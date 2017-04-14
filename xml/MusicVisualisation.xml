@@ -98,7 +98,7 @@
 				<font>Font_channels</font>
 				<textcolor>FFFFFFFF</textcolor>
 				<shadowcolor>AA000000</shadowcolor>
-				<label>| [COLOR=blue]$INFO[MusicPlayer.SampleRate,,[/COLOR] KHZ] - [COLOR=blue]$INFO[MusicPlayer.Channels,,[/COLOR] CH] - [COLOR=blue]$INFO[MusicPlayer.BitsPerSample,,[/COLOR] BITS]</label>
+				<label>| [COLOR=button_focus]$INFO[MusicPlayer.SampleRate,,[/COLOR] KHZ] - [COLOR=button_focus]$INFO[MusicPlayer.Channels,,[/COLOR] CH] - [COLOR=button_focus]$INFO[MusicPlayer.BitsPerSample,,[/COLOR] BITS]</label>
 				<scroll>false</scroll>
 				<scrollout>false</scrollout>
 			</control>
@@ -111,16 +111,17 @@
 				<font>Font_channels</font>
 				<textcolor>FFFFFFFF</textcolor>
 				<shadowcolor>AA000000</shadowcolor>
-				<label>Playlist Position [COLOR=blue]$INFO[MusicPlayer.PlaylistPosition ][/COLOR] von [COLOR=blue]$INFO[MusicPlayer.PlaylistLength][/COLOR]</label>
+				<label>Playlist Position [COLOR=button_focus]$INFO[MusicPlayer.PlaylistPosition ][/COLOR] von [COLOR=button_focus]$INFO[MusicPlayer.PlaylistLength][/COLOR]</label>
 				<scroll>false</scroll>
 				<scrollout>false</scrollout>
+                <visible>!String.IsEmpty(MusicPlayer.PlaylistPosition)</visible>
 			</control>
             	<control type="image">
 					<left>540</left>
 					<top>0</top>
 					<width>264</width>
 					<height>40</height>
-                    <colordiffuse>blue</colordiffuse>
+                    <colordiffuse>button_focus</colordiffuse>
                     <texture>$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
 					<aspectratio align="left">keep</aspectratio>
 				</control>

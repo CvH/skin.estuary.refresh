@@ -520,6 +520,7 @@
 		<value condition="!String.IsEmpty(Container(8300).ListItem.Art(fanart)) + Control.HasFocus(8300)">$INFO[Container(8300).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(8400).ListItem.Art(fanart)) + Control.HasFocus(8400)">$INFO[Container(8400).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(8500).ListItem.Art(fanart)) + Control.HasFocus(8500)">$INFO[Container(8500).ListItem.Art(fanart)]</value>
+     
         <!-- Eigener Hauptmenu eintrag 1 -->
         <value condition="!String.IsEmpty(Container(9901).ListItem.Art(fanart)) + Control.HasFocus(9901)">$INFO[Container(9901).ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container(9902).ListItem.Art(fanart)) + Control.HasFocus(9902)">$INFO[Container(9902).ListItem.Art(fanart)]</value>

@@ -178,7 +178,14 @@
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
 				<onclick>Skin.SetFile($INFO[Window(home).Property(CustomHomeWidgetPath)],.xsp,special://skin/playlists)</onclick>
 			</item>
-			
+				<item id="6">
+				<description>Favoriten</description>
+				<label>Favoriten</label>
+				<label2></label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],favourites://)</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+			</item>
 			<item id="1">
 				<description>Zufaellige Filme</description>
 				<label>Zufällige (Filme)</label>
@@ -233,6 +240,7 @@
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Laufende Serien)</onclick>
                 <onclick>Dialog.Close(all)</onclick>
            </item>
+
         </content>
 	</control>
 	<control type="grouplist" id="1000">

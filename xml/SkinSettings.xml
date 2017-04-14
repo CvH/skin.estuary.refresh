@@ -21,8 +21,49 @@
 		<control type="group" id="10000">
 			<left>470</left>
 			<include>OpenClose_Right</include>  
+             <control type="grouplist" id="9998">
+				<top>90</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>9999</onup>
+                <pagecontrol>60</pagecontrol>
+				<ondown>9999</ondown>
+				<visible>Container(9000).HasFocus(5)</visible>
+                <control type="label" id="900">
+					<label></label>
+                    <label2></label2>
+					<include>DefaultSettingButton</include>
+                </control>
+				<control type="radiobutton" id="800">
+					<label>German Telecast Offer Aktivieren</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(gto_aktiviert)</selected>
+					<onclick>Skin.ToggleSetting(gto_aktiviert)</onclick>
+				</control>
+                <control type="button" id="801">
+					<label>- Widget Aktualisieren</label>
+					<include>DefaultSettingButton</include>
+					<label2></label2>
+					<onclick>XBMC.RunScript(plugin.service.gto,action=refresh)</onclick>
+				</control>
+                <control type="button" id="802">
+					<label>- Inhalt erneut laden</label>
+					<include>DefaultSettingButton</include>
+					<label2></label2>
+					<onclick>XBMC.RunScript(plugin.service.gto,action=scrape)</onclick>
+				</control>
+                <control type="button" id="803">
+					<label>- Scaper wählen</label>
+					<include>DefaultSettingButton</include>
+					<label2></label2>
+					<onclick>XBMC.RunScript(plugin.service.gto,action=change_scraper)</onclick>
+				</control>
+            </control>   
             <control type="grouplist" id="9999">
-				<top>160</top>
+				<top>90</top>
 				<left>0</left>
 				<right>0</right>
 				<bottom>140</bottom>
@@ -438,8 +479,12 @@
 						<label>$LOCALIZE[31159]</label>
 						<onclick>noop</onclick>
 					</item>
-                   <item id="4">
+                    <item id="4">
 						<label>Hauptmenü Anpassen</label>
+						<onclick>noop</onclick>
+					</item>
+                    <item id="5">
+						<label>Widgets Anpassen</label>
 						<onclick>noop</onclick>
 					</item>
 				</content>

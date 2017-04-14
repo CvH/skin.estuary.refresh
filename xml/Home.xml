@@ -515,6 +515,14 @@
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                        <include content="WidgetListChannels" condition="Skin.Hassetting(gto_aktiviert)">
+							<param name="content_path" value="plugin://plugin.service.gto?action=getcontent&amp;ts=$INFO[Window(Home).Property(GTO.timestamp)]"/>
+							<param name="widget_header" value="German Telecast Offer"/>
+							<param name="widget_target" value="pvr"/>
+							<param name="list_id" value="12400"/>
+							<param name="label" value="$INFO[ListItem.label]"/>
+							<param name="label2" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+						</include>
 					</control>
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
 						<param name="text_label" value="$LOCALIZE[31143]" />
@@ -856,16 +864,17 @@
 					<ondown>700</ondown>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<focusedlayout height="95">
-						<control type="group">
-							<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
-							<control type="image">
+						<control type="image">
 								<left>0</left>
 								<top>0</top>
 								<width>462</width>
 								<height>95</height>
 								<texture colordiffuse="button_focus">lists/focus.png</texture>
-								<animation effect="fade" start="100" end="0" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog">Conditional</animation>
+								<animation effect="fade" start="100" end="20" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog">Conditional</animation>
 							</control>
+                        <control type="group">
+							<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+							
 							<control type="image">
 								<left>-3</left>
 								<top>1</top>
@@ -874,15 +883,16 @@
 								<texture colordiffuse="button_focus">$INFO[ListItem.Art(thumb)]</texture>
 								<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
 							</control>
-							<control type="image">
+							
+						</control>
+                        <control type="image">
 								<left>0</left>
 								<top>0</top>
 								<width>95</width>
 								<height>95</height>
 								<texture colordiffuse="51FFFFFF">colors/black.png</texture>
-								<animation effect="fade" start="100" end="0" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog">Conditional</animation>
+								<animation effect="fade" start="100" end="20" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog">Conditional</animation>
 							</control>
-						</control>
 						<control type="image">
 							<left>-3</left>
 							<top>1</top>
@@ -978,6 +988,8 @@
 					</include>
 				</control>
 			</control>
+            	
+            
 			<include>BottomBar</include>
 			<include content="TopBar">
 				<param name="breadcrumbs_label" value="" />

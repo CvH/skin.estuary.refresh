@@ -16,6 +16,7 @@
 				<onright>531</onright>
 				<onup>501</onup>
 				<ondown>501</ondown>
+                <oninfo condition="SubString(ListItem.DBType,set)">ActivateWindow(1064)</oninfo>
 				<viewtype label="20020">wide</viewtype>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>531</pagecontrol>

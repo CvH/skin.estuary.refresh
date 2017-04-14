@@ -12,6 +12,7 @@
 				<height>100%</height>
 				<onleft>9000</onleft>
 				<onright>531</onright>
+                <oninfo condition="SubString(ListItem.DBType,set)">ActivateWindow(1064)</oninfo>
 				<pagecontrol>531</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<onup>52</onup>

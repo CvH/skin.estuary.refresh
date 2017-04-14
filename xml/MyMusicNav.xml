@@ -19,7 +19,7 @@
 				<include>OpenClose_Left</include>
 				<visible>Control.Isvisible(54) | Control.IsVisible(55)</visible>
 				<include>Visible_Left</include>
-				<include>ListThumbInfoPanel</include>
+				<include>ListThumbInfoPanel1</include>
 			</control>
 			<include content="TopBar">
 				<param name="breadcrumbs_label" value="$LOCALIZE[2]" />

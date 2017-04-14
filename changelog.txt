@@ -1,3 +1,10 @@
-﻿[B]3.6.0[/B]
+﻿[B]3.6.1[/B]
+• Fehler in Dialog Position behoben
+• Oninfo nun für alle Fenster bereitgestellt
+• PosterAnsicht Fehlerbehoben falsche anzeige der Ungesehehen Folgen
+• Widelist Plot für alben / Songs usw wieder hergestellt
+
+
+[B]3.6.0[/B]
 • Oninfo Für Sets hinzugefügt
 • Eigene MenüPunkte hinzugefügt

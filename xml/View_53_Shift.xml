@@ -5,6 +5,7 @@
 			<description>Poster Viewtype</description>
 			<centertop>50%</centertop>
 			<left>0</left>
+
 			<height>880</height>
 			<control type="group">
 				<visible>Control.IsVisible(53)</visible>
@@ -51,6 +52,7 @@
 					<height>695</height>
 					<focusposition>1</focusposition>
 					<movement>0</movement>
+                    <oninfo condition="SubString(ListItem.DBType,set)">ActivateWindow(1064)</oninfo>
 					<pagecontrol>5199</pagecontrol>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>horizontal</orientation>

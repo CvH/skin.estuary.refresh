@@ -37,6 +37,7 @@
 					<focusposition>1</focusposition>
 					<movement>0</movement>
 					<pagecontrol>5199</pagecontrol>
+                    <oninfo condition="SubString(ListItem.DBType,set)">ActivateWindow(1064)</oninfo>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>horizontal</orientation>
 					<onleft>51</onleft>
@@ -132,7 +133,7 @@
                    	<control type="label">
 					<left>695</left>
 					<top>455</top>
-					<label>$INFO[ListItem.Property(TotalEpisodes),Episoden ,] ([COLOR grey]$INFO[ListItem.Property(WatchedEpisodes),ungesehen ][/COLOR])</label>
+					<label>$INFO[ListItem.Property(TotalEpisodes),Episoden ,] ([COLOR grey]$INFO[ListItem.Property(UnWatchedEpisodes),ungesehen ][/COLOR])</label>
 					<font>font25_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>left</align>

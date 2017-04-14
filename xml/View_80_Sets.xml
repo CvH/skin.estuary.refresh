@@ -6,28 +6,20 @@
 			<left>596</left>
 			<visible>Control.IsVisible(80) + Container.content(sets)</visible>
 			<include>Visible_Right</include>
-           
-                 
-			<include content="ListContainer1">
+            <include content="ListContainer1">
 				<param name="list_id" value="80" />
 				<param name="viewtype_label" value="Setview" />
 			</include>
 			<control type="group">
 				<depth>DepthContentPanel</depth>
-                
-				<control type="group">
+                <control type="group">
 					<right>1300</right>
 					<width>634</width>
-			
-                   
-                 
-                    
-                         <control type="group">
-                         <left>40</left>
+                <control type="group">
+                        <left>40</left>
                         <top>-550</top>
                     <include>filmeimset_fake_container_sets</include>
                     <control type="group">
-                    
                     <include>filmeimset_all_sets_setview</include>
                     </control>
 					<control type="scrollbar" id="80600">
@@ -53,7 +45,6 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
 			</control>
-            
             <control type="grouplist" id="4000">
 					<orientation>vertical</orientation>
 					<left>1190</left>
@@ -89,10 +80,8 @@
 						<param name="label" value="$VAR[normal_info_sets5]" />
 						<param name="width" value="750" />
 					</include>
-					
 				</control>
-    
-					<control type="image">
+                <control type="image">
 						<depth>DepthContentPopout</depth>
 						<left>50</left>
 						<right>36</right>
@@ -130,6 +119,7 @@
 			<height>550</height>
 			<movement>5</movement>
 			<focusposition>2</focusposition>
+            <oninfo condition="SubString(ListItem.DBType,set)">ActivateWindow(1064)</oninfo>
 			<scrolltime tween="cubic" easing="out">500</scrolltime>
 			<orientation>vertical</orientation>
 			<pagecontrol>$PARAM[list_id]600</pagecontrol>
@@ -222,11 +212,8 @@
 				</control>
 			</itemlayout>
 		</control>
-        
-	</include>
-    
-    	
-	<include name="ListThumbInfoPanel">
+    </include>
+    <include name="ListThumbInfoPanel">
 		<param name="flip_bg">false</param>
 		<definition>
 			<control type="group">
@@ -244,12 +231,7 @@
 					<fadetime>300</fadetime>
 					<texture background="true">$VAR[IconWallThumbVar]</texture>
 				</control>
-            
-		
-            
-              
-
-			</control>
+           </control>
 		</definition>
 	</include>
 </includes>

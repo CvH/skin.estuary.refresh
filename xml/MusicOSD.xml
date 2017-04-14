@@ -96,6 +96,7 @@
 					<onclick>SetRating</onclick>
 				</control>
 				<control type="group" id="699">
+                
 					<width>76</width>
 					<height>76</height>
 					<visible>!MusicPlayer.Content(LiveTV)</visible>
@@ -161,16 +162,16 @@
 					<onclick>ActivateWindow(1105)</onclick>
 				</control>
 			</control>
-			<control type="label">
+			<!--control type="label">
 				<right>30</right>
-				<top>-60</top>
+				<top>-45</top>
 				<textoffsetx>20</textoffsetx>
 				<aligny>center</aligny>
 				<align>right</align>
 				<width>1858</width>
 				<height>60</height>
 				<label>$VAR[MusicOSDHelpTextVar]</label>
-			</control>
+			</control-->
 		</control>
 		<control type="group">
 			<top>960</top>

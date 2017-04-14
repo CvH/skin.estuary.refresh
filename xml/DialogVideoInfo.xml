@@ -34,6 +34,9 @@
 					<texture fallback="DefaultVideo.png">$VAR[InfoDialogPosterVar]</texture>
                     <fadetime>350</fadetime>
 				</control>
+               
+            
+            
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
 					<visible>!String.IsEmpty(ListItem.Thumb) + !String.IsEqual(ListItem.Thumb,ListItem.Art(poster))</visible>
@@ -145,6 +148,21 @@
 						<visible>!Integer.IsGreater(Container(4000).NumItems,0)</visible>
 					</control>
 				</control>
+                
+                 <control type="image">
+				<!-- Certification colored-->
+				<left>1060</left>
+				<top>760</top>
+				<height>120</height>
+				<width>237</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<aspectratio>keep</aspectratio>
+				<texture>$VAR[mpaa_dialogvideoinfo]</texture>
+                <fadetime>350</fadetime>
+				</control>
+                
+                
 				<control type="grouplist" id="4000">
 					<orientation>vertical</orientation>
 					<left>730</left>
@@ -165,11 +183,7 @@
 						<param name="label" value="$VAR[similar_normal_info2]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Writer)" />
 					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="149" />
-						<param name="label" value="$VAR[similar_normal_info3]" />
-						<param name="visible" value="!String.IsEmpty(ListItem.RatingAndVotes)" />
-					</include>
+					
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="150" />
 						<param name="label" value="$VAR[similar_normal_info4]" />
@@ -195,15 +209,15 @@
 						<param name="label" value="$VAR[similar_normal_info8]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Season) + !String.IsEqual(ListItem.DBType,episode)" />
 					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="156" />
-						<param name="label" value="$VAR[similar_normal_info9]" />
-						<param name="visible" value="!String.IsEmpty(ListItem.Mpaa)" />
+                    <include content="InfoDialogMetadata">
+						<param name="control_id" value="149" />
+						<param name="label" value="$VAR[similar_normal_info3]" />
+						<param name="visible" value="!String.IsEmpty(ListItem.Rating)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="157" />
 						<param name="label" value="$VAR[similar_normal_info10]" />
-						<param name="visible" value="!String.IsEmpty(ListItem.Set)" />
+						<param name="visible" value="!String.IsEmpty(ListItem.Duration)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="157" />

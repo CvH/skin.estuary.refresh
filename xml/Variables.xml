@@ -34,8 +34,8 @@
 		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[ListItem.Country]</value>
 	</variable> 
      <variable name="similar_normal_info6">
-		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[Container(51).ListItem.Studio]</value>
-		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[ListItem.Studio]</value>
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]Studio: [/COLOR]$INFO[Container(51).ListItem.Studio]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]Studio: [/COLOR]$INFO[ListItem.Studio]</value>
 	</variable> 
      <variable name="similar_normal_info7">
 		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]$INFO[Container(51).ListItem.Premiered]</value>
@@ -50,8 +50,8 @@
 		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[31017]: [/COLOR]$INFO[ListItem.Mpaa]</value>
 	</variable>
      <variable name="similar_normal_info10">
-		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20457]: [/COLOR]$INFO[Container(51).ListItem.Set]</value>
-		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20457]: [/COLOR]$INFO[ListItem.Set]</value>
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]Laufzeit: [/COLOR]$INFO[Container(51).ListItem.Duration,, Minuten]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]Laufzeit: [/COLOR]$INFO[ListItem.Duration,, Minuten]</value>
 	</variable>
         <variable name="similar_normal_info11">
 		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20459]: [/COLOR]$INFO[Container(51).ListItem.Tag]</value>
@@ -63,27 +63,27 @@
 	</variable>
     <!-- Set View variablen -->
      <variable name="normal_info_sets1">
-		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Year),[COLOR button_focus]Jahr: [/COLOR]]</value>
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Year,[COLOR button_focus]Jahr: [/COLOR]]</value>
 		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Years),[COLOR button_focus]Jahre: [/COLOR]]</value>
 	</variable>
     <variable name="normal_info_sets2">
-		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Duration),[COLOR button_focus]Laufzeit: [/COLOR]] Minuten</value>
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Duration,[COLOR button_focus]Laufzeit: [/COLOR]] Minuten</value>
 		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Runtime),[COLOR button_focus]Laufzeit: [/COLOR]] Minuten</value>
 	</variable>
       <variable name="normal_info_sets3">
-		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(writer),[COLOR button_focus]Autor: [/COLOR]]</value>
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.writer,[COLOR button_focus]Autor: [/COLOR]]</value>
 		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Writer),[COLOR button_focus]Autor: [/COLOR]]</value>
 	</variable>
      <variable name="normal_info_sets4">
-		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Director),[COLOR button_focus]Director: [/COLOR]]</value>
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Director,[COLOR button_focus]Director: [/COLOR]]</value>
 		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Director),[COLOR button_focus]Director: [/COLOR]]</value>
 	</variable>
      <variable name="normal_info_sets5">
-		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Genre),[COLOR button_focus]Genre: [/COLOR]]</value>
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Genre,[COLOR button_focus]Genre: [/COLOR]]</value>
 		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Genre),[COLOR button_focus]Genre: [/COLOR]]</value>
 	</variable>
     <variable name="setplotlabelVar_viewsets">
-		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Plot)]</value>
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Plot]</value>
 		<value condition="!Control.hasfocus(012)">$VAR[setplotlabelVar]</value>
 	</variable>
     <variable name="InfoWallThumbVar_sets">
@@ -91,8 +91,27 @@
 		<value condition="!Control.hasfocus(012)">$VAR[InfoWallThumbVar]</value>
 	</variable>
     <!-- ENDE -->
+      <variable name="swash">
+    <value condition="[SubString(Container(110).ListItem.Label,a,Right) | SubString(Container(110).ListItem.Label,c,Right) | SubString(Container(110).ListItem.Label,d,Right) | SubString(Container(110).ListItem.Label,e,Right) | SubString(Container(110).ListItem.Label,f,Right)] + !String.Isempty(Container(110).ListItem.Property(part4))">}</value>
+    <value condition="[SubString(Container(110).ListItem.Label,h,Right) | SubString(Container(110).ListItem.Label,i,Right) | SubString(Container(110).ListItem.Label,k,Right) | SubString(Container(110).ListItem.Label,l,Right) | SubString(Container(110).ListItem.Label,m,Right)] + !String.Isempty(Container(110).ListItem.Property(part4))">}</value>
+    <value condition="[SubString(Container(110).ListItem.Label,n,Right) | SubString(Container(110).ListItem.Label,r,Right) | SubString(Container(110).ListItem.Label,t,Right) | SubString(Container(110).ListItem.Label,u,Right) | SubString(Container(110).ListItem.Label,x,Right)] + !String.Isempty(Container(110).ListItem.Property(part4))">}</value>
+	<value>{</value>
+  </variable>
     
-    
+    <variable name="mpaa_dialogvideoinfo">
+     <!-- MPAA german colored-->	
+		<value condition="!Control.hasfocus(051) + [String.Contains(ListItem.Mpaa,FSK0) | String.Contains(ListItem.Mpaa,Rated 0) | String.Contains(ListItem.Mpaa,FSK 0) | String.Contains(ListItem.Mpaa,FSK o.A.) | String.Contains(ListItem.Mpaa,o.A.) | String.Contains(ListItem.Mpaa,ab 0) | String.Contains(ListItem.Mpaa,Germany:0) | String.Contains(ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
+		<value condition="!Control.hasfocus(051) + [String.Contains(ListItem.Mpaa,FSK6) | String.Contains(ListItem.Mpaa,Rated 6) | String.Contains(ListItem.Mpaa,FSK 6) | String.Contains(ListItem.Mpaa,ab 6) | String.Contains(ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
+		<value condition="!Control.hasfocus(051) + [String.Contains(ListItem.Mpaa,FSK12) | String.Contains(ListItem.Mpaa,Rated 12) | String.Contains(ListItem.Mpaa,FSK 12) | String.Contains(ListItem.Mpaa,ab 12) | String.Contains(ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
+		<value condition="!Control.hasfocus(051) + [String.Contains(ListItem.Mpaa,FSK16) | String.Contains(ListItem.Mpaa,Rated 16) | String.Contains(ListItem.Mpaa,FSK 16) | String.Contains(ListItem.Mpaa,ab 16) | String.Contains(ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
+		<value condition="!Control.hasfocus(051) + [String.Contains(ListItem.Mpaa,FSK18) | String.Contains(ListItem.Mpaa,Rated 18) | String.Contains(ListItem.Mpaa,FSK 18) | String.Contains(ListItem.Mpaa,ab 18) | String.Contains(ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
+       
+        <value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK0) | String.Contains(Container(51).ListItem.Mpaa,Rated 0) | String.Contains(Container(51).ListItem.Mpaa,FSK 0) | String.Contains(Container(51).ListItem.Mpaa,FSK o.A.) | String.Contains(Container(51).ListItem.Mpaa,o.A.) | String.Contains(ListItem.Mpaa,ab 0) | String.Contains(ListItem.Mpaa,Germany:0) | String.Contains(ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
+		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK6) | String.Contains(Container(51).ListItem.Mpaa,Rated 6) | String.Contains(Container(51).ListItem.Mpaa,FSK 6) | String.Contains(Container(51).ListItem.Mpaa,ab 6) | String.Contains(Container(51).ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
+		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK12) | String.Contains(Container(51).ListItem.Mpaa,Rated 12) | String.Contains(Container(51).ListItem.Mpaa,FSK 12) | String.Contains(Container(51).ListItem.Mpaa,ab 12) | String.Contains(Container(51).ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
+		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK16) | String.Contains(Container(51).ListItem.Mpaa,Rated 16) | String.Contains(Container(51).ListItem.Mpaa,FSK 16) | String.Contains(Container(51).ListItem.Mpaa,ab 16) | String.Contains(Container(51).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
+		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK18) | String.Contains(Container(51).ListItem.Mpaa,Rated 18) | String.Contains(Container(51).ListItem.Mpaa,FSK 18) | String.Contains(Container(51).ListItem.Mpaa,ab 18) | String.Contains(Container(51).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
+    </variable>
     <!-- MOD ENDE -->
 	<variable name="PVRStatusImageVar">
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>

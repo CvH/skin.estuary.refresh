@@ -102,15 +102,9 @@
                         <!-- Set Filme als Icons -->
                     <control type="group">
                     <visible>!Skin.Hassetting(liste_anstatt_icons)</visible>
-                    <include>filmeimset_fake_container</include>
                     <control type="group">
-                    <animation effect="slide" end="0,150" time="300" tween="cubic" easing="out" condition="String.Isempty(Container(1001999).ListItemNowrap(4).Thumb)">conditional</animation>
                     <include>filmeimset_reihe1</include>
                     </control>
-                    <control type="group">
-                    <top>80</top>
-                    <include>filmeimset_reihe2</include>
-                    </control>   
                     </control>    
                         <!-- ENDE -->
                        	<control type="textbox" id="7898">
@@ -181,6 +175,12 @@
 						<visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
 						<altlabel>$LOCALIZE[13353]</altlabel>
 						<usealttexture>library.isscanningvideo</usealttexture>
+					</control>
+                    <control type="button" id="799">
+						<description>Suchen</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[137]</label>
+						<onclick>ActivateWindow(1107)</onclick>
 					</control>
                     <!-- MOD Liste anstatt Icons -->
                 	<control type="label" id="800">

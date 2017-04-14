@@ -177,6 +177,7 @@
                     <visible>ListItem.IsCollection + !Skin.Hassetting(liste_anstatt_icons)</visible>
                     <include>filmeimset_fake_container</include><!-- für anzahl der Filme im Set -->
                 <control type="group">
+                    <left>-20</left>
                     <include>filmeimset_all</include>
                 </control>
                     <!--control type="group">

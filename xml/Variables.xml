@@ -5,7 +5,94 @@
 		<value condition="!String.isEmpty(Listitem.Plot)">$INFO[Listitem.Plot]</value>
 		<value condition="String.isEmpty(Listitem.Plot)">$INFO[Window(home).Property(Set.Movies.Plot)]</value>
 	</variable>
-
+    <variable name="similar_normal_plot">
+		<value condition="Control.hasfocus(51)">$INFO[Container(51).Listitem.Plot]</value>
+		<value condition="!Control.hasfocus(51)">$INFO[Listitem.Plot]</value>
+	</variable>
+     <variable name="similar_normal_discart">
+		<value condition="Control.hasfocus(51)">$INFO[Container(51).ListItem.Art(discart)]</value>
+		<value condition="!Control.hasfocus(51)">$INFO[ListItem.Art(discart)]</value>
+	</variable>
+    <variable name="similar_normal_info1">
+		<value condition="Control.hasfocus(51)">$INFO[Container(51).ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]</value>
+		<value condition="!Control.hasfocus(51)">$INFO[ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]</value>
+	</variable>
+    <variable name="similar_normal_info2">
+		<value condition="Control.hasfocus(51)">$INFO[Container(51).ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]</value>
+		<value condition="!Control.hasfocus(51)">$INFO[ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]</value>
+	</variable>
+    <variable name="similar_normal_info3">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[563]: [/COLOR]$INFO[Container(51).ListItem.RatingAndVotes]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[563]: [/COLOR]$INFO[ListItem.RatingAndVotes]</value>
+	</variable>
+    <variable name="similar_normal_info4">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[515]: [/COLOR]$INFO[Container(51).ListItem.Genre]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[515]: [/COLOR]$INFO[ListItem.Genre]</value>
+	</variable>    
+    <variable name="similar_normal_info5">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[Container(51).ListItem.Country]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[ListItem.Country]</value>
+	</variable> 
+     <variable name="similar_normal_info6">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[Container(51).ListItem.Studio]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[ListItem.Studio]</value>
+	</variable> 
+     <variable name="similar_normal_info7">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]$INFO[Container(51).ListItem.Premiered]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]$INFO[ListItem.Premiered]</value>
+	</variable>
+     <variable name="similar_normal_info8">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[31048]: [/COLOR]$INFO[Container(51).ListItem.Season,, $LOCALIZE[36905]]$INFO[Container(51).ListItem.Episode, (, $LOCALIZE[20453])]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[31048]: [/COLOR]$INFO[ListItem.Season,, $LOCALIZE[36905]]$INFO[ListItem.Episode, (, $LOCALIZE[20453])]</value>
+	</variable>
+     <variable name="similar_normal_info9">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[31017]: [/COLOR]$INFO[Container(51).ListItem.Mpaa]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[31017]: [/COLOR]$INFO[ListItem.Mpaa]</value>
+	</variable>
+     <variable name="similar_normal_info10">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20457]: [/COLOR]$INFO[Container(51).ListItem.Set]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20457]: [/COLOR]$INFO[ListItem.Set]</value>
+	</variable>
+        <variable name="similar_normal_info11">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20459]: [/COLOR]$INFO[Container(51).ListItem.Tag]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[20459]: [/COLOR]$INFO[ListItem.Tag]</value>
+	</variable>
+        <variable name="similar_normal_info11">
+		<value condition="Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[126]: [/COLOR]$INFO[Container(51).ListItem.Status]</value>
+		<value condition="!Control.hasfocus(51)">[COLOR button_focus]$LOCALIZE[126]: [/COLOR]$INFO[ListItem.Status]</value>
+	</variable>
+    <!-- Set View variablen -->
+     <variable name="normal_info_sets1">
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Year),[COLOR button_focus]Jahr: [/COLOR]]</value>
+		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Years),[COLOR button_focus]Jahre: [/COLOR]]</value>
+	</variable>
+    <variable name="normal_info_sets2">
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Duration),[COLOR button_focus]Laufzeit: [/COLOR]] Minuten</value>
+		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Runtime),[COLOR button_focus]Laufzeit: [/COLOR]] Minuten</value>
+	</variable>
+      <variable name="normal_info_sets3">
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(writer),[COLOR button_focus]Autor: [/COLOR]]</value>
+		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Writer),[COLOR button_focus]Autor: [/COLOR]]</value>
+	</variable>
+     <variable name="normal_info_sets4">
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Director),[COLOR button_focus]Director: [/COLOR]]</value>
+		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Director),[COLOR button_focus]Director: [/COLOR]]</value>
+	</variable>
+     <variable name="normal_info_sets5">
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Genre),[COLOR button_focus]Genre: [/COLOR]]</value>
+		<value condition="!Control.hasfocus(012)">$INFO[Window(home).Property(Set.Movies.Genre),[COLOR button_focus]Genre: [/COLOR]]</value>
+	</variable>
+    <variable name="setplotlabelVar_viewsets">
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Property(Plot)]</value>
+		<value condition="!Control.hasfocus(012)">$VAR[setplotlabelVar]</value>
+	</variable>
+    <variable name="InfoWallThumbVar_sets">
+		<value condition="Control.hasfocus(012)">$INFO[Container(012).Listitem.Icon]</value>
+		<value condition="!Control.hasfocus(012)">$VAR[InfoWallThumbVar]</value>
+	</variable>
+    <!-- ENDE -->
+    
+    
     <!-- MOD ENDE -->
 	<variable name="PVRStatusImageVar">
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
@@ -170,9 +257,12 @@
 		<value>$INFO[ListItem.Art(poster)]</value>
 	</variable>
 	<variable name="InfoDialogPosterVar">
-		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="!Control.hasfocus(51) + !String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!Control.hasfocus(51) + !String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
+		<value condition="!Control.hasfocus(51) + !String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+        <value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Art(poster))">$INFO[Container(51).ListItem.Art(poster)]</value>
+		<value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Art(season.poster))">$INFO[Container(51).ListItem.Art(season.poster)]</value>
+		<value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Art(tvshow.poster))">$INFO[Container(51).ListItem.Art(tvshow.poster)]</value>
 	</variable>
 	<variable name="ListPosterVar">
 		<value condition="ListItem.IsParentFolder">DefaultFolderBackPoster.png</value>
@@ -246,12 +336,14 @@
 		<value>[COLOR grey]$INFO[ListItem.Year, (,)][/COLOR]</value>
 	</variable>
 	<variable name="VideoInfoMainLabelVar">
-		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
+		<value condition="!Control.hasfocus(51) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
+        <value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Title)">$INFO[Container(51).ListItem.Title]$INFO[Container(51).ListItem.Year, ([COLOR grey],[/COLOR])]</value>
 		<value>$INFO[ListItem.Label]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
 	</variable>
 	<variable name="VideoInfoSubLabelVar">
 		<value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season]$INFO[ListItem.Episode,[COLOR grey]x[/COLOR],: ]$INFO[ListItem.TVShowTitle]</value>
-		<value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Tagline,[I],[/I]]</value>
+		<value condition="!Control.hasfocus(51) + String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Tagline,[I],[/I]]</value>
+        <value condition="Control.hasfocus(51) + String.IsEqual(Container(51).ListItem.DBType,movie)">$INFO[Container(51).ListItem.Tagline,[I],[/I]]</value>
 		<value>$INFO[ListItem.Genre]</value>
 	</variable>
 	<variable name="NowPlayingBreadcrumbsVar">
@@ -329,6 +421,11 @@
 		<value condition="!String.IsEmpty(ListItem.Overlay)">$INFO[ListItem.Overlay]</value>
 		<value condition="!ListItem.IsParentFolder">OverlayUnwatched.png</value>
 	</variable>
+    <variable name="ListWatchedIconVar_newlist">
+    	<value condition="String.IsEqual(ListItem.Property(Overlay),OverlayWatched.png)">OverlayWatched.png</value>
+		<value condition="!String.IsEqual(ListItem.Property(Overlay),OverlayWatched.png)">OverlayUnwatched.png</value>
+    </variable>    
+        
 	<variable name="WallWatchedIconVar">
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
 		<value condition="ListItem.IsCollection">overlays/set.png</value>
@@ -344,6 +441,56 @@
 		<value condition="Container.Content(episodes)">$LOCALIZE[20343]</value>
 		<value>$LOCALIZE[3]</value>
 	</variable>
+     <variable name="Content-Similar">
+    <value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(ListItem.Genre,Fantasy)">special://skin/playlists/defaults/genres/tv/Fantasy.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Comedy) | String.Contains(ListItem.Genre,Sitcom) | String.Contains(ListItem.Genre,Komödie)]">special://skin/playlists/defaults/genres/tv/Comedy.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Family) | String.Contains(ListItem.Genre,Familien) | String.Contains(ListItem.Genre,Familie) | String.Contains(ListItem.Genre,Kinder) | String.Contains(ListItem.Genre,Kids)]">special://skin/playlists/defaults/genres/tv/Family.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,CSI) | String.Contains(ListItem.Genre,Crime) | String.Contains(ListItem.Genre,Krimi) | String.Contains(ListItem.Genre,Agenten)]">special://skin/playlists/defaults/genres/tv/Krimi.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Anwälte) | String.Contains(ListItem.Genre,Law) | String.Contains(ListItem.Genre,Lawyer)]">special://skin/playlists/defaults/genres/tv/Anwalt.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Sci-Fi) | String.Contains(ListItem.Genre,Stargate) | String.Contains(ListItem.Genre,Marvel)]">special://skin/playlists/defaults/genres/tv/Science fiction.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Animation) | String.Contains(ListItem.Genre,Anime) | String.Contains(ListItem.Genre,Zeichentrick)]">special://skin/playlists/defaults/genres/tv/Animation.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Musik) | String.Contains(ListItem.Genre,Music) | String.Contains(ListItem.Genre,Musical)]">special://skin/playlists/defaults/genres/tv/Music.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Biografie) | String.Contains(ListItem.Genre,Biography)]">special://skin/playlists/defaults/genres/tv/Biografie.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Mystic) | String.Contains(ListItem.Genre,Thrill) | String.Contains(ListItem.Genre,Mystery) | String.Contains(ListItem.Genre,Thriller)]">special://skin/playlists/defaults/genres/tv/Mystery.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Vampire) | String.Contains(ListItem.Genre,Vampires)]">special://skin/playlists/defaults/genres/tv/Vampire.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Action) | String.Contains(ListItem.Genre,Kampfsport) | String.Contains(ListItem.Genre,Martial) | String.Contains(ListItem.Genre,Ninja)]">special://skin/playlists/defaults/genres/tv/Action.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Western) | String.Contains(ListItem.Genre,Abenteuer) | String.Contains(ListItem.Genre,Adventure)]">special://skin/playlists/defaults/genres/tv/Abenteuer.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Mini Series) | String.Contains(ListItem.Genre,Mini Serie)]">special://skin/playlists/defaults/genres/tv/MiniSeries.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Dokumenation) | String.Contains(ListItem.Genre,Doku) | String.Contains(ListItem.Genre,Dokumentary) | String.Contains(ListItem.Genre,National) | String.Contains(ListItem.Genre,Nature)]">special://skin/playlists/defaults/genres/tv/Dokumenation.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(ListItem.Genre,Hbo)">special://skin/playlists/defaults/genres/tv/Hbo.xsp</value>
+    <value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Superhelden) | String.Contains(ListItem.Genre,Superheros) | String.Contains(ListItem.Genre,Comic Verfilmungen)]">special://skin/playlists/defaults/genres/tv/Superhelden.xsp</value>
+ 	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Drama) | String.Contains(ListItem.Genre,Love) | String.Contains(ListItem.Genre,Romance) | String.Contains(ListItem.Genre,Romanze) | String.Contains(ListItem.Genre,Romantik)]">special://skin/playlists/defaults/genres/tv/Drama.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Sport) | String.Contains(ListItem.Genre,Sports) | String.Contains(ListItem.Genre,Boxer) | String.Contains(ListItem.Genre,Boxing) | String.Contains(ListItem.Genre,Football) | String.Contains(ListItem.Genre,Baseball) | String.Contains(ListItem.Genre,Basketball)]">special://skin/playlists/defaults/genres/tv/Sport.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Krieg) | String.Contains(ListItem.Genre,War)]">special://skin/playlists/defaults/genres/tv/Krieg.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Historie) | String.Contains(ListItem.Genre,History) | String.Contains(ListItem.Genre,Monumental) | String.Contains(ListItem.Genre,Classic) | String.Contains(ListItem.Genre,Klassik) | String.Contains(ListItem.Genre,Film-Noir)]">special://skin/playlists/defaults/genres/tv/Historie.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Horror) | String.Contains(ListItem.Genre,Zombies) | String.Contains(ListItem.Genre,Splatter) | String.Contains(ListItem.Genre,Grusel)]">special://skin/playlists/defaults/genres/tv/Horror.xsp</value>
+	<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [String.Contains(ListItem.Genre,Ärzte) | String.Contains(ListItem.Genre,Krankenhaus) | String.Contains(ListItem.Genre,Doctor) | String.Contains(ListItem.Genre,Hospital)]">special://skin/playlists/defaults/genres/tv/Arzt.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Comedy) | String.Contains(ListItem.Genre,Sitcom) | String.Contains(ListItem.Genre,Komödie)]">special://skin/playlists/defaults/genres/film/Comedy.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Family) | String.Contains(ListItem.Genre,Familie) | String.Contains(ListItem.Genre,Familien) | String.Contains(ListItem.Genre,Kinder) | String.Contains(ListItem.Genre,Kids)]">special://skin/playlists/defaults/genres/film/Family.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,CSI) | String.Contains(ListItem.Genre,Crime) | String.Contains(ListItem.Genre,Krimi) | String.Contains(ListItem.Genre,Agenten)]">special://skin/playlists/defaults/genres/film/Krimi.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Anwälte) | String.Contains(ListItem.Genre,Law) | String.Contains(ListItem.Genre,Lawyer)]">special://skin/playlists/defaults/genres/film/Anwalt.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Sci-Fi) | String.Contains(ListItem.Genre,fiction)  | String.Contains(ListItem.Genre,Stargate) | String.Contains(ListItem.Genre,Marvel)]">special://skin/playlists/defaults/genres/film/Science fiction.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Superhelden) | String.Contains(ListItem.Genre,Superheros) | String.Contains(ListItem.Genre,Comic Verfilmungen)]">special://skin/playlists/defaults/genres/film/Superhelden.xsp</value>
+    <value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Animation) | String.Contains(ListItem.Genre,Anime) | String.Contains(ListItem.Genre,Zeichentrick)]">special://skin/playlists/defaults/genres/film/Animation.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Musik) | String.Contains(ListItem.Genre,Music) | String.Contains(ListItem.Genre,Musical)]">special://skin/playlists/defaults/genres/film/Music.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Biografie) | String.Contains(ListItem.Genre,Biography)]">special://skin/playlists/defaults/genres/film/Biografie.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Mystic) | String.Contains(ListItem.Genre,Thrill) | String.Contains(ListItem.Genre,Mystery) | String.Contains(ListItem.Genre,Thriller)]">special://skin/playlists/defaults/genres/film/Mystery.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Vampire) | String.Contains(ListItem.Genre,Vampires)]">special://skin/playlists/defaults/genres/film/Vampire.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Action) | String.Contains(ListItem.Genre,Kampfsport) | String.Contains(ListItem.Genre,Martial) | String.Contains(ListItem.Genre,Ninja)]">special://skin/playlists/defaults/genres/film/Action.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Western) | String.Contains(ListItem.Genre,Abenteuer) | String.Contains(ListItem.Genre,Adventure)]">special://skin/playlists/defaults/genres/film/Abenteuer.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Mini Series) | String.Contains(ListItem.Genre,Mini Serie)]">special://skin/playlists/defaults/genres/film/MiniSeries.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Dokumenation) | String.Contains(ListItem.Genre,Doku) | String.Contains(ListItem.Genre,Dokumentary) | String.Contains(ListItem.Genre,National) | String.Contains(ListItem.Genre,Nature)]">special://skin/playlists/defaults/genres/film/Dokumenation.xsp</value>
+	<value condition="Container.Content(movies) + String.Contains(ListItem.Genre,Hbo)">special://skin/playlists/defaults/genres/film/Hbo.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Drama) | String.Contains(ListItem.Genre,Love) | String.Contains(ListItem.Genre,Romance)]">special://skin/playlists/defaults/genres/film/Drama.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Sport) | String.Contains(ListItem.Genre,Sports) | String.Contains(ListItem.Genre,Boxer) | String.Contains(ListItem.Genre,Boxing) | String.Contains(ListItem.Genre,Football) | String.Contains(ListItem.Genre,Basketball) | String.Contains(ListItem.Genre,Baseball)]">special://skin/playlists/defaults/genres/film/Sport.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Krieg) | String.Contains(ListItem.Genre,War)]">special://skin/playlists/defaults/genres/film/Krieg.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Historie) | String.Contains(ListItem.Genre,History) | String.Contains(ListItem.Genre,Monumental) | String.Contains(ListItem.Genre,Classic) | String.Contains(ListItem.Genre,Klassik) | String.Contains(ListItem.Genre,Film-Noir)]">special://skin/playlists/defaults/genres/film/Historie.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Horror) | String.Contains(ListItem.Genre,Zombies) | String.Contains(ListItem.Genre,Splatter)]">special://skin/playlists/defaults/genres/film/Horror.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Ärzte) | String.Contains(ListItem.Genre,Krankenhaus) | String.Contains(ListItem.Genre,Doctor) | String.Contains(ListItem.Genre,Hospital)]">special://skin/playlists/defaults/genres/film/Arzt.xsp</value>
+	<value condition="Container.Content(movies) + [String.Contains(ListItem.Genre,Christmas) | String.Contains(ListItem.Genre,Weihnachten)]">special://skin/playlists/defaults/genres/film/Weihnachten.xsp</value>
+    <value condition="Container.Content(movies) +  String.Contains(ListItem.Genre,Fantasy)">special://skin/playlists/defaults/genres/film/Fantasy.xsp</value>
+    <value></value> 
+   </variable>
 	<variable name="BreadcrumbsPVRChannelsVar">
 		<value condition="Window.IsActive(TVChannels)">$LOCALIZE[19020] / $LOCALIZE[19019] / $INFO[Control.GetLabel(29)]</value>
 		<value>$LOCALIZE[19021] / $LOCALIZE[19019] / $INFO[Control.GetLabel(29)]</value>

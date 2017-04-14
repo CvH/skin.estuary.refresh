@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Krimi</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>fiction</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Superhelden</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Stargate</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Sci-Fi</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Marvel</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Superheros</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Stargate</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

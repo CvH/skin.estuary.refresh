@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_80_Sets">
+		<control type="group">
+			<include>OpenClose_Right</include>
+			<left>596</left>
+			<visible>Control.IsVisible(80) + Container.content(sets)</visible>
+			<include>Visible_Right</include>
+           
+                 
+			<include content="ListContainer1">
+				<param name="list_id" value="80" />
+				<param name="viewtype_label" value="Setview" />
+			</include>
+			<control type="group">
+				<depth>DepthContentPanel</depth>
+                
+				<control type="group">
+					<right>1300</right>
+					<width>634</width>
+			
+                   
+                 
+                    
+                         <control type="group">
+                         <left>40</left>
+                        <top>-550</top>
+                    <include>filmeimset_fake_container_sets</include>
+                    <control type="group">
+                    
+                    <include>filmeimset_all_sets_setview</include>
+                    </control>
+					<control type="scrollbar" id="80600">
+						<left>409</left>
+						<top>1020</top>
+						<width>12</width>
+						<height>550</height>
+						<onleft>9000</onleft>
+						<onright>80</onright>
+						<orientation>vertical</orientation>
+						<animation effect="zoom" end="50,100" time="300" tween="sine" center="Auto" easing="inout" condition="!Control.HasFocus(80600)">conditional</animation>
+					</control>
+                    </control>
+            <control type="textbox">
+				<!-- Plot  -->
+				<left>1230</left>
+				<top>730</top>
+				<width>670</width>
+				<height>290</height>
+				<align>justify</align>
+				<font>Font_18A</font>
+				<label>$VAR[setplotlabelVar_viewsets]</label>
+				<textcolor>FFFFFAF0</textcolor>
+				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
+			</control>
+            
+            <control type="grouplist" id="4000">
+					<orientation>vertical</orientation>
+					<left>1190</left>
+					<top>480</top>
+					<height>355</height>
+					<itemgap>-8</itemgap>
+					<ondown>5000</ondown>
+					<onup>50</onup>
+                   	<onright>140</onright>
+					<onleft>140</onleft>
+					<include content="InfoDialogMetadata_setview">
+						<param name="control_id" value="490" />
+						<param name="label" value="$VAR[normal_info_sets1]" />
+						<param name="width" value="750" />
+					</include>
+					<include content="InfoDialogMetadata_setview">
+						<param name="control_id" value="490" />
+						<param name="label" value="$VAR[normal_info_sets2]" />
+						<param name="width" value="750" />
+					</include>
+                    <include content="InfoDialogMetadata_setview">
+						<param name="control_id" value="490" />
+						<param name="label" value="$VAR[normal_info_sets3]" />
+						<param name="width" value="750" />
+					</include>
+                    <include content="InfoDialogMetadata_setview">
+						<param name="control_id" value="490" />
+						<param name="label" value="$VAR[normal_info_sets4]" />
+						<param name="width" value="750" />
+					</include>
+                    <include content="InfoDialogMetadata_setview">
+						<param name="control_id" value="490" />
+						<param name="label" value="$VAR[normal_info_sets5]" />
+						<param name="width" value="750" />
+					</include>
+					
+				</control>
+    
+					<control type="image">
+						<depth>DepthContentPopout</depth>
+						<left>50</left>
+						<right>36</right>
+						<top>470</top>
+						<bottom>0</bottom>
+                        <width>400</width>
+                        <height>550</height>
+						<fadetime>200</fadetime>
+						<texture fallback="DefaultVideo.png" background="true">$VAR[InfoWallThumbVar_sets]</texture>
+						<aspectratio aligny="top">stretch</aspectratio>
+                        <fadetime>350</fadetime>
+					</control>
+					<control type="group">
+						<left>310</left>
+						<top>936</top>
+						<include content="UserRatingCircle">
+							<param name="animation" value="True" />
+						</include>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="ListContainer1">
+    		<include content="ContentPanel">
+						<param name="left" value="-640" />
+						<param name="top" value="430" />
+						<param name="width" value="2000" />
+						<param name="flipx" value="true" />
+					</include>
+		<control type="fixedlist" id="$PARAM[list_id]">
+			<left>-140</left>
+			<width>list_width</width>
+			<top>470</top>
+			<height>550</height>
+			<movement>5</movement>
+			<focusposition>2</focusposition>
+			<scrolltime tween="cubic" easing="out">500</scrolltime>
+			<orientation>vertical</orientation>
+			<pagecontrol>$PARAM[list_id]600</pagecontrol>
+			<onleft>80600</onleft>
+			<onright>012</onright>
+			<onup>012</onup>
+			<ondown>$PARAM[list_id]</ondown>
+			<viewtype label="$PARAM[viewtype_label]">list</viewtype>
+			<visible>Container.Content(sets)</visible>
+			<focusedlayout height="list_item_height" width="list_width">
+				<control type="image">
+					<left>0</left>
+					<right>0</right>
+					<top>0</top>
+					<bottom>0</bottom>
+					<texture colordiffuse="button_focus">lists/focus.png</texture>
+					<visible>Control.HasFocus($PARAM[list_id])</visible>
+				</control>
+				<control type="label">
+					<left>70</left>
+					<right>70</right>
+					<top>0</top>
+					<bottom>0</bottom>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<font>font27</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="label">
+					<top>0</top>
+					<bottom>0</bottom>
+					<left>100</left>
+					<right>20</right>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<label>$VAR[ListLabel2Var]</label>
+					<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="image">
+					<left>21</left>
+					<centertop>50%</centertop>
+					<width>32</width>
+					<height>32</height>
+					<texture>$VAR[ListWatchedIconVar]</texture>
+					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+				</control>
+				<control type="image">
+					<left>21</left>
+					<centertop>50%</centertop>
+					<width>32</width>
+					<height>32</height>
+					<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+					<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+					<animation effect="fade" time="150">VisibleChange</animation>
+					<visible>!Control.HasFocus($PARAM[list_id])</visible>
+				</control>
+			</focusedlayout>
+			<itemlayout height="list_item_height" width="list_width">
+				<control type="label">
+					<left>70</left>
+					<right>70</right>
+					<top>0</top>
+					<bottom>0</bottom>
+					<aligny>center</aligny>
+					<font>font27</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<right>20</right>
+					<top>0</top>
+					<bottom>0</bottom>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<label>$VAR[ListLabel2Var]</label>
+					<textcolor>grey</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="image">
+					<left>21</left>
+					<centertop>50%</centertop>
+					<width>32</width>
+					<height>32</height>
+					<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
+				</control>
+			</itemlayout>
+		</control>
+        
+	</include>
+    
+    	
+	<include name="ListThumbInfoPanel">
+		<param name="flip_bg">false</param>
+		<definition>
+			<control type="group">
+				<depth>DepthContentPanel</depth>
+				<include content="ContentPanel">
+					<param name="width" value="654" />
+					<param name="flipx" value="$PARAM[flip_bg]" />
+				</include>
+				<control type="image">
+					<left>30</left>
+					<top>140</top>
+					<width>530</width>
+					<height>470</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<fadetime>300</fadetime>
+					<texture background="true">$VAR[IconWallThumbVar]</texture>
+				</control>
+            
+		
+            
+              
+
+			</control>
+		</definition>
+	</include>
+</includes>

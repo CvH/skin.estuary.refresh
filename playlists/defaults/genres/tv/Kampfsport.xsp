@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Kampfsport</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Kampfsport</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Martial Arts</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

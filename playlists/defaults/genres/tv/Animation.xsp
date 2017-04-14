@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Animation</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Animation</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Anime</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Zeichentrick</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

@@ -345,7 +345,7 @@
 					<height>1080</height>
 					<movement>0</movement>
 					<focusposition>8</focusposition>
-					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<scrolltime tween="cubic" easing="out">250</scrolltime>
 					<orientation>vertical</orientation>
 					<onleft>60</onleft>
 					<onright>50</onright>
@@ -398,7 +398,7 @@
 							<right>120</right>
 							<aligny>top</aligny>
 							<font>font12</font>
-                            <label>[B]$INFO[ListItem.Title][/B]</label>
+                            <label>$INFO[ListItem.Title]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
@@ -476,11 +476,14 @@
 				</control>
                 </control>
                 
-			<include content="TopBar">
+			<!--include content="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRChannelsVar]" />
 			</include>
 			<include content="BottomBar">
 				<param name="info_visible" value="true" />
+			</include-->
+            <include content="TopBar">
+				<param name="breadcrumbs_label" value="" />
 			</include>
 				<control type="image">
 					<left>0</left>

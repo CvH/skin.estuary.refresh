@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Anwalt</name>
+    <match>one</match>
+  <rule field="genre" operator="contains">
+        <value>Lawyer</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Law</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Anwälte</value>
+    </rule>
+   <order>random</order>
+</smartplaylist>

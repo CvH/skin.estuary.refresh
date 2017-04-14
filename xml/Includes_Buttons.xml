@@ -18,6 +18,20 @@
 		<radioposx>1</radioposx>
 		<radioposy>0</radioposy>
 	</include>
+    <include name="InfoDialogMetadata_setview">
+		<control type="button" id="$PARAM[control_id]">
+			<width>$PARAM[width]</width>
+			<height>49</height>
+			<textoffsetx>40</textoffsetx>
+			<aligny>center</aligny>
+			<font>font12</font>
+			<texturefocus />
+			<texturenofocus />
+			<onclick>noop</onclick>
+			<label>$PARAM[label]</label>
+			<visible>$PARAM[visible]</visible>
+		</control>
+	</include>
 	<include name="InfoDialogMetadata">
 		<control type="button" id="$PARAM[control_id]">
 			<width>505</width>
@@ -235,6 +249,37 @@
 				<textureradiooffdisabled colordiffuse="disabled">$PARAM[icon]</textureradiooffdisabled>
 				<textureradioondisabled colordiffuse="disabled">$PARAM[icon]</textureradioondisabled>
 				<label>$PARAM[label]</label>
+                <onclick>$PARAM[onclick_1]</onclick>
+				<onclick>$PARAM[onclick_2]</onclick>
+				<visible>$PARAM[visible]</visible>
+				<animation effect="fade" start="100" end="0" time="300" delay="300">Hidden</animation>
+			</control>
+		</definition>
+	</include>
+    <include name="InfoDialogButton1">
+		<param name="width">262</param>
+		<definition>
+			<control type="radiobutton" id="$PARAM[id]">
+				<width>$PARAM[width]</width>
+				<height>142</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<texturefocus border="21" colordiffuse="button_focus">buttons/button-fo.png</texturefocus>
+				<texturenofocus border="21">buttons/button-nofo.png</texturenofocus>
+				<textoffsetx>35</textoffsetx>
+				<textoffsety>78</textoffsety>
+				<radioposx>108</radioposx>
+				<radioposy>16</radioposy>
+				<radiowidth>48</radiowidth>
+				<font>font12</font>
+				<textureradioonfocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioonfocus>
+				<textureradioonnofocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioonnofocus>
+				<textureradioofffocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioofffocus>
+				<textureradiooffnofocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradiooffnofocus>
+				<textureradiooffdisabled colordiffuse="disabled">$PARAM[icon]</textureradiooffdisabled>
+				<textureradioondisabled colordiffuse="disabled">$PARAM[icon]</textureradioondisabled>
+				<label>$PARAM[label]</label>
+                <onup>$PARAM[onup]</onup>
 				<onclick>$PARAM[onclick_1]</onclick>
 				<onclick>$PARAM[onclick_2]</onclick>
 				<visible>$PARAM[visible]</visible>

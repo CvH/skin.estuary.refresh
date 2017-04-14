@@ -154,6 +154,7 @@
 				<aspectratio>scale</aspectratio>
 				<bordersize>20</bordersize>
 			</control>
+     
 			<control type="image">
 				<left>136</left>
 				<top>138</top>
@@ -171,6 +172,14 @@
 				<shadowcolor>text_shadow</shadowcolor>
 				<align>right</align>
 			</control>
+            <control type="image">
+					<left>20</left>
+					<top>128</top>
+					<width>80</width>
+					<height>80</height>
+					<texture>overlays/overlay-bg.png</texture>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+				</control>
 			<control type="image">
 				<left>20</left>
 				<top>175</top>
@@ -189,6 +198,7 @@
 				<label>$INFO[ListItem.Label]</label>
 				<visible>Window.IsActive(videos)</visible>
 			</control>
+        
 			<control type="group">
 				<visible>!Window.IsActive(videos)</visible>
 				<control type="label">

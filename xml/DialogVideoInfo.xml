@@ -23,20 +23,7 @@
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
-                <!-- Discart Filme -->
-                <control type="image">
-					<depth>DepthContentPopout</depth>
-					<left>50</left>
-					<top>20</top>
-					<width>450</width>
-					<height>450</height>
-					<aspectratio>scale</aspectratio>
-					<texture>$INFO[ListItem.Art(discart)]</texture>
-                    <animation type="WindowOpen" reversible="false">
-					<effect type="slide" start="0,0" end="0,-150" delay="800" time="4120" tween="quadratic" easing="out" />
-					<effect type="rotate" start="0" end="-720" center="auto" delay="800" time="4120" tween="quadratic" easing="out" />
-				</animation>
-				</control>
+             
 				<control type="image">
 					<depth>DepthContentPopout</depth>
 					<left>4</left>
@@ -45,6 +32,7 @@
 					<height>801</height>
 					<aspectratio>scale</aspectratio>
 					<texture fallback="DefaultVideo.png">$VAR[InfoDialogPosterVar]</texture>
+                    <fadetime>350</fadetime>
 				</control>
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
@@ -143,7 +131,7 @@
 						<top>25</top>
 						<width>670</width>
 						<height>363</height>
-						<label fallback="19055">$INFO[ListItem.Plot]</label>
+						<label fallback="19055">$VAR[similar_normal_plot]</label>
 						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 						<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
 					</control>
@@ -169,62 +157,62 @@
 					<onleft>140</onleft>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="147" />
-						<param name="label" value="$INFO[ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]" />
+						<param name="label" value="$VAR[similar_normal_info1]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Director)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="148" />
-						<param name="label" value="$INFO[ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]" />
+						<param name="label" value="$VAR[similar_normal_info2]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Writer)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="149" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[563]: [/COLOR]$INFO[ListItem.RatingAndVotes]" />
+						<param name="label" value="$VAR[similar_normal_info3]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.RatingAndVotes)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="150" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[515]: [/COLOR]$INFO[ListItem.Genre]" />
+						<param name="label" value="$VAR[similar_normal_info4]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Genre) + String.IsEqual(ListItem.DBType,movie)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="152" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[ListItem.Country]" />
+						<param name="label" value="$VAR[similar_normal_info5]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Country)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="153" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[29909]: [/COLOR]$INFO[ListItem.Studio]" />
+						<param name="label" value="$VAR[similar_normal_info6]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Studio)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="154" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]$INFO[ListItem.Premiered]" />
+						<param name="label" value="$VAR[similar_normal_info7]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Premiered)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="155" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[31048]: [/COLOR]$INFO[ListItem.Season,, $LOCALIZE[36905]]$INFO[ListItem.Episode, (, $LOCALIZE[20453])]" />
+						<param name="label" value="$VAR[similar_normal_info8]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Season) + !String.IsEqual(ListItem.DBType,episode)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="156" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[31017]: [/COLOR]$INFO[ListItem.Mpaa]" />
+						<param name="label" value="$VAR[similar_normal_info9]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Mpaa)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="157" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[20457]: [/COLOR]$INFO[ListItem.Set]" />
+						<param name="label" value="$VAR[similar_normal_info10]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Set)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="157" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[20459]: [/COLOR]$INFO[ListItem.Tag]" />
+						<param name="label" value="$VAR[similar_normal_info11]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Tag)" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="157" />
-						<param name="label" value="[COLOR button_focus]$LOCALIZE[126]: [/COLOR]$INFO[ListItem.Status]" />
+						<param name="label" value="$VAR[similar_normal_info12]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Status)" />
 					</include>
 				</control>
@@ -264,9 +252,11 @@
 					<height>370</height>
 					<onleft>50</onleft>
 					<onright>50</onright>
-					<onup condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onup>
-					<onup condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onup>
-					<ondown>140</ondown>
+					<!--onup condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onup>
+					<onup condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onup-->
+                    <visible>![Control.hasfocus(101) | Control.hasfocus(51)]</visible>
+					<animation effect="slide" time="400" start="0,0"  end="1500,0" easing="inout" tween="cubic">Hidden</animation>
+                    <ondown>140</ondown>
 					<scrolltime>200</scrolltime>
 					<orientation>horizontal</orientation>
 					<itemlayout height="317" width="245">
@@ -383,6 +373,63 @@
 						</control>
 					</focusedlayout>
 				</control>
+                
+                <control type="panel" id="51">
+					<top>158</top>
+                    <left>1500</left>
+					<width>1235</width>
+					<height>370</height>
+					<onleft>50</onleft>
+					<onright>50</onright>
+                    <ondown>101</ondown>
+                    <visible>[Control.hasfocus(101) | Control.hasfocus(51)]</visible>
+					<!--onup condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onup>
+					<onup condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onup-->
+                    <!--animation effect="slide" start="0,0" end="-1500,0" time="300" tween="cubic" easing="out" condition="Control.hasfocus(101)">conditional</animation-->
+					<animation effect="slide" time="400" start="0,0"  end="-1500,0" easing="inout" tween="cubic">Visible</animation>
+                    <animation effect="slide" time="400" start="0,0"  end="1500,0" easing="inout" tween="cubic">Hidden</animation>
+                    <ondown>140</ondown>
+					<scrolltime>200</scrolltime>
+					<orientation>horizontal</orientation>
+					<itemlayout height="317" width="203">
+						<control type="group">
+							<top>10</top>
+					
+							<control type="image">
+								<top>20</top>
+								<left>20</left>
+								<width>190</width>
+								<height>277</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio aligny="top">scale</aspectratio>
+							</control>
+							</control>
+					</itemlayout>
+					<focusedlayout height="317" width="203">
+						<control type="group">
+							<left>0</left>
+							<top>10</top>
+							<control type="image">
+								<top>20</top>
+								<left>20</left>
+								<width>190</width>
+								<height>277</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio aligny="top">scale</aspectratio>
+							</control>
+                           <control type="image">
+								<left>16</left>
+								<top>16</top>
+								<width>195</width>
+								<height>285</height>
+								<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+								<visible>Control.HasFocus(51)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+                     <content>$VAR[Content-Similar]</content>
+				</control>
+                
 				<control type="grouplist" id="5000">
 					<left>0</left>
 					<top>864</top>
@@ -424,8 +471,9 @@
 						<param name="label" value="$LOCALIZE[31003]" />
 						<param name="visible" value="System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]" />
 					</include>
-					<control type="group" id="400">
+					<control type="list" id="400">
 						<width>262</width>
+                         <onup condition="Container(400).hasfocus(101)">51</onup>
 						<visible>Control.IsEnabled(7) | !String.IsEmpty(ListItem.UserRating)</visible>
 						<control type="button" id="7">
 							<include content="VideoInfoButtonsCommon">
@@ -434,8 +482,8 @@
 							<label>$LOCALIZE[31033]</label>
 							<onleft>441</onleft>
 							<onright>101</onright>
-							<onup>140</onup>
-							<enable>String.IsEmpty(Container.PluginName)</enable>
+							<onup>101</onup>
+                            <enable>String.IsEmpty(Container.PluginName)</enable>
 							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,1)">SetFocus(50,0)</ondown>
 							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,2)">SetFocus(50,1)</ondown>
 							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,3)">SetFocus(50,2)</ondown>
@@ -460,13 +508,15 @@
 							<visible>String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 					</control>
-					<include content="InfoDialogButton">
+					<include content="InfoDialogButton1">
 						<param name="id" value="101" />
+                        <param name="onup" value="51" />
 						<param name="icon" value="icons/infodialogs/info.png" />
-						<param name="label" value="$LOCALIZE[31034]" />
-						<param name="onclick_1" value="RunScript(script.extendedinfo,info=openinfodialog)" />
-						<param name="visible" value="System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode)]" />
-					</include>
+						<param name="label" value="Ähnliche Filme" />
+						<param name="onclick_1" value="-" />
+						<param name="visible" value="[String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode)]" />
+				
+                    </include>
 					<include content="InfoDialogButton">
 						<param name="id" value="102" />
 						<param name="icon" value="icons/infodialogs/image.png" />

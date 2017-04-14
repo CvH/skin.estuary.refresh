@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Historie</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Historie</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>History</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Monumental</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Classic</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Klassik</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Film-Noir</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

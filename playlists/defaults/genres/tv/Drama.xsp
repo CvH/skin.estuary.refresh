@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Drama</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Drama</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Love</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Romance</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Romanze</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Romantik</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

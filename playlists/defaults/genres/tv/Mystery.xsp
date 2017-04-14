@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Mystery</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Mystery</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Fantasy</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Mystic</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Thrill</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Mystery</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Thriller</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

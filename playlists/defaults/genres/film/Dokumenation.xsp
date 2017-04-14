@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Dokumenation</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Dokumenation</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Doku</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Dokumentary</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>National</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Nature</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

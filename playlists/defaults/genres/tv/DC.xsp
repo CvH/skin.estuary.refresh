@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>DC</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>DC Comics</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>DC</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Superhelden</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

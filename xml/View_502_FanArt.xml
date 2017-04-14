@@ -62,7 +62,7 @@
 					<top>770</top>
 					<visible>ListItem.IsCollection</visible>
                 <control type="group">    
-                    <visible>String.IsEmpty(Control.GetLabel(7895))</visible> 
+                    <visible>String.IsEmpty(Control.GetLabel(7895)))</visible> 
 					<include content="InfoList">
 						<param name="bottom" value="108" />
 						<param name="width" value="1000" />

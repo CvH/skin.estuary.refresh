@@ -2,13 +2,15 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<views>50,51,52,53,54,55,500,501,502</views>
+	<views>50,51,52,53,54,55,500,501,502,80</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
+      
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<include>View_50_List</include>
+            <include>View_80_Sets</include>
 			<include>View_51_Poster</include>
 			<include>View_52_IconWall</include>
 			<include>View_53_Shift</include>
@@ -22,7 +24,7 @@
 				<include>OpenClose_Left</include>
 				<visible>Control.IsVisible(55)</visible>
 				<include>Visible_Left</include>
-				<include>ListThumbInfoPanel</include>
+				<include>ListThumbInfoPanel1</include>
 			</control>
             <!-- 50 / 54 / 501 + 21:9-->
 			<control type="group">
@@ -31,7 +33,7 @@
 				<visible>Control.IsVisible(50) | Control.Isvisible(54) | [Control.IsVisible(501) + String.IsEqual(Skin.AspectRatio,21:9)]</visible>
 				<include>Visible_Left</include>
 				<include content="ContentPanel">
-					<param name="width" value="656" />
+				<param name="width" value="656" />
 				</include>
 				<control type="group">
 					<width>550</width>
@@ -42,7 +44,18 @@
 						<aligny>center</aligny>
 						<height>110</height>
 						<font>font36_title</font>
+                        <visible>!ListItem.IsCollection</visible>
 						<label>$INFO[ListItem.Label]</label>
+					</control>
+                    <control type="textbox">
+						<top>120</top>
+						<left>30</left>
+						<width>550</width>
+						<aligny>center</aligny>
+						<height>110</height>
+						<font>font36_title</font>
+                        <visible>ListItem.IsCollection</visible>
+						<label>$INFO[ListItem.Label] ([COLOR grey]$INFO[Container(1001999).NumItems][/COLOR])</label>
 					</control>
 					<control type="textbox">
 						<left>30</left>
@@ -67,22 +80,42 @@
 					</control>
                     <!-- Zusammenstellungen -->
 					<control type="group">
-						<left>20</left>
+						<left>20</left> 
 						<visible>ListItem.IsCollection</visible>
                         <control type="group">
                         <top>750</top>
+                        <!-- Set FIlme als Liste -->
+                    <control type="group">
+                        <visible>Skin.Hassetting(liste_anstatt_icons)</visible>
                         <animation effect="slide" end="0,-450" time="0" tween="cubic" easing="out" condition="String.IsEmpty(Control.GetLabel(7898))">conditional</animation>
 						<include content="InfoList">
 							<param name="bottom" value="108" />
 							<param name="width" value="540" />
-							<param name="sortby" value="year" />
+                            <param name="height" value="240" />
+                          	<param name="sortby" value="year" />
 							<param name="sortorder" value="descending" />
 							<param name="font" value="font13" />
 						</include>
-                        </control>
+                    </control>
+                    </control>
+                        <!-- ENDE -->
+                        <!-- Set Filme als Icons -->
+                    <control type="group">
+                    <visible>!Skin.Hassetting(liste_anstatt_icons)</visible>
+                    <include>filmeimset_fake_container</include>
+                    <control type="group">
+                    <animation effect="slide" end="0,150" time="300" tween="cubic" easing="out" condition="String.Isempty(Container(1001999).ListItemNowrap(4).Thumb)">conditional</animation>
+                    <include>filmeimset_reihe1</include>
+                    </control>
+                    <control type="group">
+                    <top>80</top>
+                    <include>filmeimset_reihe2</include>
+                    </control>   
+                    </control>    
+                        <!-- ENDE -->
                        	<control type="textbox" id="7898">
 						<left>15</left>
-						<top>270</top>
+						<top>255</top>
 						<width>530</width>
 						<height>413</height>
 						<align>left</align>
@@ -148,6 +181,19 @@
 						<visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
 						<altlabel>$LOCALIZE[13353]</altlabel>
 						<usealttexture>library.isscanningvideo</usealttexture>
+					</control>
+                    <!-- MOD Liste anstatt Icons -->
+                	<control type="label" id="800">
+						<include>MediaMenuLabelCommon</include>
+						<label>AnsichtsOptionen</label>
+					</control>
+                    <control type="togglebutton" id="801">
+						<description>Update library</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>Set Filme : Icons</label>
+						<onclick>Skin.ToggleSetting(liste_anstatt_icons)</onclick>
+                        <selected>Skin.HasSetting(liste_anstatt_icons)</selected>
+                        <altlabel>Set Filme : Liste</altlabel>
 					</control>
 					<control type="button" id="612">
 						<description>Go to playlist</description>

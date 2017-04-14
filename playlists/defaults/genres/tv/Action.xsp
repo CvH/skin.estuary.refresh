@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Action</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Action</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Kampfsport</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Martial</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Ninja</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

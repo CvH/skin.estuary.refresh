@@ -10,6 +10,7 @@
 			<visible>Control.IsVisible(51)</visible>
 		</control>
 		<control type="group">
+        <include>filmeimset_fake_container</include>
 			<description>Poster Viewtype</description>
 			<centertop>50%</centertop>
 			<height>720</height>
@@ -116,6 +117,17 @@
 						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
 						<font>font45_title</font>
 						<shadowcolor>text_shadow</shadowcolor>
+                        <visible>!Listitem.isCollection</visible>
+                    </control>
+                    <control type="label">
+						<left>695</left>
+						<top>400</top>
+						<right>50</right>
+						<height>40</height>
+						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar] ([COLOR grey]$INFO[Container(1001999).NumItems][/COLOR])</label>
+						<font>font45_title</font>
+						<shadowcolor>text_shadow</shadowcolor>
+                        <visible>Listitem.isCollection</visible>
 					</control>
                    	<control type="label">
 					<left>695</left>

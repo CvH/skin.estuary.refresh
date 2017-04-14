@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Religion</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Religion</value>
+    </rule>
+    <order direction="ascending">random</order>
+</smartplaylist>

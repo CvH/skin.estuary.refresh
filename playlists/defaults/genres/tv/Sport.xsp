@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Sport</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Sport</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Sports</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Sport</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Boxer</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Boxing</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Football</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Baseball</value>
+    </rule>
+    <rule field="genre" operator="contains">
+        <value>Basketball</value>
+    </rule>
+	<order>random</order>
+</smartplaylist>

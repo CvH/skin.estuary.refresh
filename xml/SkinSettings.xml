@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
+    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onunload>
 	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
 	<controls>
 		<include>DefaultBackground</include>
@@ -19,8 +20,157 @@
 		</control>
 		<control type="group" id="10000">
 			<left>470</left>
-			<include>OpenClose_Right</include>
-			<control type="grouplist" id="700">
+			<include>OpenClose_Right</include>  
+            <control type="grouplist" id="9999">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>9999</onup>
+                <pagecontrol>60</pagecontrol>
+				<ondown>9999</ondown>
+				<visible>Container(9000).HasFocus(4)</visible>
+                <control type="label" id="900">
+					<label></label>
+                    <label2></label2>
+					<include>DefaultSettingButton</include>
+                </control>
+				<control type="button" id="901">
+					<label>[B]Hauptmenü Eintrag #1 setzen[/B]</label>
+					<include>DefaultSettingButton</include>
+					<label2>$INFO[Skin.string(CustomHomeLabel1)]</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath1,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel1,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb1,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+				</control>
+                 	<control type="button" id="902">
+					<label>[B]- Widget #1 setzen[/B]</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader1)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath1,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader1,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout1,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>!String.IsEmpty(Skin.String(CustomHomePath1))</visible>
+				</control>
+                <control type="button" id="903">
+					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath1)][/COLOR]</label>
+                     <label2></label2>
+					<textoffsetx>40</textoffsetx>
+                    <top>0</top>
+                    <height>95</height>
+                    <aligny>center</aligny>
+                    <font>font10</font>
+                    <invalidcolor>invalid</invalidcolor>
+                    <selectedcolor>selected</selectedcolor>
+                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+                    <texturenofocus />
+                </control>
+                <!-- test widget 3 -->
+              	<control type="button" id="904">
+					<label>[B]- Widget #2 setzen[/B]</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader3)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath3,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader3,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout3,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>!String.IsEmpty(Skin.String(CustomHomePath1))</visible>
+				</control>
+                <control type="button" id="905">
+					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath3)][/COLOR]</label>
+                     <label2></label2>
+					<textoffsetx>40</textoffsetx>
+                    <top>0</top>
+                    <height>95</height>
+                    <aligny>center</aligny>
+                    <font>font10</font>
+                    <invalidcolor>invalid</invalidcolor>
+                    <selectedcolor>selected</selectedcolor>
+                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+                    <texturenofocus />
+                </control>
+                <!-- test ende -->
+                <control type="label" id="906">
+					<label></label>
+                    <label2></label2>
+					<include>DefaultSettingButton</include>
+                </control>
+                <control type="image" id="907">
+                    <description>Dialog Header image</description>
+                    <height>3</height>
+                    <texture colordiffuse="AAAAAAAA" border="3">dialogs/separator-grey.png</texture>
+                </control>
+                 <control type="label" id="908">
+					<label></label>
+                    <label2></label2>
+					<include>DefaultSettingButton</include>
+                </control>
+                <control type="button" id="909">
+					<label>[B]Hauptmenü Eintrag #2 setzen[/B]</label>
+                    <label2>$INFO[Skin.string(CustomHomeLabel2)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath2,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel2,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb2,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+				</control>
+                <control type="button" id="910">
+					<label>[B]- Widget #1 setzen[/B]</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader2)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath2,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader2,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout2,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>!String.IsEmpty(Skin.String(CustomHomePath2))</visible>
+				</control>
+                  <control type="button" id="911">
+					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath2)][/COLOR]</label>
+                    <label2></label2>
+					<textoffsetx>40</textoffsetx>
+                    <top>0</top>
+                    <height>95</height>
+                    <aligny>center</aligny>
+                    <font>font10</font>
+                    <invalidcolor>invalid</invalidcolor>
+                    <selectedcolor>selected</selectedcolor>
+                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+                    <texturenofocus />
+                </control>
+                  <control type="button" id="912">
+					<label>[B]- Widget #2 setzen[/B]</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader4)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath4,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader4,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout4,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>!String.IsEmpty(Skin.String(CustomHomePath2))</visible>
+				</control>
+                <control type="button" id="913">
+					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath4)][/COLOR]</label>
+                    <label2></label2>
+					<textoffsetx>40</textoffsetx>
+                    <top>0</top>
+                    <height>95</height>
+                    <aligny>center</aligny>
+                    <font>font10</font>
+                    <invalidcolor>invalid</invalidcolor>
+                    <selectedcolor>selected</selectedcolor>
+                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+                    <texturenofocus />
+                </control>
+                <control type="label">
+					<label></label>
+                    <label2></label2>
+					<include>DefaultSettingButton</include>
+                </control>
+            </control>
+           <control type="grouplist" id="700">
 				<top>160</top>
 				<left>0</left>
 				<right>0</right>
@@ -126,7 +276,8 @@
 				<pagecontrol>60</pagecontrol>
 				<ondown>610</ondown>
 				<visible>Container(9000).HasFocus(2)</visible>
-				<control type="radiobutton" id="611">
+				
+                <control type="radiobutton" id="611">
 					<label>$LOCALIZE[342]</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
@@ -279,12 +430,16 @@
 						<label>$LOCALIZE[128]</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="2">
+                    <item id="2">
 						<label>$LOCALIZE[31061]</label>
 						<onclick>noop</onclick>
-					</item>
+                    </item>
 					<item id="3">
 						<label>$LOCALIZE[31159]</label>
+						<onclick>noop</onclick>
+					</item>
+                   <item id="4">
+						<label>Hauptmenü Anpassen</label>
 						<onclick>noop</onclick>
 					</item>
 				</content>
@@ -304,7 +459,7 @@
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
-			<visible>Control.IsVisible(610)</visible>
+			<visible>Control.IsVisible(610) | Control.IsVisible(9999)</visible>
 		</control>
 		<include content="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[5] / $LOCALIZE[20077]" />

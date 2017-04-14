@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
+	<include name="Visible_Right_Delayed1">
+		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
+		<include condition="!Skin.HasSetting(no_slide_animations)">Vis_FadeSlide_Right_Delayed1</include>
+	</include>
+	<include name="Vis_FadeSlide_Right_Delayed1">
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out" />
+			<effect type="slide" start="320" end="0" time="400" delay="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+    
+    
 	<include name="Animation_FocusTextureFade">
 		<animation effect="fade" start="0" end="100" time="200" tween="sine">Focus</animation>
 		<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
@@ -37,7 +54,8 @@
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
 		<include content="Vis_FadeSlide_Right_Delayed" condition="!Skin.HasSetting(no_slide_animations)">
 			<param name="id" value="$PARAM[id]" />
-		</include>
+      
+        </include>
 	</include>
 	<include name="Vis_FadeSlide_Right_Delayed">
 		<animation type="Conditional" condition="String.IsEqual(Container(9000).ListItem.Property(id),$PARAM[id])">
@@ -48,6 +66,7 @@
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
 		</animation>
+      
 	</include>
 	<include name="Visible_Right">
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
@@ -82,6 +101,7 @@
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
 		</animation>
+
 	</include>
 	<include name="Visible_Left">
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
@@ -96,12 +116,16 @@
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
 		</animation>
+    
 	</include>
+    
+
+    
 	<include name="OpenClose_Left">
 		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Left</include>
-	</include>
-	<include name="OpenClose_FadeSlide_Left">
+    </include>
+    <include name="OpenClose_FadeSlide_Left">
 		<animation type="WindowOpen">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out" />
@@ -110,8 +134,8 @@
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
 		</animation>
-	</include>
-	<include name="OpenClose_Right">
+    </include>
+    <include name="OpenClose_Right">
 		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Right</include>
 	</include>

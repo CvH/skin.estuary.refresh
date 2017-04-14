@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
+
     <!-- MOD by bumblebee-->
+    
+     <variable name="widget_has_script">
+		<value condition="System.HasAddon(service.library.data.provider)">vordefiniert von (Library.Data.Provider)</value>
+		<value condition="!System.HasAddon(service.library.data.provider)">Script "Library.Data.Provider" installieren</value>
+	</variable>
+    <variable name="value_widget_header_kategorie">
+		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serienkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">library://video/tvshows/</value>
+		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filmkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme)">library://video/movies/</value>
+        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio) ">library://music/</value>
+        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio) ">library://music/</value>
+	</variable>
+    <variable name="value_widget_header_kategorie_2">
+		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serienkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden)">library://video/tvshows/</value>
+		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filmkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme)">library://video/movies/</value>
+        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio) ">library://music/</value>
+        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio) ">library://music/</value>
+	</variable>
     <variable name="setplotlabelVar">
 		<value condition="!String.isEmpty(Listitem.Plot)">$INFO[Listitem.Plot]</value>
 		<value condition="String.isEmpty(Listitem.Plot)">$INFO[Window(home).Property(Set.Movies.Plot)]</value>
 	</variable>
+    <variable name="plot_videoinfoset">
+		<value condition="!Control.hasfocus(50)">$INFO[Window(home).Property(Set.Movies.Plot)]</value>
+		<value condition="Control.hasfocus(50)">$INFO[Container(50).Listitem.Plot]</value>
+	</variable> 
+ 
+    <variable name="VideoInfoSubLabelVar_videoinfoset">
+		<value condition="!Control.hasfocus(50)">$INFO[Window(home).Property(Set.Movies.Years),[I],[/I]]</value>
+        <value condition="Control.hasfocus(50)">$INFO[Container(50).ListItem.Tagline,[I],[/I]]</value>
+		<value>$INFO[ListItem.Genre]</value>
+	</variable>
+    
+  <variable name="tesst1">
+		<value condition="System.Hasaddon(script.skinshortcuts) + !Skin.Hassetting(shortcuts_off)">skinshortcuts-mainmenu</value>
+		<value condition="System.Hasaddon(script.skinshortcuts) + Skin.Hassetting(shortcuts_off)">default_home_content</value>
+	</variable>
+    
+    <variable name="poster_videoinfosets">
+        <value condition="!Control.hasfocus(50)">$INFO[ListItem.Art(poster)]</value>
+        <value condition="Control.hasfocus(50)">$INFO[Container(50).ListItem.Art(poster)]</value>
+    </variable>
     <variable name="similar_normal_plot">
 		<value condition="Control.hasfocus(51)">$INFO[Container(51).Listitem.Plot]</value>
 		<value condition="!Control.hasfocus(51)">$INFO[Listitem.Plot]</value>
@@ -13,10 +52,34 @@
 		<value condition="Control.hasfocus(51)">$INFO[Container(51).ListItem.Art(discart)]</value>
 		<value condition="!Control.hasfocus(51)">$INFO[ListItem.Art(discart)]</value>
 	</variable>
-    <variable name="similar_normal_info1">
+    <variable name="info_videoinfosets">
+        <value condition="Control.hasfocus(50)">$INFO[Container(50).ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]</value>
+        <value condition="!Control.hasfocus(50)">$INFO[Window(home).Property(Set.Movies.Director),[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]</value>
+    </variable>
+    <variable name="info_videoinfosets1">
+		<value condition="Control.hasfocus(50)">$INFO[Container(50).ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]</value>
+		<value condition="!Control.hasfocus(50)">$INFO[Window(home).Property(Set.Movies.writer),[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]</value>
+	</variable>
+     <variable name="info_videoinfosets2">
+		<value condition="Control.hasfocus(50)">[COLOR button_focus]$LOCALIZE[563]: [/COLOR]$INFO[Container(50).ListItem.RatingAndVotes]</value>
+		<value condition="!Control.hasfocus(50)">$INFO[Listitem.Rating,[COLOR button_focus]$LOCALIZE[563]: [/COLOR]]</value>
+	</variable>
+    <variable name="info_videoinfosets3">
+		<value condition="Control.hasfocus(50)">[COLOR button_focus]$LOCALIZE[515]: [/COLOR]$INFO[Container(50).ListItem.Genre]</value>
+		<value condition="!Control.hasfocus(50)">$INFO[Window(home).Property(Set.Movies.Genre),[COLOR button_focus]$LOCALIZE[515]: [/COLOR]]</value>
+	</variable> 
+     <variable name="info_videoinfosets4">
+		<value condition="Control.hasfocus(50)">[COLOR button_focus]Laufzeit: [/COLOR]$INFO[Container(50).ListItem.Duration,, Minuten]</value>
+		<value condition="!Control.hasfocus(50)">$INFO[Window(home).Property(Set.Movies.Runtime),[COLOR button_focus]Laufzeit: [/COLOR]] Minuten</value>
+	</variable>
+
+    
+    
+    
+     <variable name="similar_normal_info1">
 		<value condition="Control.hasfocus(51)">$INFO[Container(51).ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]</value>
 		<value condition="!Control.hasfocus(51)">$INFO[ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]</value>
-	</variable>
+    </variable>
     <variable name="similar_normal_info2">
 		<value condition="Control.hasfocus(51)">$INFO[Container(51).ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]</value>
 		<value condition="!Control.hasfocus(51)">$INFO[ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]</value>
@@ -112,6 +175,15 @@
 		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK16) | String.Contains(Container(51).ListItem.Mpaa,Rated 16) | String.Contains(Container(51).ListItem.Mpaa,FSK 16) | String.Contains(Container(51).ListItem.Mpaa,ab 16) | String.Contains(Container(51).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
 		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK18) | String.Contains(Container(51).ListItem.Mpaa,Rated 18) | String.Contains(Container(51).ListItem.Mpaa,FSK 18) | String.Contains(Container(51).ListItem.Mpaa,ab 18) | String.Contains(Container(51).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
     </variable>
+      <variable name="mpaa_dialogvideoinfosets">
+      <value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK0) | String.Contains(Container(51).ListItem.Mpaa,Rated 0) | String.Contains(Container(51).ListItem.Mpaa,FSK 0) | String.Contains(Container(51).ListItem.Mpaa,FSK o.A.) | String.Contains(Container(51).ListItem.Mpaa,o.A.) | String.Contains(ListItem.Mpaa,ab 0) | String.Contains(ListItem.Mpaa,Germany:0) | String.Contains(ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK6) | String.Contains(Container(51).ListItem.Mpaa,Rated 6) | String.Contains(Container(51).ListItem.Mpaa,FSK 6) | String.Contains(Container(51).ListItem.Mpaa,ab 6) | String.Contains(Container(51).ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK12) | String.Contains(Container(51).ListItem.Mpaa,Rated 12) | String.Contains(Container(51).ListItem.Mpaa,FSK 12) | String.Contains(Container(51).ListItem.Mpaa,ab 12) | String.Contains(Container(51).ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK16) | String.Contains(Container(51).ListItem.Mpaa,Rated 16) | String.Contains(Container(51).ListItem.Mpaa,FSK 16) | String.Contains(Container(51).ListItem.Mpaa,ab 16) | String.Contains(Container(51).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK18) | String.Contains(Container(51).ListItem.Mpaa,Rated 18) | String.Contains(Container(51).ListItem.Mpaa,FSK 18) | String.Contains(Container(51).ListItem.Mpaa,ab 18) | String.Contains(Container(51).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
+     </variable>
+    
+    
     <!-- MOD ENDE -->
 	<variable name="PVRStatusImageVar">
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
@@ -282,7 +354,8 @@
         <value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Art(poster))">$INFO[Container(51).ListItem.Art(poster)]</value>
 		<value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Art(season.poster))">$INFO[Container(51).ListItem.Art(season.poster)]</value>
 		<value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Art(tvshow.poster))">$INFO[Container(51).ListItem.Art(tvshow.poster)]</value>
-	</variable>
+    </variable>
+    
 	<variable name="ListPosterVar">
 		<value condition="ListItem.IsParentFolder">DefaultFolderBackPoster.png</value>
 		<value>$INFO[ListItem.Art(poster)]</value>
@@ -357,6 +430,11 @@
 	<variable name="VideoInfoMainLabelVar">
 		<value condition="!Control.hasfocus(51) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
         <value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Title)">$INFO[Container(51).ListItem.Title]$INFO[Container(51).ListItem.Year, ([COLOR grey],[/COLOR])]</value>
+		<value>$INFO[ListItem.Label]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
+	</variable>
+    <variable name="VideoInfoMainLabelVarsetinfo">
+		<value condition="!Control.hasfocus(50)">$INFO[ListItem.Title]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
+        <value condition="Control.hasfocus(50)">$INFO[Container(50).ListItem.Title]$INFO[Container(50).ListItem.Year, ([COLOR grey],[/COLOR])]</value>
 		<value>$INFO[ListItem.Label]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
 	</variable>
 	<variable name="VideoInfoSubLabelVar">

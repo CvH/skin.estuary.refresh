@@ -2,6 +2,7 @@
 <includes>
 	<include name="View_50_List">
 		<control type="group">
+        
 			<include>OpenClose_Right</include>
 			<left>596</left>
 			<visible>Control.IsVisible(50)</visible>
@@ -64,6 +65,7 @@
 			<orientation>vertical</orientation>
 			<pagecontrol>$PARAM[list_id]600</pagecontrol>
 			<onleft>9000</onleft>
+            <oninfo condition="SubString(ListItem.DBType,set)">ActivateWindow(1064)</oninfo>
 			<onright>$PARAM[list_id]600</onright>
 			<onup>$PARAM[list_id]</onup>
 			<ondown>$PARAM[list_id]</ondown>

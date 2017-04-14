@@ -181,7 +181,19 @@
 		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK12) | String.Contains(Container(51).ListItem.Mpaa,Rated 12) | String.Contains(Container(51).ListItem.Mpaa,FSK 12) | String.Contains(Container(51).ListItem.Mpaa,ab 12) | String.Contains(Container(51).ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
 		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK16) | String.Contains(Container(51).ListItem.Mpaa,Rated 16) | String.Contains(Container(51).ListItem.Mpaa,FSK 16) | String.Contains(Container(51).ListItem.Mpaa,ab 16) | String.Contains(Container(51).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
 		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK18) | String.Contains(Container(51).ListItem.Mpaa,Rated 18) | String.Contains(Container(51).ListItem.Mpaa,FSK 18) | String.Contains(Container(51).ListItem.Mpaa,ab 18) | String.Contains(Container(51).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
-     </variable>
+    </variable>
+    <variable name="mpaa_videoinfosets">
+        <value condition="[String.Contains(Container(012).ListItem.Mpaa,FSK0) | String.Contains(Container(012).ListItem.Mpaa,Rated 0) | String.Contains(Container(012).ListItem.Mpaa,FSK 0) | String.Contains(Container(012).ListItem.Mpaa,FSK o.A.) | String.Contains(Container(012).ListItem.Mpaa,o.A.) | String.Contains(Container(012).ListItem.Mpaa,ab 0) | String.Contains(Container(012).ListItem.Mpaa,Germany:0) | String.Contains(Container(012).ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
+		<value condition="[String.Contains(Container(012).ListItem.Mpaa,FSK6) | String.Contains(Container(012).ListItem.Mpaa,Rated 6) | String.Contains(Container(012).ListItem.Mpaa,FSK 6) | String.Contains(Container(012).ListItem.Mpaa,ab 6) | String.Contains(Container(012).ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
+		<value condition="[String.Contains(Container(012).ListItem.Mpaa,FSK12) | String.Contains(Container(012).ListItem.Mpaa,Rated 12) | String.Contains(Container(012).ListItem.Mpaa,FSK 12) | String.Contains(Container(012).ListItem.Mpaa,ab 12) | String.Contains(Container(012).ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
+		<value condition="[String.Contains(Container(012).ListItem.Mpaa,FSK16) | String.Contains(Container(012).ListItem.Mpaa,Rated 16) | String.Contains(Container(012).ListItem.Mpaa,FSK 16) | String.Contains(Container(012).ListItem.Mpaa,ab 16) | String.Contains(Container(012).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
+		<value condition="[String.Contains(Container(012).ListItem.Mpaa,FSK18) | String.Contains(Container(012).ListItem.Mpaa,Rated 18) | String.Contains(Container(012).ListItem.Mpaa,FSK 18) | String.Contains(Container(012).ListItem.Mpaa,ab 18) | String.Contains(Container(012).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
+    </variable>  
+    <variable name="button_similar">
+        <value condition="Container.Content(Movies)">Ähnliche Filme</value>	
+		<value condition="Container.Content(TvShows) | Container.Content(Seasons)">Ähnliche Serien</value>	
+    </variable>  
+    
     
     
     <!-- MOD ENDE -->
@@ -432,6 +444,11 @@
         <value condition="Control.hasfocus(51) + !String.IsEmpty(Container(51).ListItem.Title)">$INFO[Container(51).ListItem.Title]$INFO[Container(51).ListItem.Year, ([COLOR grey],[/COLOR])]</value>
 		<value>$INFO[ListItem.Label]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
 	</variable>
+    <variable name="VideoInfoMainLabelVar_globalsearch">
+		<value condition="!String.IsEmpty(Container(100).ListItem.Property(Title))">$INFO[Container(100).ListItem.Property(Title)]$INFO[Container(100).ListItem.Property(Year), ([COLOR grey],[/COLOR])]</value>
+       
+		
+	</variable>
     <variable name="VideoInfoMainLabelVarsetinfo">
 		<value condition="!Control.hasfocus(50)">$INFO[ListItem.Title]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
         <value condition="Control.hasfocus(50)">$INFO[Container(50).ListItem.Title]$INFO[Container(50).ListItem.Year, ([COLOR grey],[/COLOR])]</value>
@@ -486,7 +503,21 @@
 		<value condition="!String.IsEmpty(Container(8300).ListItem.Art(fanart)) + Control.HasFocus(8300)">$INFO[Container(8300).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(8400).ListItem.Art(fanart)) + Control.HasFocus(8400)">$INFO[Container(8400).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(8500).ListItem.Art(fanart)) + Control.HasFocus(8500)">$INFO[Container(8500).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(15100).ListItem.Property(FanartCode)) + Control.HasFocus(15100)">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container(15100).ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>
+        <!-- Eigener Hauptmenu eintrag 1 -->
+        <value condition="!String.IsEmpty(Container(9901).ListItem.Art(fanart)) + Control.HasFocus(9901)">$INFO[Container(9901).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(9902).ListItem.Art(fanart)) + Control.HasFocus(9902)">$INFO[Container(9902).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(9903).ListItem.Art(fanart)) + Control.HasFocus(9903)">$INFO[Container(9903).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(9904).ListItem.Art(fanart)) + Control.HasFocus(9904)">$INFO[Container(9904).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(9905).ListItem.Art(fanart)) + Control.HasFocus(9905)">$INFO[Container(9905).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(9906).ListItem.Art(fanart)) + Control.HasFocus(9906)">$INFO[Container(9906).ListItem.Art(fanart)]</value>
+        <!-- Eigener Hauptmenu eintrag 1 -->
+        <value condition="!String.IsEmpty(Container(8901).ListItem.Art(fanart)) + Control.HasFocus(8901)">$INFO[Container(8901).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(8902).ListItem.Art(fanart)) + Control.HasFocus(8902)">$INFO[Container(8902).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(8903).ListItem.Art(fanart)) + Control.HasFocus(8903)">$INFO[Container(8903).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(8904).ListItem.Art(fanart)) + Control.HasFocus(8904)">$INFO[Container(8904).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(8905).ListItem.Art(fanart)) + Control.HasFocus(8905)">$INFO[Container(8905).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(8906).ListItem.Art(fanart)) + Control.HasFocus(8906)">$INFO[Container(8906).ListItem.Art(fanart)]</value> 
+        <value condition="!String.IsEmpty(Container(15100).ListItem.Property(FanartCode)) + Control.HasFocus(15100)">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container(15100).ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Container(15200).ListItem.Property(FanartCode)) + Control.HasFocus(15200)">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container(15200).ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(804)">$INFO[Skin.String(HomeFanart.path)]power$INFO[Skin.String(HomeFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(802)">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</value>

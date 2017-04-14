@@ -266,9 +266,9 @@
 					<height>370</height>
 					<onleft>50</onleft>
 					<onright>50</onright>
-					<!--onup condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onup>
-					<onup condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onup-->
-                    <visible>![Control.hasfocus(101) | Control.hasfocus(51)]</visible>
+					<visible>![Control.hasfocus(101) | Control.hasfocus(51)]</visible>
+                    <onup condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onup>
+                    <onup condition="System.HasAddon(script.globalsearch)" >RunScript(script.globalsearch,searchstring=$INFO[Listitem.label],actors=true&amp;tvshows=true&amp;movies=true&amp;episodes=true&amp;directors=true)</onup>
 					<animation effect="slide" time="400" start="0,0"  end="1500,0" easing="inout" tween="cubic">Hidden</animation>
                     <ondown>140</ondown>
 					<scrolltime>200</scrolltime>
@@ -526,10 +526,9 @@
 						<param name="id" value="101" />
                         <param name="onup" value="51" />
 						<param name="icon" value="icons/infodialogs/info.png" />
-						<param name="label" value="Ähnliche Filme" />
+						<param name="label" value="$VAR[button_similar]" />
 						<param name="onclick_1" value="-" />
-						<param name="visible" value="[String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode)]" />
-				
+						<param name="visible" value="String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season)" />
                     </include>
 					<include content="InfoDialogButton">
 						<param name="id" value="102" />
@@ -617,10 +616,10 @@
 				</control>
 				<control type="label">
 					<left>74</left>
-					<width>500</width>
+					<width>700</width>
 					<height>44</height>
 					<shadowcolor>text_shadow</shadowcolor>
-					<label>$LOCALIZE[31125]</label>
+					<label>[B]Hoch[/B] für Schauspieler Suche mit Globalsearch</label>
 				</control>
 			</control>
 			<control type="group">

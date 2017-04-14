@@ -45,6 +45,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
 			</control>
+              
             <control type="grouplist" id="4000">
 					<orientation>vertical</orientation>
 					<left>1190</left>
@@ -81,6 +82,7 @@
 						<param name="width" value="750" />
 					</include>
 				</control>
+               
                 <control type="image">
 						<depth>DepthContentPopout</depth>
 						<left>50</left>
@@ -94,9 +96,22 @@
 						<aspectratio aligny="top">stretch</aspectratio>
                         <fadetime>350</fadetime>
 					</control>
+                      <control type="image">
+				<!-- Certification colored-->
+				<left>-10</left>
+				<top>930</top>
+				<top>930</top>
+				<height>100</height>
+				<width>200</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<aspectratio>keep</aspectratio>
+				<texture>$VAR[mpaa_videoinfosets]</texture>
+                <fadetime>200</fadetime>
+				</control>
 					<control type="group">
-						<left>310</left>
-						<top>936</top>
+						<left>220</left>
+						<top>450</top>
 						<include content="UserRatingCircle">
 							<param name="animation" value="True" />
 						</include>

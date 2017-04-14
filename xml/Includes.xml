@@ -47,7 +47,7 @@
                        
 						<item>
 							<label>$LOCALIZE[342]</label>
-                            <label2>[B]$INFO[Window.Property(Movies.Count),,[/B] (]$INFO[Window.Property(Movies.UnWatched,, ungesehen)]</label2>
+                            <label2>$INFO[Window.Property(Movies.Count),[B],[/B] (]$INFO[Window.Property(Movies.UnWatched,, ungesehen)]</label2>
 							<onclick condition="Library.HasContent(movies)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 							<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
@@ -57,7 +57,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[20343]</label>
-                            <label2>[B]$INFO[Window.Property(Tvshows.Count),,[/B] (]$INFO[Window.Property(Tvshows.UnWatched,, ungesehen)]</label2>
+                            <label2>$INFO[Window.Property(Tvshows.Count),[B],[/B] (]$INFO[Window.Property(Tvshows.UnWatched,, ungesehen)]</label2>
 							<onclick condition="Library.HasContent(tvshows)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 							<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
 							<property name="menu_id">$NUMBER[6000]</property>
@@ -67,7 +67,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[2]</label>
-                            <label2>$INFO[Window.Property(Music.AlbumsCount),Alben:, (]$INFO[Window.Property(Music.SongsCount),Lieder:,) ]</label2>
+                            <label2>$INFO[Window.Property(Music.AlbumsCount),[B],[/B] Alben - ,(]$INFO[Window.Property(Music.SongsCount),[B],[/B] Lieder,) ]</label2>
 							<onclick>ActivateWindow(Music,root,return)</onclick>
 							<property name="menu_id">$NUMBER[7000]</property>
 							<thumb>icons/sidemenu/music.png</thumb>
@@ -84,7 +84,7 @@
 						</item>
                        <item>
 							<label>$LOCALIZE[20389]</label>
-                            <label2>[B]$INFO[Window.Property(MusicVideos.Count),,[/B](]$INFO[Window.Property(MusicVideos.UnWatched),, ungesehen) ]</label2>
+                            <label2>$INFO[Window.Property(MusicVideos.Count),[B],[/B] (]$INFO[Window.Property(MusicVideos.UnWatched),, ungesehen) ]</label2>
 							<property name="menu_id">$NUMBER[16000]</property>
 							<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
 							<thumb>icons/sidemenu/musicvideos.png</thumb>
@@ -93,7 +93,7 @@
 						</item>
                        <item>
 							<label>$LOCALIZE[19020]</label>
-                            <label2>[B]$INFO[Pvr.BackendChannels,,[/B] Kanäle]</label2>
+                            <label2>$INFO[Pvr.BackendChannels,[B],[/B] Kanäle]</label2>
 							<property name="menu_id">$NUMBER[12000]</property>
 							<onclick>ActivateWindow(TVChannels)</onclick>  
 							<thumb>icons/sidemenu/livetv.png</thumb>

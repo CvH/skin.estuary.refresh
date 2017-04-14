@@ -1,9 +1,23 @@
-﻿[B]3.7.1[/B]
-• Fanart zu Eigenenen Menü Einträgen hinzugefügt
+﻿[B]3.7.2[/B]
+• ###########Globalsearch angepasst 
+• Hauptmenü Sublabels korrigiert (wurden leer angezeigt)
+• Setview Rating auch für Filme im Set hinzugefügt (sobald diese makiert sind)
+• Setview FSK hinzugefügt (auf dem Cover)
+• Badge + Rating in der Dialogvideoinfo hinzugefügt sowie Videoinfosets (auch für Ähnliche Filme / Serien)
+• Dialogvideoinfo "ähnliche Filme" Pfeile für vorherige / nächste Seite hinzugefügt
+• VideoinfoSets Button "schliessen" Icon korrigiert
+• VideoinfoSets FSK für Filme im Set hinzugefügt
+• Dialogvideoinfo Fehler bei Onup auf Schauspielern behoben (hat nicht nach dem schauspieler gesucht sondern dem Film)
+• Fehler im Globalsearch behoben, ergebnisse kriegen kein Focus aus der Dialogvideoinfo 
+• Globalsearch "suchtitel" hinzugefügt 
+
+ 
+[B]3.7.1[/B]
+• Fanart zu Eigenenen Widget Einträgen hinzugefügt
 • Dialog zum auswählen der Widgets angepasst
 • Globalsearch angepasst
 • Badges (Bewertung) aktiviert
-• Dialogvideoinfo Onup auf Schauspieler, sucht per Globalsearch
+• Dialogvideoinfo Onup auf Schauspieler, sucht per Globalsearch, nicht mehr über das extendedinfo script
 • Homemenü sublabels hinzugefügt
 • Rating Badge in der Set Ansicht korrigiert
 • Ähnliche Filme / Serien visible korrigiert + Bezeichnung des Buttons

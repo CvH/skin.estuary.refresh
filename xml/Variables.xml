@@ -175,13 +175,7 @@
 		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK16) | String.Contains(Container(51).ListItem.Mpaa,Rated 16) | String.Contains(Container(51).ListItem.Mpaa,FSK 16) | String.Contains(Container(51).ListItem.Mpaa,ab 16) | String.Contains(Container(51).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
 		<value condition="Control.hasfocus(051) + [String.Contains(Container(51).ListItem.Mpaa,FSK18) | String.Contains(Container(51).ListItem.Mpaa,Rated 18) | String.Contains(Container(51).ListItem.Mpaa,FSK 18) | String.Contains(Container(51).ListItem.Mpaa,ab 18) | String.Contains(Container(51).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
     </variable>
-      <variable name="mpaa_dialogvideoinfosets">
-      <value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK0) | String.Contains(Container(51).ListItem.Mpaa,Rated 0) | String.Contains(Container(51).ListItem.Mpaa,FSK 0) | String.Contains(Container(51).ListItem.Mpaa,FSK o.A.) | String.Contains(Container(51).ListItem.Mpaa,o.A.) | String.Contains(ListItem.Mpaa,ab 0) | String.Contains(ListItem.Mpaa,Germany:0) | String.Contains(ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
-		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK6) | String.Contains(Container(51).ListItem.Mpaa,Rated 6) | String.Contains(Container(51).ListItem.Mpaa,FSK 6) | String.Contains(Container(51).ListItem.Mpaa,ab 6) | String.Contains(Container(51).ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
-		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK12) | String.Contains(Container(51).ListItem.Mpaa,Rated 12) | String.Contains(Container(51).ListItem.Mpaa,FSK 12) | String.Contains(Container(51).ListItem.Mpaa,ab 12) | String.Contains(Container(51).ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
-		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK16) | String.Contains(Container(51).ListItem.Mpaa,Rated 16) | String.Contains(Container(51).ListItem.Mpaa,FSK 16) | String.Contains(Container(51).ListItem.Mpaa,ab 16) | String.Contains(Container(51).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
-		<value condition="Control.hasfocus(50) + [String.Contains(Container(51).ListItem.Mpaa,FSK18) | String.Contains(Container(51).ListItem.Mpaa,Rated 18) | String.Contains(Container(51).ListItem.Mpaa,FSK 18) | String.Contains(Container(51).ListItem.Mpaa,ab 18) | String.Contains(Container(51).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
-    </variable>
+      
     <variable name="mpaa_videoinfosets">
         <value condition="[String.Contains(Container(012).ListItem.Mpaa,FSK0) | String.Contains(Container(012).ListItem.Mpaa,Rated 0) | String.Contains(Container(012).ListItem.Mpaa,FSK 0) | String.Contains(Container(012).ListItem.Mpaa,FSK o.A.) | String.Contains(Container(012).ListItem.Mpaa,o.A.) | String.Contains(Container(012).ListItem.Mpaa,ab 0) | String.Contains(Container(012).ListItem.Mpaa,Germany:0) | String.Contains(Container(012).ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
 		<value condition="[String.Contains(Container(012).ListItem.Mpaa,FSK6) | String.Contains(Container(012).ListItem.Mpaa,Rated 6) | String.Contains(Container(012).ListItem.Mpaa,FSK 6) | String.Contains(Container(012).ListItem.Mpaa,ab 6) | String.Contains(Container(012).ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
@@ -193,7 +187,30 @@
         <value condition="Container.Content(Movies)">Ähnliche Filme</value>	
 		<value condition="Container.Content(TvShows) | Container.Content(Seasons)">Ähnliche Serien</value>	
     </variable>  
-    
+    <variable name="viewsets_rating_similar">
+        <value condition="Control.hasfocus(012)">$INFO[Container(012).ListItem.Rating]</value>	
+		<value condition="!Control.hasfocus(051)">$INFO[ListItem.Rating]</value>	
+    </variable> 
+    <variable name="videoinfo_rating_similar">
+        <value condition="Control.hasfocus(51)">$INFO[Container(51).ListItem.Rating]</value>	
+		<value condition="!Control.hasfocus(51)">$INFO[ListItem.Rating]</value>	
+    </variable> 
+    <variable name="videoinfosets_rating_similar">
+        <value condition="Control.hasfocus(50)">$INFO[Container(50).ListItem.Rating]</value>	
+		<value condition="!Control.hasfocus(50)">$INFO[ListItem.Rating]</value>	
+    </variable> 
+     <variable name="mpaa_dialogvideoinfosets">
+        <value condition="!Control.hasfocus(50) + [String.Contains(ListItem.Mpaa,FSK0) | String.Contains(ListItem.Mpaa,Rated 0) | String.Contains(ListItem.Mpaa,FSK 0) | String.Contains(ListItem.Mpaa,FSK o.A.) | String.Contains(ListItem.Mpaa,o.A.) | String.Contains(ListItem.Mpaa,ab 0) | String.Contains(ListItem.Mpaa,Germany:0) | String.Contains(ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
+		<value condition="!Control.hasfocus(50) + [String.Contains(ListItem.Mpaa,FSK6) | String.Contains(ListItem.Mpaa,Rated 6) | String.Contains(ListItem.Mpaa,FSK 6) | String.Contains(ListItem.Mpaa,ab 6) | String.Contains(ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
+		<value condition="!Control.hasfocus(50) + [String.Contains(ListItem.Mpaa,FSK12) | String.Contains(ListItem.Mpaa,Rated 12) | String.Contains(ListItem.Mpaa,FSK 12) | String.Contains(ListItem.Mpaa,ab 12) | String.Contains(ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
+		<value condition="!Control.hasfocus(50) + [String.Contains(ListItem.Mpaa,FSK16) | String.Contains(ListItem.Mpaa,Rated 16) | String.Contains(ListItem.Mpaa,FSK 16) | String.Contains(ListItem.Mpaa,ab 16) | String.Contains(ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
+		<value condition="!Control.hasfocus(50) + [String.Contains(ListItem.Mpaa,FSK18) | String.Contains(ListItem.Mpaa,Rated 18) | String.Contains(ListItem.Mpaa,FSK 18) | String.Contains(ListItem.Mpaa,ab 18) | String.Contains(ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
+        <value condition="Control.hasfocus(50) + [String.Contains(Container(50).ListItem.Mpaa,FSK0) | String.Contains(Container(50).ListItem.Mpaa,Rated 0) | String.Contains(Container(50).ListItem.Mpaa,FSK 0) | String.Contains(Container(50).ListItem.Mpaa,FSK o.A.) | String.Contains(Container(50).ListItem.Mpaa,o.A.) | String.Contains(ListItem.Mpaa,ab 0) | String.Contains(ListItem.Mpaa,Germany:0) | String.Contains(ListItem.Mpaa,Germany:o.Al.)]">mpaa/fsk-0.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(50).ListItem.Mpaa,FSK6) | String.Contains(Container(50).ListItem.Mpaa,Rated 6) | String.Contains(Container(50).ListItem.Mpaa,FSK 6) | String.Contains(Container(50).ListItem.Mpaa,ab 6) | String.Contains(Container(50).ListItem.Mpaa,Germany:6)]">mpaa/fsk-6.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(50).ListItem.Mpaa,FSK12) | String.Contains(Container(50).ListItem.Mpaa,Rated 12) | String.Contains(Container(50).ListItem.Mpaa,FSK 12) | String.Contains(Container(50).ListItem.Mpaa,ab 12) | String.Contains(Container(50).ListItem.Mpaa,Germany:12)]">mpaa/fsk-12.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(50).ListItem.Mpaa,FSK16) | String.Contains(Container(50).ListItem.Mpaa,Rated 16) | String.Contains(Container(50).ListItem.Mpaa,FSK 16) | String.Contains(Container(50).ListItem.Mpaa,ab 16) | String.Contains(Container(50).ListItem.Mpaa,Germany:16)]">mpaa/fsk-16.png</value>	
+		<value condition="Control.hasfocus(50) + [String.Contains(Container(50).ListItem.Mpaa,FSK18) | String.Contains(Container(50).ListItem.Mpaa,Rated 18) | String.Contains(Container(50).ListItem.Mpaa,FSK 18) | String.Contains(Container(50).ListItem.Mpaa,ab 18) | String.Contains(Container(50).ListItem.Mpaa,Germany:18)]">mpaa/fsk-18.png</value>
+    </variable>
     
     
     <!-- MOD ENDE -->

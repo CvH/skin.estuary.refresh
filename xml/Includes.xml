@@ -2208,7 +2208,7 @@
 						<include>OpenClose_Left</include>
 						<animation effect="fade" time="400">VisibleChange</animation>
 						<texture background="true" colordiffuse="37FFFFFF">$VAR[PosterVar]</texture>
-						<visible>!Control.IsVisible(32111)</visible>
+						<visible>![Control.IsVisible(32111) | Control.hasfocus(012)]</visible>
 					</control>
 				</control>
 			</control>

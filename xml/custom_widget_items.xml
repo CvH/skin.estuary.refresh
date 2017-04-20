@@ -208,14 +208,14 @@
 				<description>Eigene Playliste</description>
 				<label>Eigene Playliste (Episoden)</label>
 				<label2>Kodi Playlist Ordner</label2>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],filme)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],episoden)</onclick>
 				<onclick>Skin.SetFile($INFO[Window(home).Property(CustomHomeWidgetPath)],.xsp,special://videoplaylists/)</onclick>
 			</item>
              <item id="9">
 				<description>Eigene Playliste</description>
 				<label>Eigene Playliste (Musik)</label>
 				<label2>Kodi Playlist Ordner</label2>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],filme)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
 				<onclick>Skin.SetFile($INFO[Window(home).Property(CustomHomeWidgetPath)],.xsp,special://musicplaylists/)</onclick>
 			</item>
             <item id="6">

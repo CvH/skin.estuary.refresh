@@ -1,4 +1,7 @@
-﻿[B]3.7.5[/B]
+﻿[B]3.7.6[/B]
+• Fehler in der Menüerstellung behoben (Widget Kategorie wurde nicht angezeigt unter music)
+
+[B]3.7.5[/B]
 • Fehler in der Menüerstellung behoben (onclicks / icons)
 • Fehler der falschen design auswahl der widgets behoben
 • Fehler in der Position des Widgets behoben falls die Library leer ist, zb keine Musicvideos

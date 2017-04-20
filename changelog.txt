@@ -1,4 +1,11 @@
-﻿[B]3.7.3[/B]
+﻿[B]3.7.4[/B]
+• Favoriten sublabel hinzugefügt
+• German telecast offers widget angepasst
+• Das komplette Hauptmenü + Widgets ist jetzt frei wählbar
+##### globalsearch anpassen
+
+
+[B]3.7.3[/B]
 • Fehler in der musicvisualisation korrigiert (playlist anzeige wägrend radio empfang)
 • Aufnahme / geplante aufnahme Icon Position korrigiert
 • Pvr Kanäle Ansicht, Pfeile angepasst an den Skin

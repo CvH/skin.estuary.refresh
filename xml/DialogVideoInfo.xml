@@ -423,9 +423,6 @@
 					<onright>50</onright>
                     <ondown>101</ondown>
                     <visible>[Control.hasfocus(101) | Control.hasfocus(51)]</visible>
-					<!--onup condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onup>
-					<onup condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onup-->
-                    <!--animation effect="slide" start="0,0" end="-1500,0" time="300" tween="cubic" easing="out" condition="Control.hasfocus(101)">conditional</animation-->
 					<animation effect="slide" time="400" start="0,0"  end="-1500,0" easing="inout" tween="cubic">Visible</animation>
                     <animation effect="slide" time="400" start="0,0"  end="1500,0" easing="inout" tween="cubic">Hidden</animation>
                     <ondown>140</ondown>

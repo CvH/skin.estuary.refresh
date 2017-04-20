@@ -3,23 +3,170 @@
 
 
     <!-- MOD by bumblebee-->
+     <variable name="helptext_custommenu_kategory">
+		<value condition="Control.Hasfocus(8)">Hier wählt ihr das [B]Kategorie Widget[/B] passend zu eurem Menüeintrag und Widgets.</value>
+		<value condition="Control.Hasfocus(10)">[B]Achtung[/B][CR]Hier löscht ihr die ausgewählte [B]Kategorie[/B] und das Widget ist deaktiviert.</value>
+    </variable> 
+    <variable name="helptext_custommenu_homeitems">
+		<value condition="Control.Hasfocus(8)">Hier muss noch ein [B]Titel[/B] und [B]Icon[/B] des Hauptmenüeintrages vergeben werden!</value>
+		<value condition="Control.Hasfocus(9)">Hier definiert ihr den [B]Titel[/B] des Menüpunktes.</value>
+        <value condition="Control.Hasfocus(10)">Hier definiert ihr das [B]Icon[/B] des Menüpunktes.</value>
+        <value condition="Control.Hasfocus(11)">[B]Achtung[/B][CR]Hier löscht ihr all eure Einstellungen des Menüpunktes.</value>
+    </variable>
+    <variable name="helptext_custommenu_widget">
+		<value condition="Control.hasfocus(8) + [Container(8).HasFocus(1) | Container(8).HasFocus(2)| Container(8).HasFocus(3)| Container(8).HasFocus(4)| Container(8).HasFocus(5)| Container(8).HasFocus(7)| Container(8).HasFocus(8)| Container(8).HasFocus(9)]">Hier muss noch ein Titel des Widgets über [B]"Titel ändern"[/B] vergeben werden!</value>
+		<value condition="Control.Hasfocus(9)">Hier definiert ihr den [B]Titel[/B] des Widgets.</value>
+        <value condition="Control.Hasfocus(10)">[B]Achtung[/B][CR]Hier löscht ihr all eure Einstellungen des Widgets.</value>
+    </variable>
+    
+    
+    
+   <!-- custom menu + standard menu labels -->
+    <variable name="homemenu_label_custommenu0">
+		<value condition="Skin.Hassetting(custommenu_0)">$INFO[Skin.String(CustomHomeLabel0)]</value>
+		<value condition="!Skin.Hassetting(custommenu_0)">$LOCALIZE[10134]</value>
+    </variable>  
+     <variable name="homemenu_label_custommenu1">
+		<value condition="Skin.Hassetting(custommenu_1)">$INFO[Skin.String(CustomHomeLabel1)]</value>
+		<value condition="!Skin.Hassetting(custommenu_1)">$LOCALIZE[342]</value>
+    </variable>    
+    <variable name="homemenu_label_custommenu2">
+        <value condition="Skin.Hassetting(custommenu_2)">$INFO[Skin.String(CustomHomeLabel2)]</value>
+		<value condition="!Skin.Hassetting(custommenu_2)">$LOCALIZE[20343]</value>
+    </variable>    
+    <variable name="homemenu_label_custommenu3">
+        <value condition="Skin.Hassetting(custommenu_3)">$INFO[Skin.String(CustomHomeLabel3)]</value>
+		<value condition="!Skin.Hassetting(custommenu_3)">$LOCALIZE[2]</value>
+    </variable>
+      <variable name="homemenu_label_custommenu4">
+        <value condition="Skin.Hassetting(custommenu_4)">$INFO[Skin.String(CustomHomeLabel4)]</value>
+		<value condition="!Skin.Hassetting(custommenu_4)">$LOCALIZE[20389]</value>
+    </variable>
+      <variable name="homemenu_label_custommenu5">
+		<value condition="Skin.Hassetting(custommenu_5)">$INFO[Skin.String(CustomHomeLabel5)]</value>
+		<value condition="!Skin.Hassetting(custommenu_5)">$LOCALIZE[19020]</value>
+    </variable>  
+      <variable name="homemenu_label_custommenu6">
+		<value condition="Skin.Hassetting(custommenu_6)">$INFO[Skin.String(CustomHomeLabel6)]</value>
+		<value condition="!Skin.Hassetting(custommenu_6)">$LOCALIZE[19021]</value>
+    </variable> 
+      <variable name="homemenu_label_custommenu7">
+		<value condition="Skin.Hassetting(custommenu_7)">$INFO[Skin.String(CustomHomeLabel7)]</value>
+		<value condition="!Skin.Hassetting(custommenu_7)">$LOCALIZE[24001]</value>
+    </variable>
+    
+    <!-- custom menu + standard menu icons -->
+     <variable name="homemenu_icon_custommenu0">
+		<value condition="Skin.Hassetting(custommenu_0)">$INFO[Skin.String(CustomHomeThumb0)]</value>
+		<value condition="!Skin.Hassetting(custommenu_0)">icons/sidemenu/favourites.png</value>
+    </variable> 
+     <variable name="homemenu_icon_custommenu1">
+		<value condition="Skin.Hassetting(custommenu_1)">$INFO[Skin.String(CustomHomeThumb1)]</value>
+		<value condition="!Skin.Hassetting(custommenu_1)">icons/sidemenu/movies.png</value>
+    </variable>    
+    <variable name="homemenu_icon_custommenu2">
+		<value condition="Skin.Hassetting(custommenu_2)">$INFO[Skin.String(CustomHomeThumb2)]</value>
+		<value condition="!Skin.Hassetting(custommenu_2)">icons/sidemenu/tv.png</value>
+    </variable>    
+    <variable name="homemenu_icon_custommenu3">
+		<value condition="Skin.Hassetting(custommenu_3)">$INFO[Skin.String(CustomHomeThumb3)]</value>
+		<value condition="!Skin.Hassetting(custommenu_3)">icons/sidemenu/music.png</value>
+    </variable>
+      <variable name="homemenu_icon_custommenu4">
+ 		<value condition="Skin.Hassetting(custommenu_4)">$INFO[Skin.String(CustomHomeThumb4)]</value>
+		<value condition="!Skin.Hassetting(custommenu_4)">icons/sidemenu/musicvideos.png</value>
+    </variable>
+      <variable name="homemenu_icon_custommenu5">
+		<value condition="Skin.Hassetting(custommenu_5)">$INFO[Skin.String(CustomHomeThumb5)]</value>
+		<value condition="!Skin.Hassetting(custommenu_5)">icons/sidemenu/livetv.png</value>
+    </variable>  
+      <variable name="homemenu_icon_custommenu6">
+		<value condition="Skin.Hassetting(custommenu_6)">$INFO[Skin.String(CustomHomeThumb6)]</value>
+		<value condition="!Skin.Hassetting(custommenu_6)">icons/sidemenu/radio.png</value>
+    </variable> 
+     <variable name="homemenu_icon_custommenu7">
+		<value condition="Skin.Hassetting(custommenu_7)">$INFO[Skin.String(CustomHomeThumb7)]</value>
+		<value condition="!Skin.Hassetting(custommenu_7)">icons/sidemenu/addons.png</value>
+    </variable>
+     <!-- custom menu + standard menu onclick -->
+      <variable name="homemenu_onclick_custommenu0">
+		<value condition="Skin.Hassetting(custommenu_0)">$INFO[Skin.String(CustomHomePath0)]</value>
+		<value condition="!Skin.Hassetting(custommenu_0)">ActivateWindow(favourites)</value>
+    </variable>
+     <variable name="homemenu_onclick_custommenu1">
+		<value condition="Skin.Hassetting(custommenu_1)">$INFO[Skin.String(CustomHomePath1)]</value>
+		<value condition="!Skin.Hassetting(custommenu_1)">ActivateWindow(Videos,videodb://movies/titles/,return)</value>
+    </variable>    
+    <variable name="homemenu_onclick_custommenu2">
+		<value condition="Skin.Hassetting(custommenu_2)">$INFO[Skin.String(CustomHomePath2)]</value>
+		<value condition="!Skin.Hassetting(custommenu_2)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</value>
+    </variable>  
+    <variable name="homemenu_onclick_custommenu3">
+		<value condition="Skin.Hassetting(custommenu_3)">$INFO[Skin.String(CustomHomePath3)]</value>
+		<value condition="!Skin.Hassetting(custommenu_3)">ActivateWindow(Music,root,return)</value>
+    </variable>
+    <variable name="homemenu_onclick_custommenu4">
+		<value condition="Skin.Hassetting(custommenu_4)">$INFO[Skin.String(CustomHomePath4)]</value>
+		<value condition="!Skin.Hassetting(custommenu_4)">ActivateWindow(Videos,musicvideos,return)</value>
+    </variable>
+    <variable name="homemenu_onclick_custommenu5">
+		<value condition="Skin.Hassetting(custommenu_5)">$INFO[Skin.String(CustomHomePath5)]</value>
+		<value condition="!Skin.Hassetting(custommenu_5)">ActivateWindow(TVChannels)</value>
+    </variable>
+    <variable name="homemenu_onclick_custommenu6">
+		<value condition="Skin.Hassetting(custommenu_6)">$INFO[Skin.String(CustomHomePath6)]</value>
+		<value condition="!Skin.Hassetting(custommenu_6)">ActivateWindow(RadioChannels)</value>
+    </variable>
+     <variable name="homemenu_onclick_custommenu7">
+		<value condition="Skin.Hassetting(custommenu_7)">$INFO[Skin.String(CustomHomePath7)]</value>
+		<value condition="!Skin.Hassetting(custommenu_7)">ActivateWindow(1100)</value>
+    </variable>
+    <!-- custom menu + standard menu label2 -->
+    <variable name="homemenu_label2_custommenu0">
+		<value condition="Skin.Hassetting(custommenu_0)"></value>
+		<value condition="!Skin.Hassetting(custommenu_0)">$INFO[Container(14100).Numitems,[B],[/B] Einträge]</value>
+    </variable> 
+    <variable name="homemenu_label2_custommenu1">
+		<value condition="Skin.Hassetting(custommenu_1)"></value>
+		<value condition="!Skin.Hassetting(custommenu_1)">$INFO[Window.Property(Movies.Count),[B],[/B] (]$INFO[Window.Property(Movies.UnWatched,, ungesehen)]</value>
+    </variable> 
+    <variable name="homemenu_label2_custommenu2">
+		<value condition="Skin.Hassetting(custommenu_2)"></value>
+		<value condition="!Skin.Hassetting(custommenu_2)">$INFO[Window.Property(Tvshows.Count),[B],[/B] (]$INFO[Window.Property(Tvshows.UnWatched,, ungesehen)]</value>
+    </variable> 
+    <variable name="homemenu_label2_custommenu3">
+		<value condition="Skin.Hassetting(custommenu_3)"></value>
+		<value condition="!Skin.Hassetting(custommenu_3)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] Alben - ,(]$INFO[Window.Property(Music.SongsCount),[B],[/B] Lieder,) ]</value>
+    </variable> 
+    <variable name="homemenu_label2_custommenu4">
+		<value condition="Skin.Hassetting(custommenu_4)"></value>
+		<value condition="!Skin.Hassetting(custommenu_4)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (]$INFO[Window.Property(MusicVideos.UnWatched),, ungesehen) ]</value>
+    </variable> 
+    <variable name="homemenu_label2_custommenu5">
+		<value condition="Skin.Hassetting(custommenu_5)"></value>
+		<value condition="!Skin.Hassetting(custommenu_5)">$INFO[Pvr.BackendChannels,[B],[/B] Kanäle]</value>
+    </variable>
+    <variable name="homemenu_label2_custommenu6">
+		<value condition="Skin.Hassetting(custommenu_6)"></value>
+		<value condition="!Skin.Hassetting(custommenu_6)">$INFO[Container(13200).Numitems,[B],[/B] Kanäle]</value>
+    </variable> 
+   
+        
+    <variable name="value_widget_header_kategorie">
+		<value condition="String.IsEqual(Skin.String(CustomHomeWidgetLayout),serienkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">library://video/tvshows/</value>
+		<value condition="String.IsEqual(Skin.String(CustomHomeWidgetLayout),filmkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme)">library://video/movies/</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomeWidgetLayout),audio) ">library://music/</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomeWidgetLayout),radio_tv) ">addons://sources/</value>
+    </variable>
+    
     
      <variable name="widget_has_script">
 		<value condition="System.HasAddon(service.library.data.provider)">vordefiniert von (Library.Data.Provider)</value>
 		<value condition="!System.HasAddon(service.library.data.provider)">Script "Library.Data.Provider" installieren</value>
 	</variable>
-    <variable name="value_widget_header_kategorie">
-		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serienkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">library://video/tvshows/</value>
-		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filmkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme)">library://video/movies/</value>
-        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio) ">library://music/</value>
-        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio) ">library://music/</value>
-	</variable>
-    <variable name="value_widget_header_kategorie_2">
-		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serienkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden)">library://video/tvshows/</value>
-		<value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filmkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme)">library://video/movies/</value>
-        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio) ">library://music/</value>
-        <value condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio) ">library://music/</value>
-	</variable>
+    
+
+ 
     <variable name="setplotlabelVar">
 		<value condition="!String.isEmpty(Listitem.Plot)">$INFO[Listitem.Plot]</value>
 		<value condition="String.isEmpty(Listitem.Plot)">$INFO[Window(home).Property(Set.Movies.Plot)]</value>
@@ -439,7 +586,11 @@
 	<variable name="SkinSettingsHelpTextVar">
 		<value condition="Container(9000).HasFocus(1)">$LOCALIZE[31129]</value>
 		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31130]</value>
-	</variable>
+        <value condition="Control.HasFocus(894) | Control.HasFocus(901) | Control.HasFocus(907) | Control.HasFocus(913) | Control.HasFocus(919)| Control.HasFocus(921) | Control.HasFocus(928)| Control.HasFocus(935)| Control.HasFocus(941)">Durch aktivieren werden die alten MenüPunkte deaktiviert und ihr könnt eure eigenen konfigurieren, mit jeweils 3 Widgets</value>
+        <value condition="Control.HasFocus(895) | Control.HasFocus(902) | Control.HasFocus(908) | Control.HasFocus(914) | Control.HasFocus(920) | Control.HasFocus(926) | Control.HasFocus(922)| Control.HasFocus(929) | Control.HasFocus(936) | Control.HasFocus(942)">Hier wird der [B]Onclick[/B] sowie [B]Name[/B] und [B]Icon[/B] des eigenen Hauptmenü Punktes definiert.[CR]Unabhängig von dem Widgets die ihr später definiert könnt ihr hier jede verfügbare Kategorie auswählen.</value>
+        <value condition="Control.HasFocus(898) | Control.HasFocus(897) | Control.HasFocus(896) | Control.HasFocus(903) | Control.HasFocus(904) | Control.HasFocus(905) | Control.HasFocus(909) | Control.HasFocus(910) | Control.HasFocus(911)| Control.HasFocus(915)| Control.HasFocus(916)| Control.HasFocus(917)| Control.HasFocus(923)| Control.HasFocus(927)| Control.HasFocus(933)| Control.HasFocus(934)| Control.HasFocus(930)| Control.HasFocus(924) | Control.HasFocus(925) | Control.HasFocus(931)| Control.HasFocus(932)| Control.HasFocus(937)| Control.HasFocus(938)| Control.HasFocus(939)| Control.HasFocus(943)| Control.HasFocus(944)| Control.HasFocus(945)">Hier könnt ihr eure eigenen Widgets auswählen und benennen und zurücksetzen</value>
+        <value condition="Control.HasFocus(8950) | Control.HasFocus(8951) | Control.HasFocus(8952) | Control.HasFocus(8953) | Control.HasFocus(8954) | Control.HasFocus(8955) | Control.HasFocus(8956) | Control.HasFocus(8957)">Hier könnt ihr das Kategorien Widget festlegen, das ist das Widget was an erster stelle ganz oben über den Widgets angezeigt wird.  Und definiert welcher Kategorie euer Menüpunkt angehört. </value>
+    </variable>
 	<variable name="DSPManagerHelpTextVar">
 		<value condition="Control.HasFocus(20)">$INFO[Container(20).ListItem.Property(Description)]</value>
 		<value condition="Control.HasFocus(21)">$INFO[Container(21).ListItem.Property(Description)]</value>
@@ -520,22 +671,133 @@
 		<value condition="!String.IsEmpty(Container(8300).ListItem.Art(fanart)) + Control.HasFocus(8300)">$INFO[Container(8300).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(8400).ListItem.Art(fanart)) + Control.HasFocus(8400)">$INFO[Container(8400).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(8500).ListItem.Art(fanart)) + Control.HasFocus(8500)">$INFO[Container(8500).ListItem.Art(fanart)]</value>
-     
-        <!-- Eigener Hauptmenu eintrag 1 -->
-        <value condition="!String.IsEmpty(Container(9901).ListItem.Art(fanart)) + Control.HasFocus(9901)">$INFO[Container(9901).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(9902).ListItem.Art(fanart)) + Control.HasFocus(9902)">$INFO[Container(9902).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(9903).ListItem.Art(fanart)) + Control.HasFocus(9903)">$INFO[Container(9903).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(9904).ListItem.Art(fanart)) + Control.HasFocus(9904)">$INFO[Container(9904).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(9905).ListItem.Art(fanart)) + Control.HasFocus(9905)">$INFO[Container(9905).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(9906).ListItem.Art(fanart)) + Control.HasFocus(9906)">$INFO[Container(9906).ListItem.Art(fanart)]</value>
-        <!-- Eigener Hauptmenu eintrag 1 -->
-        <value condition="!String.IsEmpty(Container(8901).ListItem.Art(fanart)) + Control.HasFocus(8901)">$INFO[Container(8901).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(8902).ListItem.Art(fanart)) + Control.HasFocus(8902)">$INFO[Container(8902).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(8903).ListItem.Art(fanart)) + Control.HasFocus(8903)">$INFO[Container(8903).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(8904).ListItem.Art(fanart)) + Control.HasFocus(8904)">$INFO[Container(8904).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(8905).ListItem.Art(fanart)) + Control.HasFocus(8905)">$INFO[Container(8905).ListItem.Art(fanart)]</value>
-        <value condition="!String.IsEmpty(Container(8906).ListItem.Art(fanart)) + Control.HasFocus(8906)">$INFO[Container(8906).ListItem.Art(fanart)]</value> 
-        <value condition="!String.IsEmpty(Container(15100).ListItem.Property(FanartCode)) + Control.HasFocus(15100)">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container(15100).ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>
+      <value condition="!String.IsEmpty(Container(6000).ListItem.Art(fanart)) + Control.HasFocus(6000)">$INFO[Container(6000).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6001).ListItem.Art(fanart)) + Control.HasFocus(6001)">$INFO[Container(6001).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6002).ListItem.Art(fanart)) + Control.HasFocus(6002)">$INFO[Container(6002).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6003).ListItem.Art(fanart)) + Control.HasFocus(6003)">$INFO[Container(6003).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6004).ListItem.Art(fanart)) + Control.HasFocus(6004)">$INFO[Container(6004).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6005).ListItem.Art(fanart)) + Control.HasFocus(6005)">$INFO[Container(6005).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6006).ListItem.Art(fanart)) + Control.HasFocus(6006)">$INFO[Container(6006).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6007).ListItem.Art(fanart)) + Control.HasFocus(6007)">$INFO[Container(6007).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6008).ListItem.Art(fanart)) + Control.HasFocus(6008)">$INFO[Container(6008).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6009).ListItem.Art(fanart)) + Control.HasFocus(6009)">$INFO[Container(6009).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6010).ListItem.Art(fanart)) + Control.HasFocus(6010)">$INFO[Container(6010).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6011).ListItem.Art(fanart)) + Control.HasFocus(6011)">$INFO[Container(6011).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6012).ListItem.Art(fanart)) + Control.HasFocus(6012)">$INFO[Container(6012).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6013).ListItem.Art(fanart)) + Control.HasFocus(6013)">$INFO[Container(6013).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6014).ListItem.Art(fanart)) + Control.HasFocus(6014)">$INFO[Container(6014).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6015).ListItem.Art(fanart)) + Control.HasFocus(6015)">$INFO[Container(6015).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6016).ListItem.Art(fanart)) + Control.HasFocus(6016)">$INFO[Container(6016).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6017).ListItem.Art(fanart)) + Control.HasFocus(6017)">$INFO[Container(6017).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6018).ListItem.Art(fanart)) + Control.HasFocus(6018)">$INFO[Container(6018).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6019).ListItem.Art(fanart)) + Control.HasFocus(6019)">$INFO[Container(6019).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6020).ListItem.Art(fanart)) + Control.HasFocus(6020)">$INFO[Container(6020).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6021).ListItem.Art(fanart)) + Control.HasFocus(6021)">$INFO[Container(6021).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6022).ListItem.Art(fanart)) + Control.HasFocus(6022)">$INFO[Container(6022).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6023).ListItem.Art(fanart)) + Control.HasFocus(6023)">$INFO[Container(6023).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6024).ListItem.Art(fanart)) + Control.HasFocus(6024)">$INFO[Container(6024).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6025).ListItem.Art(fanart)) + Control.HasFocus(6025)">$INFO[Container(6025).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6026).ListItem.Art(fanart)) + Control.HasFocus(6026)">$INFO[Container(6026).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6027).ListItem.Art(fanart)) + Control.HasFocus(6027)">$INFO[Container(6027).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6028).ListItem.Art(fanart)) + Control.HasFocus(6028)">$INFO[Container(6028).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6029).ListItem.Art(fanart)) + Control.HasFocus(6029)">$INFO[Container(6029).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6030).ListItem.Art(fanart)) + Control.HasFocus(6030)">$INFO[Container(6030).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6031).ListItem.Art(fanart)) + Control.HasFocus(6031)">$INFO[Container(6031).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6032).ListItem.Art(fanart)) + Control.HasFocus(6032)">$INFO[Container(6032).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6033).ListItem.Art(fanart)) + Control.HasFocus(6033)">$INFO[Container(6033).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6034).ListItem.Art(fanart)) + Control.HasFocus(6034)">$INFO[Container(6034).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6035).ListItem.Art(fanart)) + Control.HasFocus(6035)">$INFO[Container(6035).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6036).ListItem.Art(fanart)) + Control.HasFocus(6036)">$INFO[Container(6036).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6037).ListItem.Art(fanart)) + Control.HasFocus(6037)">$INFO[Container(6037).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6038).ListItem.Art(fanart)) + Control.HasFocus(6038)">$INFO[Container(6038).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6039).ListItem.Art(fanart)) + Control.HasFocus(6039)">$INFO[Container(6039).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6040).ListItem.Art(fanart)) + Control.HasFocus(6040)">$INFO[Container(6040).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6041).ListItem.Art(fanart)) + Control.HasFocus(6041)">$INFO[Container(6041).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6042).ListItem.Art(fanart)) + Control.HasFocus(6042)">$INFO[Container(6042).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6043).ListItem.Art(fanart)) + Control.HasFocus(6043)">$INFO[Container(6043).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6044).ListItem.Art(fanart)) + Control.HasFocus(6044)">$INFO[Container(6044).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6045).ListItem.Art(fanart)) + Control.HasFocus(6045)">$INFO[Container(6045).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6046).ListItem.Art(fanart)) + Control.HasFocus(6046)">$INFO[Container(6046).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6047).ListItem.Art(fanart)) + Control.HasFocus(6047)">$INFO[Container(6047).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6048).ListItem.Art(fanart)) + Control.HasFocus(6048)">$INFO[Container(6048).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6049).ListItem.Art(fanart)) + Control.HasFocus(6049)">$INFO[Container(6049).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6050).ListItem.Art(fanart)) + Control.HasFocus(6050)">$INFO[Container(6050).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6051).ListItem.Art(fanart)) + Control.HasFocus(6051)">$INFO[Container(6051).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6052).ListItem.Art(fanart)) + Control.HasFocus(6052)">$INFO[Container(6052).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6053).ListItem.Art(fanart)) + Control.HasFocus(6053)">$INFO[Container(6053).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6054).ListItem.Art(fanart)) + Control.HasFocus(6054)">$INFO[Container(6054).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6055).ListItem.Art(fanart)) + Control.HasFocus(6055)">$INFO[Container(6055).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6056).ListItem.Art(fanart)) + Control.HasFocus(6056)">$INFO[Container(6056).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6057).ListItem.Art(fanart)) + Control.HasFocus(6057)">$INFO[Container(6057).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6058).ListItem.Art(fanart)) + Control.HasFocus(6058)">$INFO[Container(6058).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6059).ListItem.Art(fanart)) + Control.HasFocus(6059)">$INFO[Container(6059).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6060).ListItem.Art(fanart)) + Control.HasFocus(6060)">$INFO[Container(6060).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6061).ListItem.Art(fanart)) + Control.HasFocus(6061)">$INFO[Container(6061).ListItem.Art(fanart)]</value>
+       <value condition="!String.IsEmpty(Container(6062).ListItem.Art(fanart)) + Control.HasFocus(6062)">$INFO[Container(6062).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6063).ListItem.Art(fanart)) + Control.HasFocus(6063)">$INFO[Container(6063).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6064).ListItem.Art(fanart)) + Control.HasFocus(6064)">$INFO[Container(6064).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6065).ListItem.Art(fanart)) + Control.HasFocus(6065)">$INFO[Container(6065).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6066).ListItem.Art(fanart)) + Control.HasFocus(6066)">$INFO[Container(6066).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6067).ListItem.Art(fanart)) + Control.HasFocus(6067)">$INFO[Container(6067).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6068).ListItem.Art(fanart)) + Control.HasFocus(6068)">$INFO[Container(6068).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6069).ListItem.Art(fanart)) + Control.HasFocus(6069)">$INFO[Container(6069).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6070).ListItem.Art(fanart)) + Control.HasFocus(6070)">$INFO[Container(6070).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6071).ListItem.Art(fanart)) + Control.HasFocus(6071)">$INFO[Container(6071).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6072).ListItem.Art(fanart)) + Control.HasFocus(6072)">$INFO[Container(6072).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6073).ListItem.Art(fanart)) + Control.HasFocus(6073)">$INFO[Container(6073).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6074).ListItem.Art(fanart)) + Control.HasFocus(6074)">$INFO[Container(6074).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6075).ListItem.Art(fanart)) + Control.HasFocus(6075)">$INFO[Container(6075).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6076).ListItem.Art(fanart)) + Control.HasFocus(6076)">$INFO[Container(6076).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6077).ListItem.Art(fanart)) + Control.HasFocus(6077)">$INFO[Container(6077).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6078).ListItem.Art(fanart)) + Control.HasFocus(6078)">$INFO[Container(6078).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6079).ListItem.Art(fanart)) + Control.HasFocus(6079)">$INFO[Container(6079).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6080).ListItem.Art(fanart)) + Control.HasFocus(6080)">$INFO[Container(6080).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6081).ListItem.Art(fanart)) + Control.HasFocus(6081)">$INFO[Container(6081).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6082).ListItem.Art(fanart)) + Control.HasFocus(6082)">$INFO[Container(6082).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6083).ListItem.Art(fanart)) + Control.HasFocus(6083)">$INFO[Container(6083).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6084).ListItem.Art(fanart)) + Control.HasFocus(6084)">$INFO[Container(6084).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6085).ListItem.Art(fanart)) + Control.HasFocus(6085)">$INFO[Container(6085).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6086).ListItem.Art(fanart)) + Control.HasFocus(6086)">$INFO[Container(6086).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6087).ListItem.Art(fanart)) + Control.HasFocus(6087)">$INFO[Container(6087).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6088).ListItem.Art(fanart)) + Control.HasFocus(6088)">$INFO[Container(6088).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6089).ListItem.Art(fanart)) + Control.HasFocus(6089)">$INFO[Container(6089).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6090).ListItem.Art(fanart)) + Control.HasFocus(6090)">$INFO[Container(6090).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6091).ListItem.Art(fanart)) + Control.HasFocus(6091)">$INFO[Container(6091).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6092).ListItem.Art(fanart)) + Control.HasFocus(6092)">$INFO[Container(6092).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6093).ListItem.Art(fanart)) + Control.HasFocus(6093)">$INFO[Container(6093).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6094).ListItem.Art(fanart)) + Control.HasFocus(6094)">$INFO[Container(6094).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6095).ListItem.Art(fanart)) + Control.HasFocus(6095)">$INFO[Container(6095).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6096).ListItem.Art(fanart)) + Control.HasFocus(6096)">$INFO[Container(6096).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6097).ListItem.Art(fanart)) + Control.HasFocus(6097)">$INFO[Container(6097).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6098).ListItem.Art(fanart)) + Control.HasFocus(6098)">$INFO[Container(6098).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(6099).ListItem.Art(fanart)) + Control.HasFocus(6099)">$INFO[Container(6099).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7000).ListItem.Art(fanart)) + Control.HasFocus(7000)">$INFO[Container(7000).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7001).ListItem.Art(fanart)) + Control.HasFocus(7001)">$INFO[Container(7001).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7002).ListItem.Art(fanart)) + Control.HasFocus(7002)">$INFO[Container(7002).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7003).ListItem.Art(fanart)) + Control.HasFocus(7003)">$INFO[Container(7003).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7004).ListItem.Art(fanart)) + Control.HasFocus(7004)">$INFO[Container(7004).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7005).ListItem.Art(fanart)) + Control.HasFocus(7005)">$INFO[Container(7005).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7006).ListItem.Art(fanart)) + Control.HasFocus(7006)">$INFO[Container(7006).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7007).ListItem.Art(fanart)) + Control.HasFocus(7007)">$INFO[Container(7007).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7008).ListItem.Art(fanart)) + Control.HasFocus(7008)">$INFO[Container(7008).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7009).ListItem.Art(fanart)) + Control.HasFocus(7009)">$INFO[Container(7009).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7010).ListItem.Art(fanart)) + Control.HasFocus(7010)">$INFO[Container(7010).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7011).ListItem.Art(fanart)) + Control.HasFocus(7011)">$INFO[Container(7011).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7012).ListItem.Art(fanart)) + Control.HasFocus(7012)">$INFO[Container(7012).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7013).ListItem.Art(fanart)) + Control.HasFocus(7013)">$INFO[Container(7013).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7014).ListItem.Art(fanart)) + Control.HasFocus(7014)">$INFO[Container(7014).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7015).ListItem.Art(fanart)) + Control.HasFocus(7015)">$INFO[Container(7015).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7016).ListItem.Art(fanart)) + Control.HasFocus(7016)">$INFO[Container(7016).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7017).ListItem.Art(fanart)) + Control.HasFocus(7017)">$INFO[Container(7017).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7018).ListItem.Art(fanart)) + Control.HasFocus(7018)">$INFO[Container(7018).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7019).ListItem.Art(fanart)) + Control.HasFocus(7019)">$INFO[Container(7019).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7020).ListItem.Art(fanart)) + Control.HasFocus(7020)">$INFO[Container(7020).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7021).ListItem.Art(fanart)) + Control.HasFocus(7021)">$INFO[Container(7021).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7022).ListItem.Art(fanart)) + Control.HasFocus(7022)">$INFO[Container(7022).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7023).ListItem.Art(fanart)) + Control.HasFocus(8500)">$INFO[Container(7023).ListItem.Art(fanart)]</value>
+      <value condition="!String.IsEmpty(Container(7024).ListItem.Art(fanart)) + Control.HasFocus(7024)">$INFO[Container(7024).ListItem.Art(fanart)]</value>
+    
+      <value condition="!String.IsEmpty(Container(15100).ListItem.Property(FanartCode)) + Control.HasFocus(15100)">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container(15100).ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Container(15200).ListItem.Property(FanartCode)) + Control.HasFocus(15200)">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container(15200).ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(804)">$INFO[Skin.String(HomeFanart.path)]power$INFO[Skin.String(HomeFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(802)">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</value>

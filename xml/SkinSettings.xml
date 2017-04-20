@@ -18,198 +18,591 @@
 			<imagepath background="true" colordiffuse="bg_overlay">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</imagepath>
 			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
 		</control>
+        
+                        
+                        
+           
+                        
 		<control type="group" id="10000">
 			<left>470</left>
-			<include>OpenClose_Right</include>  
-             <control type="grouplist" id="9998">
-				<top>90</top>
-				<left>0</left>
-				<right>0</right>
-				<bottom>140</bottom>
-				<onleft>9000</onleft>
-				<onright>60</onright>
-				<onup>9999</onup>
-                <pagecontrol>60</pagecontrol>
-				<ondown>9999</ondown>
-				<visible>Container(9000).HasFocus(5)</visible>
-                <control type="label" id="900">
-					<label></label>
-                    <label2></label2>
-					<include>DefaultSettingButton</include>
-                </control>
-				<control type="radiobutton" id="800">
-					<label>German Telecast Offer Aktivieren</label>
-					<include>DefaultSettingButton</include>
-					<selected>Skin.HasSetting(gto_aktiviert)</selected>
-					<onclick>Skin.ToggleSetting(gto_aktiviert)</onclick>
-				</control>
-                <control type="button" id="801">
-					<label>- Widget Aktualisieren</label>
-					<include>DefaultSettingButton</include>
-					<label2></label2>
-					<onclick>XBMC.RunScript(plugin.service.gto,action=refresh)</onclick>
-				</control>
-                <control type="button" id="802">
-					<label>- Inhalt erneut laden</label>
-					<include>DefaultSettingButton</include>
-					<label2></label2>
-					<onclick>XBMC.RunScript(plugin.service.gto,action=scrape)</onclick>
-				</control>
-                <control type="button" id="803">
-					<label>- Scaper wählen</label>
-					<include>DefaultSettingButton</include>
-					<label2></label2>
-					<onclick>XBMC.RunScript(plugin.service.gto,action=change_scraper)</onclick>
-				</control>
-            </control>   
+			<include>OpenClose_Right</include> 
+            
             <control type="grouplist" id="9999">
-				<top>90</top>
+                <top>160</top>
 				<left>0</left>
 				<right>0</right>
 				<bottom>140</bottom>
 				<onleft>9000</onleft>
 				<onright>60</onright>
 				<onup>9999</onup>
-                <pagecontrol>60</pagecontrol>
+				<pagecontrol>60</pagecontrol>
 				<ondown>9999</ondown>
 				<visible>Container(9000).HasFocus(4)</visible>
-                <control type="label" id="900">
-					<label></label>
-                    <label2></label2>
+               
+                 <!-- EIGENER MENÜ EINTRAG 0 -->
+                <control type="image" id="0">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_0)</visible>
+                </control>           
+               <control type="radiobutton" id="894">
+					<label>Hauptmenüeintrag [B]Favouriten[/B] anpassen</label>
 					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_0)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_0)</onclick>
                 </control>
-				<control type="button" id="901">
-					<label>[B]Hauptmenü Eintrag #1 setzen[/B]</label>
+				<control type="button" id="895">
+					<label>- Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]Favouriten[/B])</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath0,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel0,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb0,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_0)</visible>
+				</control>
+                 <control type="button" id="8950">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory0)]</label2>
 					<include>DefaultSettingButton</include>
-					<label2>$INFO[Skin.string(CustomHomeLabel1)]</label2>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory0,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout0,home)</onclick>
+                    <!--onclick>SetProperty(pvr_widget,pvr_widget_enabled0,home)</onclick-->
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_0)</visible>
+				</control>
+                <control type="button" id="896">
+					<label>- Widget #1</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader24)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath24,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader24,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout24,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_0)</visible>
+				</control>
+                <control type="button" id="897">
+					<label>- Widget #2</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader25)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath25,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader25,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout25,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_0)</visible>
+				</control>
+                <control type="button" id="898">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader26)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath26,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader26,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout26,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_0)</visible>
+				</control>
+                <control type="image" id="899">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_0)</visible>
+                </control>
+                <control type="image" id="2">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_1)</visible>
+                </control>
+                <control type="radiobutton" id="901">
+					<label>Hauptmenüeintrag [B]Filme[/B] anpassen</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_1)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_1)</onclick>
+                </control>
+				<control type="button" id="902">
+					<label>Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]Filme[/B])</label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath1,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel1,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb1,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_1)</visible>
 				</control>
-                 	<control type="button" id="902">
-					<label>[B]- Widget #1 setzen[/B]</label>
+                     <control type="button" id="8951">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory1)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory1,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout1,home)</onclick>
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_1)</visible>
+				</control>
+                 	<control type="button" id="903">
+					<label>- Widget #1</label>
 					<label2>$INFO[Skin.string(CustomHome1WidgetHeader1)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath1,home)</onclick>
 					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader1,home)</onclick>
 					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout1,home)</onclick>
 					<onclick>ActivateWindow(1871)</onclick>
-					<visible>!String.IsEmpty(Skin.String(CustomHomePath1))</visible>
+					<visible>Skin.HasSetting(custommenu_1)</visible>
 				</control>
-                <control type="button" id="903">
-					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath1)][/COLOR]</label>
-                     <label2></label2>
-					<textoffsetx>40</textoffsetx>
-                    <top>0</top>
-                    <height>95</height>
-                    <aligny>center</aligny>
-                    <font>font10</font>
-                    <invalidcolor>invalid</invalidcolor>
-                    <selectedcolor>selected</selectedcolor>
-                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
-                    <texturenofocus />
-                </control>
-                <!-- test widget 3 -->
-              	<control type="button" id="904">
-					<label>[B]- Widget #2 setzen[/B]</label>
-					<label2>$INFO[Skin.string(CustomHome1WidgetHeader3)]</label2>
-					<include>DefaultSettingButton</include>
-					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath3,home)</onclick>
-					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader3,home)</onclick>
-					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout3,home)</onclick>
-					<onclick>ActivateWindow(1871)</onclick>
-					<visible>!String.IsEmpty(Skin.String(CustomHomePath1))</visible>
-				</control>
-                <control type="button" id="905">
-					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath3)][/COLOR]</label>
-                     <label2></label2>
-					<textoffsetx>40</textoffsetx>
-                    <top>0</top>
-                    <height>95</height>
-                    <aligny>center</aligny>
-                    <font>font10</font>
-                    <invalidcolor>invalid</invalidcolor>
-                    <selectedcolor>selected</selectedcolor>
-                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
-                    <texturenofocus />
-                </control>
-                <!-- test ende -->
-                <control type="label" id="906">
-					<label></label>
-                    <label2></label2>
-					<include>DefaultSettingButton</include>
-                </control>
-                <control type="image" id="907">
-                    <description>Dialog Header image</description>
-                    <height>3</height>
-                    <texture colordiffuse="AAAAAAAA" border="3">dialogs/separator-grey.png</texture>
-                </control>
-                 <control type="label" id="908">
-					<label></label>
-                    <label2></label2>
-					<include>DefaultSettingButton</include>
-                </control>
-                <control type="button" id="909">
-					<label>[B]Hauptmenü Eintrag #2 setzen[/B]</label>
-                    <label2>$INFO[Skin.string(CustomHomeLabel2)]</label2>
-					<include>DefaultSettingButton</include>
-					<onclick>SetProperty(CustomHomePath,CustomHomePath2,home)</onclick>
-					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel2,home)</onclick>
-					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb2,home)</onclick>
-					<onclick>ActivateWindow(1870)</onclick>
-				</control>
-                <control type="button" id="910">
-					<label>[B]- Widget #1 setzen[/B]</label>
+            
+                <control type="button" id="904">
+					<label>- Widget #2</label>
 					<label2>$INFO[Skin.string(CustomHome1WidgetHeader2)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath2,home)</onclick>
 					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader2,home)</onclick>
 					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout2,home)</onclick>
 					<onclick>ActivateWindow(1871)</onclick>
-					<visible>!String.IsEmpty(Skin.String(CustomHomePath2))</visible>
+					<visible>Skin.HasSetting(custommenu_1)</visible>
 				</control>
-                  <control type="button" id="911">
-					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath2)][/COLOR]</label>
-                    <label2></label2>
-					<textoffsetx>40</textoffsetx>
-                    <top>0</top>
-                    <height>95</height>
-                    <aligny>center</aligny>
-                    <font>font10</font>
-                    <invalidcolor>invalid</invalidcolor>
-                    <selectedcolor>selected</selectedcolor>
-                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
-                    <texturenofocus />
+                <control type="button" id="905">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader3)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath3,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader3,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout3,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_1)</visible>
+				</control>
+                <control type="image" id="906">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_1)</visible>
                 </control>
-                  <control type="button" id="912">
-					<label>[B]- Widget #2 setzen[/B]</label>
+              <!-- EIGENER MENÜ EINTRAG 2 -->
+               <control type="image" id="3">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_2)</visible>
+                </control>             
+               <control type="radiobutton" id="907">
+					<label>Hauptmenüeintrag [B]Serien[/B] anpassen</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_2)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_2)</onclick>
+                </control>
+				<control type="button" id="908">
+					<label>Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]Serien[/B])</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath2,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel2,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb2,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_2)</visible>
+				</control>
+                 <control type="button" id="8952">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory2)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory2,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout2,home)</onclick>
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_2)</visible>
+				</control>
+                 	<control type="button" id="909">
+					<label>- Widget #1</label>
 					<label2>$INFO[Skin.string(CustomHome1WidgetHeader4)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath4,home)</onclick>
 					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader4,home)</onclick>
 					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout4,home)</onclick>
 					<onclick>ActivateWindow(1871)</onclick>
-					<visible>!String.IsEmpty(Skin.String(CustomHomePath2))</visible>
+					<visible>Skin.HasSetting(custommenu_2)</visible>
 				</control>
-                <control type="button" id="913">
-					<label>Pfad des Widgets[CR][COLOR=grey]$INFO[Skin.string(CustomHome1WidgetPath4)][/COLOR]</label>
-                    <label2></label2>
-					<textoffsetx>40</textoffsetx>
-                    <top>0</top>
-                    <height>95</height>
-                    <aligny>center</aligny>
-                    <font>font10</font>
-                    <invalidcolor>invalid</invalidcolor>
-                    <selectedcolor>selected</selectedcolor>
-                    <texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
-                    <texturenofocus />
-                </control>
-                <control type="label">
-					<label></label>
-                    <label2></label2>
+                <control type="button" id="910">
+					<label>- Widget #2</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader5)]</label2>
 					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath5,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader5,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout5,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_2)</visible>
+				</control>
+                <control type="button" id="911">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader6)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath6,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader6,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout6,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_2)</visible>
+				</control>
+                <control type="image" id="912">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_2)</visible>
                 </control>
+                  <!-- EIGENER MENÜ EINTRAG 3 -->
+             <control type="image" id="4">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_3)</visible>
+                </control>
+                <control type="radiobutton" id="913">
+					<label>Hauptmenüeintrag [B]Musik[/B] anpassen</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_3)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_3)</onclick>
+                </control>
+				<control type="button" id="914">
+					<label>Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]Musik[/B])</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath3,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel3,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb3,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_3)</visible>
+				</control>
+                 <control type="button" id="8953">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory3)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory3,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout3,home)</onclick>
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_3)</visible>
+				</control>
+                 	<control type="button" id="915">
+					<label>- Widget #1</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader8)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath8,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader8,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout8,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_3)</visible>
+				</control>
+                <control type="button" id="916">
+					<label>- Widget #2</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader9)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath9,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader9,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout9,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_3)</visible>
+				</control>
+                <control type="button" id="917">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader10)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath10,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader10,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout10,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_3)</visible>
+				</control>
+                <control type="image" id="918">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_3)</visible>
+                </control>     
+              <!-- EIGENER MENÜ EINTRAG 4 -->
+                <control type="image" id="920">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_4)</visible>
+                </control>
+                <control type="radiobutton" id="921">
+					<label>Hauptmenüeintrag [B]Musikvideos[/B] anpassen</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_4)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_4)</onclick>
+                </control>
+				<control type="button" id="922">
+					<label>Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]MusikVideos[/B])</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath4,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel4,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb4,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_4)</visible>
+				</control>
+                 <control type="button" id="8954">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory4)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory4,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout4,home)</onclick>
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_4)</visible>
+				</control>
+                 	<control type="button" id="923">
+					<label>- Widget #1</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader11)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath11,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader11,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout11,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_4)</visible>
+				</control>
+                <control type="button" id="924">
+					<label>- Widget #2</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader12)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath12,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader12,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout12,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_4)</visible>
+				</control>
+                <control type="button" id="925">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader13)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath13,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader13,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout13,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_4)</visible>
+				</control> 
+                  <control type="image" id="926">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_4)</visible>
+                </control>
+                 <!-- EIGENER MENÜ EINTRAG 5 -->
+               <control type="image" id="927">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_5)</visible>
+                </control>
+               
+                <control type="radiobutton" id="928">
+					<label>Hauptmenüeintrag [B]TV[/B] anpassen</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_5)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_5)</onclick>
+                </control>
+				<control type="button" id="929">
+					<label>Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]TV[/B])</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath15,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel15,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb15,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_5)</visible>
+				</control>
+                 <control type="button" id="8955">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory5)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory5,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout5,home)</onclick>
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_5)</visible>
+				</control>
+                 	<control type="button" id="930">
+					<label>- Widget #1</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader15)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath15,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader15,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout15,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_5)</visible>
+				</control>
+                <control type="button" id="931">
+					<label>- Widget #2</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader16)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath16,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader16,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout16,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_5)</visible>
+				</control>
+                <control type="button" id="932">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader17)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath17,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader17,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout17,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_5)</visible>
+				</control> 
+                <control type="image" id="933">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_5)</visible>
+                </control>    
+                <!-- EIGENER MENÜ EINTRAG 6 -->
+              <control type="image" id="934">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_6)</visible>
+                </control>
+                <control type="radiobutton" id="935">
+					<label>Hauptmenüeintrag [B]Radio[/B] anpassen</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_6)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_6)</onclick>
+                </control>
+				<control type="button" id="936">
+					<label>Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]Radio[/B])</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath16,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel16,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb16,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_6)</visible>
+				</control>
+                 <control type="button" id="8956">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory6)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory6,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout6,home)</onclick>
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_6)</visible>
+				</control>
+                 	<control type="button" id="937">
+					<label>- Widget #1</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader18)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath18,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader18,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout18,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_6)</visible>
+				</control>
+                <control type="button" id="938">
+					<label>- Widget #2</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader19)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath19,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader19,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout19,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_6)</visible>
+				</control>
+                <control type="button" id="939">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader20)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath20,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader20,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout20,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_6)</visible>
+				</control> 
+                
+                   <!-- EIGENER MENÜ EINTRAG 7 -->
+              <control type="image" id="940">
+				<left>470</left>
+				<bottom>135</bottom>
+                <width>1450</width>
+				<height>2</height>
+				<texture border="2">dialogs/separator-grey.png</texture>
+                <visible>Skin.HasSetting(custommenu_7)</visible>
+                </control>
+                <control type="radiobutton" id="941">
+					<label>Hauptmenüeintrag [B]Addons[/B] anpassen</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(custommenu_7)</selected>
+					<onclick>Skin.ToggleSetting(custommenu_7)</onclick>
+                </control>
+				<control type="button" id="942">
+					<label>Hauptmenüeintrag konfigurieren</label>
+                    <include>DefaultSettingButton</include>
+					<label2>(ersetzt Hauptmenü [B]Addons[/B])</label2>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath7,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel7,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb7,home)</onclick>
+					<onclick>ActivateWindow(1870)</onclick>
+                    <visible>Skin.HasSetting(custommenu_7)</visible>
+				</control>
+                 <control type="button" id="8957">
+					<label>- Kategorie Widget setzen</label>
+					<label2>$INFO[Skin.string(CustomHomeWidgetCategory7)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory7,home)</onclick>
+                    <onclick>SetProperty(CustomHomeWidgetCategoryLayout,CustomHomeWidgetCategoryLayout7,home)</onclick>
+					<onclick>ActivateWindow(1875)</onclick>
+					<visible>Skin.HasSetting(custommenu_7)</visible>
+				</control>
+                 	<control type="button" id="943">
+					<label>- Widget #1</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader21)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath21,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader21,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout21,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_7)</visible>
+				</control>
+                <control type="button" id="944">
+					<label>- Widget #2</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader22)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath22,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader22,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout22,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_7)</visible>
+				</control>
+                <control type="button" id="945">
+					<label>- Widget #3</label>
+					<label2>$INFO[Skin.string(CustomHome1WidgetHeader23)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomeWidgetPath,CustomHome1WidgetPath23,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetHeader,CustomHome1WidgetHeader23,home)</onclick>
+					<onclick>SetProperty(CustomHomeWidgetLayout,CustomHome1WidgetLayout23,home)</onclick>
+					<onclick>ActivateWindow(1871)</onclick>
+					<visible>Skin.HasSetting(custommenu_7)</visible>
+				</control> 
+              
             </control>
            <control type="grouplist" id="700">
 				<top>160</top>
@@ -483,10 +876,7 @@
 						<label>Hauptmenü Anpassen</label>
 						<onclick>noop</onclick>
 					</item>
-                    <item id="5">
-						<label>Widgets Anpassen</label>
-						<onclick>noop</onclick>
-					</item>
+                 
 				</content>
 			</control>
 		</control>

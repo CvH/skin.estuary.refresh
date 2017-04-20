@@ -370,11 +370,11 @@
 			</item>
 			<item id="25">
 				<description>Laufende Filme</description>
-				<label>Laufende (Filme)</label>
+				<label>Angefangene (Filme)</label>
 				<label2>$VAR[widget_has_script]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],filme)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window(Home).Property(recommendedmovies)])</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Laufende Filme)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Angefangene Filme)</onclick>
                 <onclick>Dialog.Close(all)</onclick>
 			</item>
 			<item id="26">
@@ -395,16 +395,51 @@
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Neue Episoden)</onclick>
                 <onclick>Dialog.Close(all)</onclick>
 			</item>
-			<item id="28">
+       		<item id="28">
 				<description>Laufende Serien</description>
-				<label>Laufende (Serien)</label>
+				<label>Angefangene (Episoden)</label>
 				<label2>$VAR[widget_has_script]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],episoden)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window(Home).Property(recommendedepisodes)])</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Laufende Serien)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Angefangene Episoden)</onclick>
                 <onclick>Dialog.Close(all)</onclick>
            </item>
-
+           <item id="29">
+				<description>Neue Alben</description>
+				<label>Neue (Alben)</label>
+				<label2>$VAR[widget_has_script]</label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window(Home).Property(recentalbums)])</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Neue Alben)</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+           </item>
+          <item id="30">
+				<description>Zufällige Alben</description>
+				<label>Zufällige (Alben)</label>
+				<label2>$VAR[widget_has_script]</label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)])</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Zufällige Alben)</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+           </item>
+           <item id="31">
+				<description>Angefangene Alben</description>
+				<label>Angefangene (Alben)</label>
+				<label2>$VAR[widget_has_script]</label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window(Home).Property(recommendedalbums)])</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Angefangene Alben)</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+           </item>
+            <item id="32">
+				<description>Zufällige Lieder</description>
+				<label>Zufällige (Lieder)</label>
+				<label2>$VAR[widget_has_script]</label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://service.library.data.provider?type=randomsongs&amp;reload=$INFO[Window(Home).Property(randomsongs)])</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Zufällige Lieder)</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+           </item>
         </content>
 	</control>
 	<control type="grouplist" id="1000">

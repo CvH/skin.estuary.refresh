@@ -581,6 +581,10 @@ msgctxt "#40009"
 msgid "Here you can select, the sublabels of your own home menu item."
 msgstr "Hier könnt ihr die Sublabels des Homemenüs auswählen."
 
+msgctxt "#40010"
+msgid "Use Add-on"
+msgstr "Addon verwenden"
 
-
-
+msgctxt "#40011"
+msgid "Own"
+msgstr "Eigene"

@@ -143,7 +143,7 @@
 			</item>
 			<item id="3">
 				<description>Playliste</description>
-				<label>Video Playliste</label>
+				<label>$LOCALIZE[20012]</label>
 				<label2>vordefinierte Playlisten</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],DefaultMovies.png)</onclick>
 				<onclick>Skin.SetFile(CustomHomeTempString,.xsp,special://skin/playlists)</onclick>
@@ -151,7 +151,7 @@
 			</item>
             <item id="4">
 				<description>Eigene Playliste</description>
-				<label>Eigene Video Playliste</label>
+				<label>$LOCALIZE[40011] $LOCALIZE[20012]</label>
 				<label2>Kodi Playlist Ordner</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],DefaultMovies.png)</onclick>
 				<onclick>Skin.SetFile(CustomHomeTempString,.xsp,special://videoplaylists/)</onclick>
@@ -159,7 +159,7 @@
 			</item>
           <item id="5">
 				<description>Knoten</description>
-				<label>Audio Knoten</label>
+				<label>$LOCALIZE[2]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],DefaultMusic.png)</onclick>
 				<onclick>Skin.SetPath(CustomHomeTempString,library://music/)</onclick>
@@ -167,15 +167,15 @@
 			</item>
 			<item id="6">
 				<description>Playliste</description>
-				<label>Audio Playliste</label>
+				<label>$LOCALIZE[31066]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],DefaultMusic.png)</onclick>
 				<onclick>Skin.SetFile(CustomHomeTempString,.xsp,special://skin/playlists)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomePath)],ActivateWindow(music,$INFO[Skin.string(CustomHomeTempString)],return))</onclick>
 			</item>
 		    <item id="7">
-				<description>Addon</description>
-				<label>Addon verwenden</label>
+				<description>Addon verwenden</description>
+				<label>$LOCALIZE[40010]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],DefaultAddon.png)</onclick>
 				<onclick>Skin.SetAddon(CustomHomeTempString,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio)</onclick>
@@ -184,7 +184,7 @@
 			</item>
             <item id="8">
 				<description>PVR</description>
-				<label>LiveTV</label>
+				<label>$LOCALIZE[19020]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],icons/sidemenu/livetv.png)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomePath)],ActivateWindow(TVChannels))</onclick>
@@ -192,7 +192,7 @@
 			</item>
             <item id="9">
 				<description>Radio</description>
-				<label>Radio</label>
+				<label>$LOCALIZE[19021]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],icons/sidemenu/radio.png)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomePath)],ActivateWindow(RadioChannels))</onclick>
@@ -200,7 +200,7 @@
 			</item>
             <item id="10">
 				<description>Musikvideos</description>
-				<label>Musikvideos</label>
+				<label>$LOCALIZE[36909]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],icons/sidemenu/musicvideos.png)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomePath)],ActivateWindow(Videos,musicvideos,return))</onclick>
@@ -208,7 +208,7 @@
 			</item>
             <item id="11">
 				<description>Musik</description>
-				<label>Musik</label>
+				<label>$LOCALIZE[2]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],icons/sidemenu/music.png)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomePath)],ActivateWindow(Music,root,return))</onclick>
@@ -216,7 +216,7 @@
 			</item>
             <item id="12">
 				<description>Serien</description>
-				<label>Serien</label>
+				<label>$LOCALIZE[20343]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],icons/sidemenu/tv.png)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomePath)],ActivateWindow(Videos,videodb://tvshows/titles/,return))</onclick>
@@ -224,7 +224,7 @@
 			</item>
             <item id="13">
 				<description>Filme</description>
-				<label>Filme</label>
+				<label>$LOCALIZE[342]</label>
 				<label2>$INFO[Skin.String($INFO[Window(home).Property(CustomHomePath))]</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeThumb)],icons/sidemenu/movies.png)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomePath)],ActivateWindow(Videos,videodb://movies/titles/,return))</onclick>
@@ -295,7 +295,7 @@
     <control type="button" id="11">
 			<width>300</width>
 			<height>100</height>
-			<label>Zurücksetzen</label>
+			<label>$LOCALIZE[10035]</label>
 			<font>font25_title</font>
 			<textoffsetx>20</textoffsetx>
 			<onclick>Skin.reset($INFO[Window(home).Property(CustomHomeLabel)])</onclick>

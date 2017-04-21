@@ -19,8 +19,142 @@
         <value condition="Control.Hasfocus(10)">[B]Achtung[/B][CR]Hier löscht ihr all eure Einstellungen des Widgets.</value>
     </variable>
     
-    
-    
+     <variable name="sublabel_choose_bylist0">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel0),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel0),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable>  
+    <variable name="sublabel_choose_bylist1">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel1),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel1),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable> 
+    <variable name="sublabel_choose_bylist2">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel2),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel2),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable> 
+    <variable name="sublabel_choose_bylist3">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel3),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel3),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable> 
+    <variable name="sublabel_choose_bylist4">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel4),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel4),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable> 
+    <variable name="sublabel_choose_bylist5">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel5),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel5),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable> 
+     <variable name="sublabel_choose_bylist6">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel6),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel6),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable> 
+     <variable name="sublabel_choose_bylist7">
+		<value condition="String.IsEqual(Skin.String(CustomHomesublabel7),movies_count)">$INFO[Window.Property(Movies.Count),[B],[/B] (Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),movies_watched)">$INFO[Window.Property(Movies.Watched),[B],[/B] (gesehene Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),movies_unwatched)">$INFO[Window.Property(Movies.UnWatched),[B],[/B] (neue Filme)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),tvshows_count)">$INFO[Window.Property(TVShows.Count),[B],[/B] (Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),tvshows_watched)">$INFO[Window.Property(TVShows.Watched),[B],[/B] (gesehene Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),tvshows_unwatched)">$INFO[Window.Property(TVShows.UnWatched),[B],[/B] (neue Serien)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),episodes_count)">$INFO[Window.Property(Episodes.Count),[B],[/B] (Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),episodes_watched)">$INFO[Window.Property(Episodes.Watched),[B],[/B] (gesehene Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),episodes_unwatched)">$INFO[Window.Property(Episodes.UnWatched),[B],[/B] (neue Episoden)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),musicsongs_count)">$INFO[Window.Property(Music.SongsCount),[B],[/B] (Lieder)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),musicalbums_count)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] (Alben)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),musicartists_count)">$INFO[Window.Property(Music.ArtistsCount),[B],[/B] (Interpreten)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),musicvideos_count)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (MusikVideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),musicvideos_watched)">$INFO[Window.Property(MusicVideos.Watched),[B],[/B] (gesehene Musikvideos)]</value>
+        <value condition="String.IsEqual(Skin.String(CustomHomesublabel7),musicvideos_unwatched)">$INFO[Window.Property(MusicVideos.UnWatched),[B],[/B] (neue Musikvideos)]</value>
+    </variable> 
    <!-- custom menu + standard menu labels -->
     <variable name="homemenu_label_custommenu0">
 		<value condition="Skin.Hassetting(custommenu_0)">$INFO[Skin.String(CustomHomeLabel0)]</value>
@@ -123,35 +257,37 @@
     </variable>
     <!-- custom menu + standard menu label2 -->
     <variable name="homemenu_label2_custommenu0">
-		<value condition="Skin.Hassetting(custommenu_0)"></value>
+		<value condition="Skin.Hassetting(custommenu_0)">$VAR[sublabel_choose_bylist0]</value>
 		<value condition="!Skin.Hassetting(custommenu_0)">$INFO[Container(14100).Numitems,[B],[/B] Einträge]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu1">
-		<value condition="Skin.Hassetting(custommenu_1)"></value>
+		<value condition="Skin.Hassetting(custommenu_1)">$VAR[sublabel_choose_bylist1]</value>
 		<value condition="!Skin.Hassetting(custommenu_1)">$INFO[Window.Property(Movies.Count),[B],[/B] (]$INFO[Window.Property(Movies.UnWatched,, ungesehen)]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu2">
-		<value condition="Skin.Hassetting(custommenu_2)"></value>
+		<value condition="Skin.Hassetting(custommenu_2)">$VAR[sublabel_choose_bylist2]</value>
 		<value condition="!Skin.Hassetting(custommenu_2)">$INFO[Window.Property(Tvshows.Count),[B],[/B] (]$INFO[Window.Property(Tvshows.UnWatched,, ungesehen)]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu3">
-		<value condition="Skin.Hassetting(custommenu_3)"></value>
+		<value condition="Skin.Hassetting(custommenu_3)">$VAR[sublabel_choose_bylist3]</value>
 		<value condition="!Skin.Hassetting(custommenu_3)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] Alben - ,(]$INFO[Window.Property(Music.SongsCount),[B],[/B] Lieder,) ]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu4">
-		<value condition="Skin.Hassetting(custommenu_4)"></value>
+		<value condition="Skin.Hassetting(custommenu_4)">$VAR[sublabel_choose_bylist4]</value>
 		<value condition="!Skin.Hassetting(custommenu_4)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (]$INFO[Window.Property(MusicVideos.UnWatched),, ungesehen) ]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu5">
-		<value condition="Skin.Hassetting(custommenu_5)"></value>
+		<value condition="Skin.Hassetting(custommenu_5)">$VAR[sublabel_choose_bylist5]</value>
 		<value condition="!Skin.Hassetting(custommenu_5)">$INFO[Pvr.BackendChannels,[B],[/B] Kanäle]</value>
     </variable>
     <variable name="homemenu_label2_custommenu6">
-		<value condition="Skin.Hassetting(custommenu_6)"></value>
+		<value condition="Skin.Hassetting(custommenu_6)">$VAR[sublabel_choose_bylist6]</value>
 		<value condition="!Skin.Hassetting(custommenu_6)">$INFO[Container(13200).Numitems,[B],[/B] Kanäle]</value>
     </variable> 
-   
-        
+      <variable name="homemenu_label2_custommenu7">
+		<value condition="Skin.Hassetting(custommenu_7)">$VAR[sublabel_choose_bylist7]</value>
+		<value condition="!Skin.Hassetting(custommenu_7)"></value>
+    </variable> 
     <variable name="value_widget_header_kategorie">
 		<value condition="String.IsEqual(Skin.String(CustomHomeWidgetLayout),serienkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">library://video/tvshows/</value>
 		<value condition="String.IsEqual(Skin.String(CustomHomeWidgetLayout),filmkategorien) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme)">library://video/movies/</value>
@@ -586,11 +722,12 @@
 	<variable name="SkinSettingsHelpTextVar">
 		<value condition="Container(9000).HasFocus(1)">$LOCALIZE[31129]</value>
 		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31130]</value>
-        <value condition="Control.HasFocus(894) | Control.HasFocus(901) | Control.HasFocus(907) | Control.HasFocus(913) | Control.HasFocus(919)| Control.HasFocus(921) | Control.HasFocus(928)| Control.HasFocus(935)| Control.HasFocus(941)">Durch aktivieren werden die alten MenüPunkte deaktiviert und ihr könnt eure eigenen konfigurieren, mit jeweils 3 Widgets</value>
-        <value condition="Control.HasFocus(895) | Control.HasFocus(902) | Control.HasFocus(908) | Control.HasFocus(914) | Control.HasFocus(920) | Control.HasFocus(926) | Control.HasFocus(922)| Control.HasFocus(929) | Control.HasFocus(936) | Control.HasFocus(942)">Hier wird der [B]Onclick[/B] sowie [B]Name[/B] und [B]Icon[/B] des eigenen Hauptmenü Punktes definiert.[CR]Unabhängig von dem Widgets die ihr später definiert könnt ihr hier jede verfügbare Kategorie auswählen.</value>
-        <value condition="Control.HasFocus(898) | Control.HasFocus(897) | Control.HasFocus(896) | Control.HasFocus(903) | Control.HasFocus(904) | Control.HasFocus(905) | Control.HasFocus(909) | Control.HasFocus(910) | Control.HasFocus(911)| Control.HasFocus(915)| Control.HasFocus(916)| Control.HasFocus(917)| Control.HasFocus(923)| Control.HasFocus(927)| Control.HasFocus(933)| Control.HasFocus(934)| Control.HasFocus(930)| Control.HasFocus(924) | Control.HasFocus(925) | Control.HasFocus(931)| Control.HasFocus(932)| Control.HasFocus(937)| Control.HasFocus(938)| Control.HasFocus(939)| Control.HasFocus(943)| Control.HasFocus(944)| Control.HasFocus(945)">Hier könnt ihr eure eigenen Widgets auswählen und benennen und zurücksetzen</value>
-        <value condition="Control.HasFocus(8950) | Control.HasFocus(8951) | Control.HasFocus(8952) | Control.HasFocus(8953) | Control.HasFocus(8954) | Control.HasFocus(8955) | Control.HasFocus(8956) | Control.HasFocus(8957)">Hier könnt ihr das Kategorien Widget festlegen, das ist das Widget was an erster stelle ganz oben über den Widgets angezeigt wird.  Und definiert welcher Kategorie euer Menüpunkt angehört. </value>
-    </variable>
+        <value condition="Control.HasFocus(894) | Control.HasFocus(901) | Control.HasFocus(907) | Control.HasFocus(913) | Control.HasFocus(919)| Control.HasFocus(921) | Control.HasFocus(928)| Control.HasFocus(935)| Control.HasFocus(941)">$LOCALIZE[40005]</value>
+        <value condition="Control.HasFocus(895) | Control.HasFocus(902) | Control.HasFocus(908) | Control.HasFocus(914) | Control.HasFocus(920) | Control.HasFocus(926) | Control.HasFocus(922)| Control.HasFocus(929) | Control.HasFocus(936) | Control.HasFocus(942)">$LOCALIZE[40006]</value>
+        <value condition="Control.HasFocus(898) | Control.HasFocus(897) | Control.HasFocus(896) | Control.HasFocus(903) | Control.HasFocus(904) | Control.HasFocus(905) | Control.HasFocus(909) | Control.HasFocus(910) | Control.HasFocus(911)| Control.HasFocus(915)| Control.HasFocus(916)| Control.HasFocus(917)| Control.HasFocus(923)| Control.HasFocus(927)| Control.HasFocus(933)| Control.HasFocus(934)| Control.HasFocus(930)| Control.HasFocus(924) | Control.HasFocus(925) | Control.HasFocus(931)| Control.HasFocus(932)| Control.HasFocus(937)| Control.HasFocus(938)| Control.HasFocus(939)| Control.HasFocus(943)| Control.HasFocus(944)| Control.HasFocus(945)">$LOCALIZE[40007]</value>
+        <value condition="Control.HasFocus(9102) |Control.HasFocus(9002) |Control.HasFocus(8991) |Control.HasFocus(8981) | Control.HasFocus(8971) |Control.HasFocus(8961) | Control.HasFocus(8950) | Control.HasFocus(8951) | Control.HasFocus(8952) | Control.HasFocus(8953) | Control.HasFocus(8954) | Control.HasFocus(8955) | Control.HasFocus(8956) | Control.HasFocus(8957)">$LOCALIZE[40008]</value>
+		<value condition="Control.HasFocus(9101) | Control.HasFocus(9001)| Control.HasFocus(8990)| Control.HasFocus(8980) | Control.HasFocus(8970) | Control.HasFocus(8960)| Control.HasFocus(8926)| Control.HasFocus(8949)">$LOCALIZE[40009]</value>   
+   </variable>
 	<variable name="DSPManagerHelpTextVar">
 		<value condition="Control.HasFocus(20)">$INFO[Container(20).ListItem.Property(Description)]</value>
 		<value condition="Control.HasFocus(21)">$INFO[Container(21).ListItem.Property(Description)]</value>

@@ -135,6 +135,7 @@
 						</item>
                        <item>
 							<label fallback="Eigener Eintrag7">$VAR[homemenu_label_custommenu7]</label>
+                             <label2>$VAR[homemenu_label2_custommenu7]</label2>
 							<property name="menu_id">$NUMBER[8000]</property>
 							<onclick>$VAR[homemenu_onclick_custommenu7]</onclick>
 							<thumb fallback="special://skin/extras/icons/playlist.png">$VAR[homemenu_icon_custommenu7]</thumb>
@@ -890,7 +891,7 @@
                                 <fadetime>350</fadetime>
 							</control>
 				</focusedlayout>
-    <content target="video" sort="year">videodb://movies/sets/$INFO[Listitem.DBID]</content>
+    <content target="video" sortby="year" order="ascending" >videodb://movies/sets/$INFO[Listitem.DBID]</content>
     </control>
     </include>
     

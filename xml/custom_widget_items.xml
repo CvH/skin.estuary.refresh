@@ -220,7 +220,7 @@
 			</item>
             <item id="6">
 				<description>Favoriten</description>
-				<label>Favoriten</label>
+				<label>Favouriten</label>
 				<label2></label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],favourites://)</onclick>
@@ -249,7 +249,7 @@
 			</item>
             <item id="12">
 				<description>Tv Kanäle</description>
-				<label>Alle Tv Kanäle</label>
+				<label>asasasadfsdAlle Tv Kanäle</label>
 				<label2></label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],radio_tv)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],pvr://channels/tv/*?view=flat)</onclick>
@@ -341,14 +341,15 @@
                 <onclick>Dialog.Close(all)</onclick>
                 <visible>System.Platform.Android</visible>
 			</item>
-              <item id="22">
+            <item id="22">
 				<description>Script German telecast offers</description>
 				<label>German Telecast Offers</label>
 				<label2></label2>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],radio_tv)</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://plugin.service.gto?action=getcontent&amp;ts=$INFO[Window(Home).Property(GTO.timestamp)])</onclick>
-                <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],German Telecast Offers)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],widget_gto)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://plugin.service.gto?action=getcontent&ts=$INFO[Window(Home).Property(GTO.timestamp)])</onclick>
+                <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$ADDON[plugin.service.gto 30104]: $INFO[Window(Home).Property(GTO.Provider)])</onclick>
                 <onclick>Dialog.Close(all)</onclick>
+                <visible>System.HasPVRAddon + System.HasAddon(plugin.service.gto)</visible>
             </item>
             <item id="23">
 				<description>Zufaellige Filme</description>

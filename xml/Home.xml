@@ -101,15 +101,16 @@
 							<param name="sortby" value="random"/>
 							<param name="list_id" value="5600"/>
 						</include>
-                        <include content="ImageWidget" condition="!Library.HasContent(movies)">
+                     
+                </control>
+               </control>
+                  <include content="ImageWidget" condition="!Library.HasContent(movies)">
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
 						<param name="button_id" value="5500"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
 					</include>
-                </control>
-               </control>
                 <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG FILME -->
                 <control type="group">
                 <visible>Skin.Hassetting(custommenu_1)</visible>
@@ -139,6 +140,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6019"/>
 						</include>
+                        <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3780"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
@@ -165,7 +174,10 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6023"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                       
                       
                         <!-- WIDGET 2-->
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden)">
@@ -194,6 +206,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6027"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),episoden)">
@@ -222,6 +236,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6031"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                 </control>
                </control>
@@ -316,6 +332,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6035"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3782"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
@@ -335,13 +359,15 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6038"/>
 						</include>
-                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),radio_tv)">
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4,radio_tv)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
 							<param name="sortby" value="lastplayed"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6039"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),episoden)">
@@ -370,6 +396,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6043"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),episoden)">
@@ -398,6 +426,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6047"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                 </control>
                </control>
@@ -493,6 +523,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6051"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3784"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
@@ -519,6 +557,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6055"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
                       
@@ -548,6 +588,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6059"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
                     
@@ -577,6 +619,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6063"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                     </control>    
                     </control>    
@@ -671,6 +715,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="7012"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3779"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
@@ -697,6 +749,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7016"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
                       
@@ -726,6 +780,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7020"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
                     
@@ -755,6 +811,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7024"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>  
                     </control>
                     </control>
@@ -897,6 +955,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6080"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3776"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
@@ -923,8 +989,18 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6084"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3805"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
@@ -951,8 +1027,18 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6088"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3806"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
@@ -979,6 +1065,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6092"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                     </control>
 					  </control>
@@ -1085,6 +1173,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6096"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3778"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
@@ -1110,7 +1206,9 @@
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
 							<param name="widget_target" value="files"/>
-							<param name="list_id" value="7000"/>
+							<param name="list_id" value="6998"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),episoden)">
@@ -1139,7 +1237,17 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7004"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath19)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3806"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                         <!-- WIDGET 3 -->
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
@@ -1167,7 +1275,17 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7008"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3807"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                     </control>    
                     </control>
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
@@ -1232,7 +1350,7 @@
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory0)]"/>
 							<param name="widget_header" value="Kategorien"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6000"/>
+							<param name="list_id" value="5999"/>
                         </include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),pvr_widget)">
 							<param name="widget_header" value="Kategorien"/>
@@ -1251,6 +1369,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6003"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3781"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
@@ -1276,7 +1402,8 @@
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
 							<param name="widget_target" value="files"/>
-                            <param name="label2" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 							<param name="list_id" value="6007"/>
 						</include>
                         <!-- WIDGET 2-->
@@ -1334,6 +1461,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6015"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                      
                      
@@ -1542,6 +1671,14 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6067"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3775"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
@@ -1561,11 +1698,28 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6070"/>
 						</include>
-                        <!-- WIDGET 2-->
-                      
-						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),episoden)">
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),radio_tv)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="2400"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
+						</include>
+                        <!-- WIDGET 2-->
+                       <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3776"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6071"/>
 						</include>
@@ -1582,8 +1736,25 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6073"/>
 						</include>
+                           <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="2401"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
+						</include>
                         <!-- WIDGET 3 -->
-                    
+                      <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3777"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
@@ -1602,6 +1773,16 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6076"/>
+						</include>
+                           <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="2402"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                     </control>    
                     </control>    
@@ -1666,7 +1847,7 @@
 								<width>462</width>
 								<height>95</height>
 								<texture colordiffuse="button_focus">lists/focus.png</texture>
-								<animation effect="fade" start="100" end="20" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog">Conditional</animation>
+								<animation effect="fade" start="100" end="20" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog | Control.hasfocus(804) | Control.hasfocus(802) | Control.hasfocus(801)">Conditional</animation>
 							</control>
                         <control type="group">
 							<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
@@ -1698,13 +1879,14 @@
 						</control>
 						<control type="label">
 							<left>104</left>
-							<top>-15</top>
+							<top>0</top>
 							<height>95</height>
 							<width>560</width>
 							<aligny>center</aligny>
 							<font>font37</font>
 							<label>[B]$INFO[ListItem.Label][/B]</label>
 							<shadowcolor>text_shadow</shadowcolor>
+                            <animation effect="slide" start="0,0" end="0,-15" time="0" condition="!String.IsEmpty(ListItem.Label2)">Conditional</animation>
 						</control>
                         <control type="label">
 							<left>104</left>
@@ -1812,6 +1994,20 @@
 					<texture>icons/logo-text.png</texture>
 				</control>
 			</control>
+            
+             <control type="label">
+							<left>400</left>
+							<top>40</top>
+							<width>1400</width>
+							<height>120</height>
+							<label>$VAR[sublabel_choose_bylist] </label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<scroll>true</scroll>
+							<aligny>top</aligny>
+						</control>
+                        
 			<control type="rss">
 				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>

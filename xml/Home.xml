@@ -90,7 +90,7 @@
 							<param name="content_path" value="videodb://movies/genres/"/>
 							<param name="widget_header" value="$LOCALIZE[135]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5500"/>
+							<param name="list_id" value="5410"/>
 							<param name="icon" value="$VAR[WidgetGenreIconVar]"/>
 							<param name="icon_height" value="70"/>
 						</include>
@@ -108,7 +108,7 @@
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
-						<param name="button_id" value="5500"/>
+						<param name="button_id" value="10452"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
 					</include>
                 <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG FILME -->
@@ -649,7 +649,7 @@
 					</control>
                      <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG MUSIK -->
                     <control type="group">
-                    <visible>Skin.Hassetting(custommenu_3custommenu_3)</visible>
+                    <visible>Skin.Hassetting(custommenu_3)</visible>
 					<control type="grouplist" id="7001">
 						<include>WidgetGroupListCommon</include>
                     
@@ -671,9 +671,9 @@
 							<param name="list_id" value="6050"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
-                        <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),video_source)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+                        <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6051"/>
 						</include>
@@ -1790,7 +1790,17 @@
 						</focusedlayout>
 						<content>favourites://</content>
 					</control>
+                    	<!--include content="ImageWidget">
+						<param name="text_label" value="$LOCALIZE[31025]" />
+						<param name="button_label" value="$LOCALIZE[31116]" />
+						<param name="button_onclick" value=""/>
+						<param name="button_id" value="5500"/>
+						<param name="visible" value="!Integer.IsGreater(Container(14100).NumItems,0) + !Container(14100).IsUpdating"/>
+						<param name="visible_1" value="false"/>
+						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoFavButton)"/>
+					</include-->
                     </control>
+                    
                     <control type="group">
                     <visible>Skin.Hassetting(custommenu_0)</visible>
                   	<control type="grouplist" id="14100">
@@ -1993,15 +2003,7 @@
                      
                      </control>    
                      </control>    
-					<include content="ImageWidget">
-						<param name="text_label" value="$LOCALIZE[31025]" />
-						<param name="button_label" value="$LOCALIZE[31116]" />
-						<param name="button_onclick" value=""/>
-						<param name="button_id" value="5500"/>
-						<param name="visible" value="!Integer.IsGreater(Container(14100).NumItems,0) + !Container(14100).IsUpdating"/>
-						<param name="visible_1" value="false"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoFavButton)"/>
-					</include>
+				
 				</control>
 				<control type="group" id="15000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
@@ -2160,7 +2162,7 @@
                      
 					</control>
                     </control>
-                       <include content="ImageWidget" condition="!Library.HasContent(musicvideos)">
+                       <include content="ImageWidget" condition="!Skin.Hassetting(custommenu_4) + !Library.HasContent(musicvideos)">
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>

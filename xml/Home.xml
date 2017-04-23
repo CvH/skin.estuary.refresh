@@ -119,18 +119,18 @@
                        <!-- WIDGET 1-->
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout1),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory1)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6016"/>
                        </include>
                       	<include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout1),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6017"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout1),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6018"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
@@ -390,18 +390,18 @@
                        <!-- WIDGET 1-->
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout2),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory2)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6032"/>
 						</include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout2),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6033"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout2),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6034"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
@@ -656,18 +656,18 @@
                   <!-- WIDGET 1-->
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout3),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory3)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6048"/>
 						</include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout3),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6049"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout3),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6050"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
@@ -921,18 +921,18 @@
                        <!-- WIDGET 1-->
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout7),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory7)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="7009"/>
                         </include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout7),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="7010"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout7),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="7011"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
@@ -1234,18 +1234,18 @@
                       <!-- WIDGET 1-->
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout5),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory5)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6077"/>
 						</include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout5),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6078"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout5),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6079"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
@@ -1527,18 +1527,18 @@
                        <!-- WIDGET 1-->
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout6),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory6)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6093"/>
 						</include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout6),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6094"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout6),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6095"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
@@ -1798,18 +1798,18 @@
                      <!-- WIDGET 1-->
                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory0)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5999"/>
                         </include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6001"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6002"/>
                             <param name="addon_submenu" value="true"/>
                         </include>
@@ -2175,18 +2175,18 @@
                   <!-- WIDGET 1-->
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout4),category_widget)">
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory4)]"/>
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6064"/>
 						</include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout4),pvr_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6065"/>
                             <param name="pvr_submenu" value="true"/>
 							<param name="pvr_type" value="TV"/>
                         </include>
                          <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout4),addons_widget)">
-							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="6066"/>
                             <param name="addon_submenu" value="true"/>
                         </include>

@@ -262,27 +262,27 @@
     </variable> 
     <variable name="homemenu_label2_custommenu1">
 		<value condition="Skin.Hassetting(custommenu_1)">$VAR[sublabel_choose_bylist1]</value>
-		<value condition="!Skin.Hassetting(custommenu_1)">$INFO[Window.Property(Movies.Count),[B],[/B] (]$INFO[Window.Property(Movies.UnWatched,, ungesehen)]</value>
+		<value condition="!Skin.Hassetting(custommenu_1)">$INFO[Window.Property(Movies.Count),[B],[/B] (]$INFO[Window.Property(Movies.UnWatched,, $LOCALIZE[16101])]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu2">
 		<value condition="Skin.Hassetting(custommenu_2)">$VAR[sublabel_choose_bylist2]</value>
-		<value condition="!Skin.Hassetting(custommenu_2)">$INFO[Window.Property(Tvshows.Count),[B],[/B] (]$INFO[Window.Property(Tvshows.UnWatched,, ungesehen)]</value>
+		<value condition="!Skin.Hassetting(custommenu_2)">$INFO[Window.Property(Tvshows.Count),[B],[/B] (]$INFO[Window.Property(Tvshows.UnWatched,, $LOCALIZE[16101])]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu3">
 		<value condition="Skin.Hassetting(custommenu_3)">$VAR[sublabel_choose_bylist3]</value>
-		<value condition="!Skin.Hassetting(custommenu_3)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] Alben - ,(]$INFO[Window.Property(Music.SongsCount),[B],[/B] Lieder,) ]</value>
+		<value condition="!Skin.Hassetting(custommenu_3)">$INFO[Window.Property(Music.AlbumsCount),[B],[/B] $LOCALIZE[132] - ,(]$INFO[Window.Property(Music.SongsCount),[B],[/B] $LOCALIZE[134],) ]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu4">
 		<value condition="Skin.Hassetting(custommenu_4)">$VAR[sublabel_choose_bylist4]</value>
-		<value condition="!Skin.Hassetting(custommenu_4)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (]$INFO[Window.Property(MusicVideos.UnWatched),, ungesehen) ]</value>
+		<value condition="!Skin.Hassetting(custommenu_4)">$INFO[Window.Property(MusicVideos.Count),[B],[/B] (]$INFO[Window.Property(MusicVideos.UnWatched),, $LOCALIZE[16101]) ]</value>
     </variable> 
     <variable name="homemenu_label2_custommenu5">
 		<value condition="Skin.Hassetting(custommenu_5)">$VAR[sublabel_choose_bylist5]</value>
-		<value condition="!Skin.Hassetting(custommenu_5)">$INFO[Pvr.BackendChannels,[B],[/B] Kanäle]</value>
+		<value condition="!Skin.Hassetting(custommenu_5)">$INFO[Pvr.BackendChannels,[B],[/B] $LOCALIZE[19019]]</value>
     </variable>
     <variable name="homemenu_label2_custommenu6">
 		<value condition="Skin.Hassetting(custommenu_6)">$VAR[sublabel_choose_bylist6]</value>
-		<value condition="!Skin.Hassetting(custommenu_6)">$INFO[Container(13200).Numitems,[B],[/B] Kanäle]</value>
+		<value condition="!Skin.Hassetting(custommenu_6)">$INFO[Container(13200).Numitems,[B],[/B] $LOCALIZE[19019]]</value>
     </variable> 
       <variable name="homemenu_label2_custommenu7">
 		<value condition="Skin.Hassetting(custommenu_7)">$VAR[sublabel_choose_bylist7]</value>

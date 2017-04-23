@@ -588,3 +588,16 @@ msgstr "Addon verwenden"
 msgctxt "#40011"
 msgid "Own"
 msgstr "Eigene"
+
+msgctxt "#40012"
+msgid "Number of"
+msgstr "Anzahl der"
+
+msgctxt "#40013"
+msgid "Number of watched"
+msgstr "Anzahl der gesehenen"
+
+msgctxt "#40013"
+msgid "Number of unwatched"
+msgstr "Anzahl der ungesehenen"
+

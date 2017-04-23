@@ -133,63 +133,63 @@
 		<content>
 			<item id="1">
 				<description>Movies Count</description>
-				<label>Anzahl der Filme</label>
+				<label>$LOCALIZE[40012] $LOCALIZE[342]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],movies_count)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
             </item>
 			<item id="2">
 				<description>Gesehene Filme</description>
-				<label>Anzahl der gesehenen Filme</label>
+				<label>$LOCALIZE[40013] $LOCALIZE[342]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],movies_watched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
             <item id="3">
-				<description>UnGesehene Filme</description>
-				<label>Anzahl der ungesehenen Filme</label>
+				<description>Ungesehene Filme</description>
+				<label>$LOCALIZE[40014] $LOCALIZE[342]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],movies_unwatched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
             <item id="4">
 				<description>Serien Count</description>
-				<label>Anzahl der Serien</label>
+				<label>$LOCALIZE[40012] $LOCALIZE[20343]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],tvshows_count)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
 			<item id="5">
 				<description>Gesehene Serien</description>
-				<label>Anzahl der gesehenen Serien</label>
+				<label>$LOCALIZE[40013] $LOCALIZE[20343]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],tvshows_watched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
             <item id="6">
 				<description>UnGesehene Serien</description>
-				<label>Anzahl der ungesehenen Serien</label>
+				<label>$LOCALIZE[40014] $LOCALIZE[20343]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],tvshows_unwatched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
             <item id="7">
 				<description>Episoden Count</description>
-				<label>Anzahl der Episoden</label>
+				<label>$LOCALIZE[40012] $LOCALIZE[20360]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],episodes_count)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
 			<item id="8">
 				<description>Gesehene Episoden</description>
-				<label>Anzahl der gesehenen Episoden</label>
+				<label>$LOCALIZE[40013] $LOCALIZE[20360]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],episodes_watched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
             <item id="9">
 				<description>UnGesehene Episoden</description>
-				<label>Anzahl der ungesehenen Episoden</label>
+				<label>$LOCALIZE[40014] $LOCALIZE[20360]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],episodes_unwatched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
@@ -197,21 +197,21 @@
             
             <item id="7">
 				<description>Song Count</description>
-				<label>Anzahl der Lieder</label>
+				<label>$LOCALIZE[40012] $LOCALIZE[36921]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],musicsongs_count)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
 			<item id="8">
 				<description>albums count</description>
-				<label>Anzahl der Alben</label>
+				<label>$LOCALIZE[40012] $LOCALIZE[132]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],musicalbums_count)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
             <item id="9">
 				<description>artists Count</description>
-				<label>Anzahl der Interpreten</label>
+				<label>$LOCALIZE[40012] $LOCALIZE[133]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],musicartists_count)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
@@ -219,21 +219,21 @@
             
             <item id="7">
 				<description>musikvideos Count</description>
-				<label>Anzahl der Musikvideos</label>
+				<label>$LOCALIZE[40012] $LOCALIZE[20389]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],musicvideos_count)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
 			<item id="8">
 				<description>watched musicvideos count</description>
-				<label>Anzahl der gesehenen Musikvideos</label>
+				<label>$LOCALIZE[40013] $LOCALIZE[20389]</label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],musicvideos_watched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>
 			</item>
             <item id="9">
 				<description>unwatched musicvideos count</description>
-				<label>Anzahl der ungesehenen Musikvideos</label>
+				<label>$LOCALIZE[40014] $LOCALIZE[20389]/label>
 				<label2></label2>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomesublabel)],musicvideos_unwatched)</onclick>
                 <onclick>Dialog.Close(1876)</onclick>

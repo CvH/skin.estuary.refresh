@@ -112,9 +112,28 @@
 					<control type="group">
 						<left>220</left>
 						<top>450</top>
-						<include content="UserRatingCircle">
-							<param name="animation" value="True" />
-						</include>
+						<control type="group">
+				<visible>!String.IsEmpty(ListItem.Rating) | !String.IsEmpty(Container(012).ListItem.Rating)</visible>
+				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
+				<control type="image">
+					<left>3</left>
+					<top>-3</top>
+					<width>55</width>
+					<height>55</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="button_focus">badge.png</texture>
+				</control>
+				<control type="label">
+					<left>3</left>
+					<top>-3</top>
+					<align>center</align>
+					<aligny>center</aligny>
+					<width>55</width>
+					<height>55</height>
+					<font>font20_title</font>
+					<label>$VAR[viewsets_rating_similar]</label>
+				</control>
+			</control>
 					</control>
 				</control>
 			</control>

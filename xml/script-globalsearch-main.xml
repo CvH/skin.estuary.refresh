@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+    <defaultcontrol always="true">9000</defaultcontrol>
 	<include>Animation_DialogPopupOpenClose</include>
     <backgroundcolor>background</backgroundcolor>
 	<controls>
@@ -239,6 +240,12 @@
 					<onleft>101</onleft>
 					<onright>101</onright>
 				</control>
+                <control type="group">
+                       	<top>-100</top>
+                <include content="InfoDialogTopBarInfo1">
+                        <param name="main_label" value="Suchergebnisse für $INFO[Window.Property(GlobalSearch.SearchString), ([COLOR grey],[/COLOR])]" />
+                </include>
+                </control>
 				<control type="group">
 					<control type="fixedlist" id="9000">
 						<left>0</left>

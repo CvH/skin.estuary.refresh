@@ -58,10 +58,33 @@
 				</control>
                
             
-            
-			
+            <control type="group">
+                <left>240</left>
+				<top>-25</top>
+				<visible>!String.IsEmpty(ListItem.Rating) | !String.IsEmpty(Container(50).ListItem.Rating)</visible>
+				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
+				<control type="image">
+					<left>3</left>
+					<top>-3</top>
+					<width>65</width>
+					<height>65</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="button_focus">badge.png</texture>
+				</control>
+				<control type="label">
+					<left>3</left>
+					<top>-3</top>
+					<align>center</align>
+					<aligny>center</aligny>
+					<width>65</width>
+					<height>65</height>
+					<font>font25_title</font>
+					<label>$VAR[videoinfosets_rating_similar]</label>
+				</control>
 			</control>
 			
+			</control>
+			 
 			<control type="group">
 				<include>OpenClose_Right</include>
 				<left>620</left>
@@ -118,7 +141,7 @@
 				<texture>$VAR[mpaa_dialogvideoinfosets]</texture>
                 <fadetime>350</fadetime>
 				</control>
-                
+             
                 
 				<control type="grouplist" id="4000">
 					<orientation>vertical</orientation>
@@ -286,7 +309,7 @@
 					</include>
                     <include content="InfoDialogButton">
 						<param name="id" value="105" />
-						<param name="icon" value="icons/infodialogs/update.png" />
+						<param name="icon" value="close.png" />
                         <param name="onclick_1" value="Dialog.Close(all)" />
 						<param name="label" value="Schliessen" />
 					</include>

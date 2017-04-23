@@ -19,20 +19,30 @@
 			<control type="group">
 				<include>OpenClose_Left</include>
                 
-              <control type="image">
-				<texture colordiffuse="white">up.png</texture>
-				<width>35</width>
+            <control type="image">
 				<left>10</left>
-				<top>720</top>
-				<height>35</height>
-			</control>
-              <control type="image">
-				<texture colordiffuse="white">down.png</texture>
-				<width>35</width>
+				<top>725</top>
+				<width>30</width>
+				<height>30</height>
+				<bottom>0</bottom>
+              	<texture colordiffuse="button_focus">arrowup.png</texture>
+				<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+				<animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+               
+                </control>
+                <control type="image">
 				<left>10</left>
-				<top>770</top>
-				<height>35</height>
-			</control>
+				<top>775</top>
+				<width>30</width>
+				<height>30</height>
+				<bottom>0</bottom>
+              	<texture flipy="true" colordiffuse="button_focus">arrowup.png</texture>
+				<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+				<animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+
+    </control>
                 
                 
 				<control type="image">
@@ -46,128 +56,6 @@
 				<height>1110</height>
 			</control>
         
-				<control type="fixedlist" id="51">
-					<left>0</left>
-					<top>list_y_offset</top>
-					<right>920</right>
-					<bottom>list_y_offset</bottom>
-					<movement>4</movement>
-					<focusposition>6</focusposition>
-					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<orientation>vertical</orientation>
-					<onleft>9000</onleft>
-					<onright>60</onright>
-					<onup>51</onup>
-					<ondown>51</ondown>
-					<viewtype label="List">list</viewtype>
-					<preloaditems>1</preloaditems>
-					<pagecontrol>60</pagecontrol>
-					<focusedlayout height="70" width="tvchannelslist_width">
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<right>0</right>
-							<bottom>0</bottom>
-							<texture colordiffuse="button_focus">lists/focus.png</texture>
-							<visible>Control.hasFocus(51)</visible>
-						</control>
-						<control type="progress">
-							<right>10</right>
-							<top>25</top>
-							<width>50</width>
-							<height>12</height>
-							<colordiffuse>88FFFFFF</colordiffuse>
-							<midtexture border="3">progress/texturebg_white.png</midtexture>
-							<visible>ListItem.HasEpg + !ListItem.IsRecording</visible>
-							<info>ListItem.Progress</info>
-						</control>
-						<control type="image">
-							<right>15</right>
-							<top>9</top>
-							<width>40</width>
-							<height>40</height>
-							<texture>$VAR[PVRStatusImageVar]</texture>
-						</control>
-						<control type="label">
-							<left>105</left>
-							<top>0</top>
-							<bottom>0</bottom>
-							<right>90</right>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-						<control type="label">
-							<left>320</left>
-							<top>0</top>
-							<bottom>0</bottom>
-							<right>90</right>
-							<aligny>center</aligny>
-							<align>right</align>
-							<label>$INFO[ListItem.Title]</label>
-						</control>
-						<control type="label">
-							<left>12</left>
-							<top>0</top>
-							<bottom>0</bottom>
-							<width>75</width>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>font32_title</font>
-							<label>$INFO[ListItem.ChannelNumberLabel]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-						</control>
-					</focusedlayout>
-					<itemlayout height="70" width="tvchannelslist_width">
-						<control type="progress">
-							<right>10</right>
-							<top>25</top>
-							<width>50</width>
-							<height>12</height>
-							<colordiffuse>88FFFFFF</colordiffuse>
-							<visible>ListItem.HasEpg + !ListItem.IsRecording</visible>
-							<info>ListItem.Progress</info>
-						</control>
-						<control type="image">
-							<right>15</right>
-							<top>9</top>
-							<width>40</width>
-							<height>40</height>
-							<texture>$VAR[PVRStatusImageVar]</texture>
-						</control>
-						<control type="label">
-							<left>105</left>
-							<top>0</top>
-							<bottom>0</bottom>
-							<right>90</right>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-						</control>
-						<control type="label">
-							<left>320</left>
-							<top>0</top>
-							<bottom>0</bottom>
-							<right>90</right>
-							<aligny>center</aligny>
-							<align>right</align>
-							<label>$INFO[ListItem.Title]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-							<textcolor>grey</textcolor>
-						</control>
-						<control type="label">
-							<left>12</left>
-							<top>0</top>
-							<bottom>0</bottom>
-							<width>75</width>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>font32_title</font>
-							<label>$INFO[ListItem.ChannelNumberLabel]</label>
-							<textcolor>grey</textcolor>
-							<shadowcolor>text_shadow</shadowcolor>
-						</control>
-					</itemlayout>
-				</control>
 			</control>
 			<control type="group">
 				<depth>DepthContentPanel</depth>
@@ -374,7 +262,7 @@
 							<info>ListItem.Progress</info>
 						</control>
 						<control type="image">
-							<left>150</left>
+							<left>0</left>
 							<top>25</top>
 							<width>40</width>
 							<height>40</height>
@@ -432,7 +320,7 @@
 							<info>ListItem.Progress</info>
 						</control>
 						<control type="image">
-							<right>110</right>
+							<left>0</left>
 							<top>25</top>
 							<width>40</width>
 							<height>40</height>

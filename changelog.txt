@@ -1,5 +1,13 @@
-﻿[B]3.7.2[/B]
-• ###########Globalsearch angepasst 
+﻿[B]3.7.3[/B]
+• Fehler in der musicvisualisation korrigiert (playlist anzeige wägrend radio empfang)
+• Aufnahme / geplante aufnahme Icon Position korrigiert
+• Pvr Kanäle Ansicht, Pfeile angepasst an den Skin
+• Favoriten zu Widget auswahl hinzugefügt
+• Listen layout geändert, Home + Settings
+• Script German telecast Offer eingebaut, muss aber erst unter Skin aktiviert werden.
+
+
+[B]3.7.2[/B]
 • Hauptmenü Sublabels korrigiert (wurden leer angezeigt)
 • Setview Rating auch für Filme im Set hinzugefügt (sobald diese makiert sind)
 • Setview FSK hinzugefügt (auf dem Cover)

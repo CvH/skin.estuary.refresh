@@ -981,7 +981,7 @@
 				<label>Scaper wählen</label>
 				<onclick>XBMC.RunScript(plugin.service.gto,action=change_scraper)</onclick>
 				<thumb>newspaper.png</thumb>
-                <visible>Skin.HasSetting(gto_aktiviert)</visible>
+                <visible>Skin.HasSetting(gto_aktiviert) + System.hasaddon(plugin.service.gto)</visible>
 			</item>
             
            

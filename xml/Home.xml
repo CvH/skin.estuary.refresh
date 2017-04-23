@@ -44,137 +44,19 @@
 					<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 				</animation>
 				<include>OpenClose_Right</include>
-                <!-- CUSTOM MENU 1 WIDGET 1 -->
-				<control type="group" id="99999">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custommenu1)</visible>
-					<include content="Visible_Right_Delayed">
-					<param name="id" value="custommenu1"/>
-					</include>
-					<control type="grouplist" id="9999">
-						<include>WidgetGroupListCommon</include>
-						<!-- Video LAYOUT WIDGET1 Categories AUDIO / FILME / MUSIC / TVSHOWS / EPISODES-->
-						<include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serienkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filmkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien)|String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audiokategorien))"><!-- HEADER -->
-							<param name="content_path" value="$VAR[value_widget_header_kategorie]"/>
-							<param name="widget_header" value="Kategorien"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9900"/>
-						</include>
-                        <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9901"/>
-						</include>
-						<!-- Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audiokategorien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader1)]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="9902"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-                            <!-- Filme/Serien LAYOUT WIDGET1 -->
-						<include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9903"/>
-						</include>
-                        <!-- TEST widget 3 -->
-                        <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),episoden)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9904"/>
-						</include>
-						<!-- Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout3),audiokategorien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader3)]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="9905"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-                         <!-- Filme/Serien LAYOUT WIDGET1 -->
-						<include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout3),serien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9906"/>
-						</include>
-				</control>
-			</control>
-			<control type="group" id="99998">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custommenu2)</visible>
-					<include content="Visible_Right_Delayed">
-					<param name="id" value="custommenu2"/>
-					</include>
-                <control type="grouplist" id="9998">
-                    <include>WidgetGroupListCommon</include>
-                    <!-- Video LAYOUT WIDGET1 Categories AUDIO / FILME / MUSIC / TVSHOWS / EPISODES-->
-						<include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serienkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filmkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien)|String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audiokategorien))"><!-- HEADER -->
-							<param name="content_path" value="$VAR[value_widget_header_kategorie_2]"/>
-							<param name="widget_header" value="Kategorien"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="8900"/>
-						</include>
-                        <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="8901"/>
-						</include>
-						<!-- Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audiokategorien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader2)]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="8902"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-                          <!-- Filme/Serien LAYOUT WIDGET1 -->
-						<include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="8903"/>
-						</include>
-                        <!-- TEST WIDGET 3 -->
-                        <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),episoden)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="8904"/>
-						</include>
-						<!-- Serien LAYOUT WIDGET1 ENDE--> 
-						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout4),audiokategorien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader4)]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="8905"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-                        	<include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout4),serien)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="8906"/>
-						</include>
-                    </control>
-			</control>
-                <!-- CUSTOM MENU 2 WIDGET 2  ENDE--> 
+           
+              
 				<control type="group" id="5000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
-					<include content="Visible_Right_Delayed">
-						<param name="id" value="movies"/>
-                   </include>
-                    <control type="grouplist" id="5001">
-                        <include>WidgetGroupListCommon</include>
-                        <include content="WidgetListCategories_small" condition="Library.HasContent(movies)">
+                    <visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
+                    <include content="Visible_Right_Delayed">
+                        <param name="id" value="movies"/>
+                    </include>
+                <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_1)</visible>
+                <control type="grouplist" id="5001">
+                       <include>WidgetGroupListCommon</include>
+                       <!-- STANDARD MENU EINTAG -->
+                       <include content="WidgetListCategories_small" condition="Library.HasContent(movies)">
 							<param name="content_path" value="library://video/movies/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -219,20 +101,138 @@
 							<param name="sortby" value="random"/>
 							<param name="list_id" value="5600"/>
 						</include>
-					</control>
-					<include content="ImageWidget" condition="!Library.HasContent(movies)">
+                        <include content="ImageWidget" condition="!Library.HasContent(movies)">
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
 						<param name="button_id" value="5500"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
 					</include>
-				</control>
+                </control>
+               </control>
+                <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG FILME -->
+                <control type="group">
+                <visible>Skin.Hassetting(custommenu_1)</visible>
+                <control type="grouplist" id="5001">
+                       <include>WidgetGroupListCommon</include>
+                       <!-- WIDGET 1-->
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout1),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory1)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6016"/>
+                       </include>
+                      	<include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout1),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6017"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout1),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6018"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                        <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6019"/>
+						</include>
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6020"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6021"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6022"/>
+						</include>
+                        <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6023"/>
+						</include>
+                      
+                        <!-- WIDGET 2-->
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6024"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6025"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6026"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6027"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6028"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout3),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6029"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout3),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6030"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6031"/>
+						</include>
+                </control>
+               </control>
+              </control>
 				<control type="group" id="6000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="tvshows"/>,
                     </include>
+                    <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_2)</visible>
                     <control type="grouplist" id="6001">
 						<include>WidgetGroupListCommon</include>
 						<include content="WidgetListCategories_small" condition="Library.HasContent(tvshows)">
@@ -285,12 +285,130 @@
 						<param name="button_id" value="6400"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoTVShowButton)"/>
 					</include>
-				</control>
+                 </control>   
+				
+                 <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG FILME -->
+                <control type="group">
+                <visible>Skin.Hassetting(custommenu_2)</visible>
+                <control type="grouplist" id="5001">
+                       <include>WidgetGroupListCommon</include>
+                       <!-- WIDGET 1-->
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout2),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory2)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6032"/>
+						</include>
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout2),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6033"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout2),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6034"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                        <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6035"/>
+						</include>
+                      	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6036"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout4),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6037"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout4),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6038"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6039"/>
+						</include>
+                        <!-- WIDGET 2-->
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath5)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6040"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout5),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath5)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6041"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout5),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath5)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6042"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath5)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6043"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath6)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6044"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout6),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath6)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6045"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout6),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath6)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6046"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath6)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6047"/>
+						</include>
+                </control>
+               </control>
+               </control>
 				<control type="group" id="7000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="music"/>
 					</include>
+                     <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_3)</visible>
 					<control type="grouplist" id="7001">
 						<include>WidgetGroupListCommon</include>
 						<include content="WidgetListCategories_small" condition="Library.HasContent(music)">
@@ -343,20 +461,134 @@
 							<param name="sortby" value="playcount"/>
 							<param name="sortorder" value="descending"/>
 						</include>
+                        </control>
 					</control>
-					<include content="ImageWidget" condition="!Library.HasContent(music)">
-						<param name="text_label" value="$LOCALIZE[31104]" />
-						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(music,files)"/>
-						<param name="button_id" value="7600"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMusicButton)"/>
-					</include>
+                     <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG MUSIK -->
+                    <control type="group">
+                    <visible>Skin.Hassetting(custommenu_3)</visible>
+					<control type="grouplist" id="7001">
+						<include>WidgetGroupListCommon</include>
+                    
+                  <!-- WIDGET 1-->
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout3),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory4)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6048"/>
+						</include>
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout3),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6049"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout3),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6050"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                        <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6051"/>
+						</include>
+                      	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6052"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout8),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6053"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout8),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6054"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6055"/>
+						</include>
+                        <!-- WIDGET 2-->
+                      
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6056"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout9),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6057"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout9),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6058"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6059"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                    
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath10)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6060"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout10),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath10)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6061"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout10),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath10)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6062"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath10)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6063"/>
+						</include>
+                    </control>    
+                    </control>    
+					
 				</control>
 				<control type="group" id="8000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="addons"/>
 					</include>
+                    <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_7)</visible>
 					<control type="grouplist" id="8001">
 						<include>WidgetGroupListCommon</include>
 						<include content="WidgetListCategories_small">
@@ -410,6 +642,122 @@
 							<param name="list_id" value="8500"/>
 						</include>
 					</control>
+                    </control>
+                    <control type="group">
+                    <visible>Skin.Hassetting(custommenu_7)</visible>
+					<control type="grouplist" id="8001">
+						<include>WidgetGroupListCommon</include>
+                       <!-- WIDGET 1-->
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout7),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory7)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7009"/>
+                        </include>
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout7),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="7010"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout7),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="7011"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                           <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7012"/>
+						</include>
+                      	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7013"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout21),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="7014"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout21),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7015"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="7016"/>
+						</include>
+                        <!-- WIDGET 2-->
+                      
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath22)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7017"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout22),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath22)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="7018"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout22),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath22)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7019"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath22)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="7020"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                    
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath23)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7021"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout23),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath23)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="7022"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout23),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath23)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7023"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath23)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="7024"/>
+						</include>  
+                    </control>
+                    </control>
 					<include content="ImageWidget">
 						<param name="text_label" value="$LOCALIZE[31119]" />
 						<param name="button_label" value="$LOCALIZE[31118]" />
@@ -426,7 +774,7 @@
 					</include>
                   	<control type="grouplist" id="11001">
 						<include>WidgetGroupListCommon</include>
-						<include content="WidgetListCategories">
+						<include content="WidgetListCategories_small">
 							<param name="content_path" value="library://video/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -460,6 +808,8 @@
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="livetv"/>
 					</include>
+                     <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_5)</visible>
                   	<control type="grouplist" id="12001">
 						<include>WidgetGroupListCommon</include>
 						<control type="grouplist" id="12855">
@@ -515,16 +865,124 @@
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
-                        <include content="WidgetListChannels" condition="Skin.Hassetting(gto_aktiviert)">
-							<param name="content_path" value="plugin://plugin.service.gto?action=getcontent&amp;ts=$INFO[Window(Home).Property(GTO.timestamp)]"/>
-							<param name="widget_header" value="German Telecast Offer"/>
-							<param name="widget_target" value="pvr"/>
-							<param name="list_id" value="12400"/>
-							<param name="label" value="$INFO[ListItem.label]"/>
-							<param name="label2" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
-						</include>
+                    
 					</control>
-					<include content="ImageWidget" condition="!System.HasPVRAddon">
+                    </control>
+                    
+                    <control type="group">
+                    <visible>Skin.Hassetting(custommenu_5)</visible>
+                    	<control type="grouplist" id="12001">
+						<include>WidgetGroupListCommon</include>
+                      <!-- WIDGET 1-->
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout5),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory5)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6077"/>
+						</include>
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout5),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6078"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout5),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6079"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                        <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6080"/>
+						</include>
+                      	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6081"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout15),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6082"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout15),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6083"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6084"/>
+						</include>
+                        <!-- WIDGET 2-->
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6085"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout16),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6086"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout16),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6087"/>
+						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6088"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6089"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout17),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6090"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout17),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6091"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6092"/>
+						</include>
+                    </control>
+					  </control>
+                    <include content="ImageWidget" condition="!System.HasPVRAddon">
 						<param name="text_label" value="$LOCALIZE[31143]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
 						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://user/xbmc.pvrclient,return)"/>
@@ -537,6 +995,8 @@
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="radio"/>
 					</include>
+                    <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_6)</visible>
                   	<control type="grouplist" id="13001">
 						<include>WidgetGroupListCommon</include>
 						<control type="grouplist" id="13855">
@@ -582,6 +1042,7 @@
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="13200"/>
 						</include>
+                      
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://recordings/radio/active?view=flat"/>
 							<param name="sortby" value="date"/>
@@ -592,7 +1053,123 @@
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                    </control>
 					</control>
+                    
+                    <control type="group">
+                    <visible>Skin.Hassetting(custommenu_6)</visible>
+                  	<control type="grouplist" id="13001">
+						<include>WidgetGroupListCommon</include>
+                    
+                       <!-- WIDGET 1-->
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout6),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory6)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6093"/>
+						</include>
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout6),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6094"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout6),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6095"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                           <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6096"/>
+						</include>
+                      	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6097"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout18),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6098"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout18),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6099"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="7000"/>
+						</include>
+                        <!-- WIDGET 2-->
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7001"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout19),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath19)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="7002"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout19),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath19)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7003"/>
+						</include>
+                           <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath19)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="7004"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7005"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout20),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="7006"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout20),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="7007"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="7008"/>
+						</include>
+                    </control>    
+                    </control>
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
 						<param name="text_label" value="$LOCALIZE[31143]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
@@ -606,6 +1183,8 @@
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="favorites"/>
 					</include>
+                    <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_0)</visible>
                    	<control type="panel" id="14100">
 						<left>65</left>
 						<top>0</top>
@@ -643,6 +1222,123 @@
 						</focusedlayout>
 						<content>favourites://</content>
 					</control>
+                    </control>
+                    <control type="group">
+                    <visible>Skin.Hassetting(custommenu_0)</visible>
+                  	<control type="grouplist" id="14100">
+						<include>WidgetGroupListCommon</include>
+                     <!-- WIDGET 1-->
+                       <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory0)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6000"/>
+                        </include>
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6001"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6002"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                            <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6003"/>
+						</include>
+                      	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6004"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout24),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6005"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout24),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6006"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="widget_target" value="files"/>
+                            <param name="label2" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+							<param name="list_id" value="6007"/>
+						</include>
+                        <!-- WIDGET 2-->
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath25)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6008"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout25),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath25)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6009"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout25),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath25)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6010"/>
+						</include>
+                           <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath25)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6011"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath26)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6012"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout26),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath26)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6013"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout26),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath26)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6014"/>
+						</include>
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath26)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="6015"/>
+						</include>
+                     
+                     
+                     </control>    
+                     </control>    
 					<include content="ImageWidget">
 						<param name="text_label" value="$LOCALIZE[31025]" />
 						<param name="button_label" value="$LOCALIZE[31116]" />
@@ -752,6 +1448,8 @@
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="musicvideos"/>
 					</include>
+                    <control type="group">
+                    <visible>!Skin.Hassetting(custommenu_4)</visible>
                     <control type="grouplist" id="16001">
 						<include>WidgetGroupListCommon</include>
 						<include content="WidgetListCategories_small" condition="Library.HasContent(musicvideos)">
@@ -805,14 +1503,112 @@
 							<param name="icon" value="$VAR[WidgetStudioIconVar]"/>
 							<param name="icon_height" value="70"/>
 						</include>
-					</control>
-					<include content="ImageWidget" condition="!Library.HasContent(musicvideos)">
+                        <include content="ImageWidget" condition="!Library.HasContent(musicvideos)">
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
 						<param name="button_id" value="16800"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMusicVideoButton)"/>
-					</include>
+                        </include>
+					</control>
+                    </control>
+                    
+                    <control type="group">
+                    <visible>Skin.Hassetting(custommenu_4)</visible>
+					<control type="grouplist" id="16001">
+						<include>WidgetGroupListCommon</include>
+                    
+                  <!-- WIDGET 1-->
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout4),category_widget)">
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory4)]"/>
+							<param name="widget_header" value="Kategorien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6064"/>
+						</include>
+                        <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout4),pvr_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6065"/>
+                            <param name="pvr_submenu" value="true"/>
+							<param name="pvr_type" value="TV"/>
+                        </include>
+                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout4),addons_widget)">
+							<param name="widget_header" value="Kategorien"/>
+							<param name="list_id" value="6066"/>
+                            <param name="addon_submenu" value="true"/>
+                        </include>
+                        <include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),video_source)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6067"/>
+						</include>
+                      	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6068"/>
+						</include>
+						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout11),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6069"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout11),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6070"/>
+						</include>
+                        <!-- WIDGET 2-->
+                      
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6071"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout12),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6072"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout12),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6073"/>
+						</include>
+                        <!-- WIDGET 3 -->
+                    
+                        <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6074"/>
+						</include>
+                        <include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout13),audiokategorien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="6075"/>
+							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
+						</include>
+                        <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout13),serien)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6076"/>
+						</include>
+                    </control>    
+                    </control>    
+                    
+                    
+                    
+					
 				</control>
 				<control type="group" id="4000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>

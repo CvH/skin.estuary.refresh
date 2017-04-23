@@ -1,4 +1,8 @@
-﻿[B]3.7.6[/B]
+﻿[B]3.7.7[/B]
+• Widgets hinzugefügt (Library Data Provider) (Zufällige(Lieder) / Angefangene(Alben) / Zufällige(Alben) / Neue(Alben) / Angefangene (Episoden))
+
+
+[B]3.7.6[/B]
 • Fehler in der Menüerstellung behoben (Widget Kategorie wurde nicht angezeigt unter music)
 
 [B]3.7.5[/B]

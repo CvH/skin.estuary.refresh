@@ -101,15 +101,16 @@
 							<param name="sortby" value="random"/>
 							<param name="list_id" value="5600"/>
 						</include>
-                        <include content="ImageWidget" condition="!Library.HasContent(movies)">
+                     
+                </control>
+               </control>
+                  <include content="ImageWidget" condition="!Library.HasContent(movies)">
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
 						<param name="button_id" value="5500"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
 					</include>
-                </control>
-               </control>
                 <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG FILME -->
                 <control type="group">
                 <visible>Skin.Hassetting(custommenu_1)</visible>
@@ -139,6 +140,41 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6019"/>
 						</include>
+                        <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3780"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
+                        <!-- PINBOARD Filme / Serien  -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="list_id" value="3040"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="list_id" value="3041"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="list_id" value="3046"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
+							<param name="list_id" value="3047"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
@@ -165,7 +201,10 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6023"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                       
                       
                         <!-- WIDGET 2-->
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden)">
@@ -181,6 +220,32 @@
 							<param name="list_id" value="6025"/>
 							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
 						</include>
+                        <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3042"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3043"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3048"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3049"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
                         <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
@@ -194,6 +259,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6027"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),episoden)">
@@ -209,6 +276,32 @@
 							<param name="list_id" value="6029"/>
 							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
 						</include>
+                   <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="list_id" value="3044"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="list_id" value="3045"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="list_id" value="3050"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
+							<param name="list_id" value="3051"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
                         <include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout3),serien)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
@@ -222,6 +315,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6031"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                 </control>
                </control>
@@ -316,6 +411,39 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6035"/>
 						</include>
+                        <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3052"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3053"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3054"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
+							<param name="list_id" value="3055"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3782"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
@@ -335,15 +463,42 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6038"/>
 						</include>
-                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),radio_tv)">
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4,radio_tv)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
 							<param name="sortby" value="lastplayed"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6039"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
+                        <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="list_id" value="3056"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="list_id" value="3057"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="list_id" value="3058"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
+							<param name="list_id" value="3059"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout5),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath5)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
@@ -370,8 +525,35 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader5)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6043"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
+                          <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="list_id" value="3060"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="list_id" value="3061"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="list_id" value="3062"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
+							<param name="list_id" value="3063"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout6),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath6)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
@@ -398,6 +580,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader6)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6047"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                 </control>
                </control>
@@ -465,7 +649,7 @@
 					</control>
                      <!-- EIGENER MENU EINTAG ERSETZT DEN STANDARD MENU EINTRAG MUSIK -->
                     <control type="group">
-                    <visible>Skin.Hassetting(custommenu_3)</visible>
+                    <visible>Skin.Hassetting(custommenu_3custommenu_3)</visible>
 					<control type="grouplist" id="7001">
 						<include>WidgetGroupListCommon</include>
                     
@@ -493,6 +677,39 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6051"/>
 						</include>
+                         <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="list_id" value="3064"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="list_id" value="3065"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="list_id" value="3066"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+							<param name="list_id" value="3067"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3784"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout8),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath8)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
@@ -519,9 +736,35 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader8)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6055"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
-                      
+                              <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="list_id" value="3068"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="list_id" value="3069"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="list_id" value="3070"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="list_id" value="3071"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout9),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
@@ -548,9 +791,35 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6059"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
-                    
+                           <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="list_id" value="3072"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="list_id" value="3073"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="list_id" value="3074"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
+							<param name="list_id" value="3075"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout10),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath10)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
@@ -577,6 +846,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader10)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6063"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                     </control>    
                     </control>    
@@ -671,6 +942,39 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="7012"/>
 						</include>
+                              <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="list_id" value="3112"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="list_id" value="3113"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="list_id" value="3114"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+							<param name="list_id" value="3115"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3779"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout21),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath21)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
@@ -697,9 +1001,35 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader21)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7016"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
-                      
+                              <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="list_id" value="3116"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="list_id" value="3117"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="list_id" value="3118"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
+							<param name="list_id" value="3119"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout22),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath22)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
@@ -726,9 +1056,35 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader22)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7020"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
-                    
+                            <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="list_id" value="3120"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="list_id" value="3121"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="list_id" value="3122"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
+							<param name="list_id" value="3123"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout23),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath23)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
@@ -755,6 +1111,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader23)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7024"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>  
                     </control>
                     </control>
@@ -897,6 +1255,39 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6080"/>
 						</include>
+                            <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="list_id" value="3088"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="list_id" value="3089"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="list_id" value="3090"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+							<param name="list_id" value="3091"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3776"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout15),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath15)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
@@ -923,8 +1314,43 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader15)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6084"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
+                               <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="list_id" value="3092"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="list_id" value="3093"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="list_id" value="3094"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="list_id" value="3095"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3805"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout16),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
@@ -951,8 +1377,43 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6088"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 3 -->
+                      <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="list_id" value="3096"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="list_id" value="3097"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="list_id" value="3098"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+							<param name="list_id" value="3099"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3806"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout17),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath17)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
@@ -979,6 +1440,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader17)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6092"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                     </control>
 					  </control>
@@ -1085,6 +1548,39 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6096"/>
 						</include>
+                             <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="list_id" value="3100"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="list_id" value="3101"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="list_id" value="3102"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+							<param name="list_id" value="3103"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3778"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout18),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath18)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
@@ -1110,12 +1606,39 @@
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader18)]"/>
 							<param name="widget_target" value="files"/>
-							<param name="list_id" value="7000"/>
+							<param name="list_id" value="6998"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                         <!-- WIDGET 2-->
+                             <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+							<param name="list_id" value="3104"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+							<param name="list_id" value="3105"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+							<param name="list_id" value="3106"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+							<param name="list_id" value="3107"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),episoden)">
-							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath16)]"/>
-							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader16)]"/>
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath19)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="7001"/>
 						</include>
@@ -1139,8 +1662,43 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7004"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout19),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath19)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader19)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3806"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                         <!-- WIDGET 3 -->
+                                <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="list_id" value="3108"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="list_id" value="3109"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="list_id" value="3110"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+							<param name="list_id" value="3111"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
@@ -1167,7 +1725,17 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="7008"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout20),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath20)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader20)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3807"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                     </control>    
                     </control>
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
@@ -1232,7 +1800,7 @@
 							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory0)]"/>
 							<param name="widget_header" value="Kategorien"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6000"/>
+							<param name="list_id" value="5999"/>
                         </include>
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout0),pvr_widget)">
 							<param name="widget_header" value="Kategorien"/>
@@ -1251,6 +1819,39 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6003"/>
 						</include>
+                             <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="list_id" value="3124"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="list_id" value="3125"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="list_id" value="3126"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+							<param name="list_id" value="3127"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3781"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout24),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath24)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
@@ -1276,10 +1877,36 @@
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader24)]"/>
 							<param name="widget_target" value="files"/>
-                            <param name="label2" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 							<param name="list_id" value="6007"/>
 						</include>
                         <!-- WIDGET 2-->
+                            <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="list_id" value="3128"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="list_id" value="3129"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="list_id" value="3130"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
+							<param name="list_id" value="3131"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout25),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath25)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader25)]"/>
@@ -1308,6 +1935,31 @@
 							<param name="list_id" value="6011"/>
 						</include>
                         <!-- WIDGET 3 -->
+                        <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="list_id" value="3132"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="list_id" value="3133"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="list_id" value="3134"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
+							<param name="list_id" value="3135"/>
+                         	<param name="addon_content" value="true"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout26),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath26)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
@@ -1334,6 +1986,8 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader26)]"/>
 							<param name="widget_target" value="files"/>
 							<param name="list_id" value="6015"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                      
                      
@@ -1542,6 +2196,39 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6067"/>
 						</include>
+                            <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="list_id" value="3076"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="list_id" value="3077"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="list_id" value="3078"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+							<param name="list_id" value="3079"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                         <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3775"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                       	<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath11)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader11)]"/>
@@ -1561,11 +2248,54 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6070"/>
 						</include>
-                        <!-- WIDGET 2-->
-                      
-						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),episoden)">
+                          <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout11),radio_tv)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath9)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader9)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="2400"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
+						</include>
+                        <!-- WIDGET 2-->
+                        
+                            <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="list_id" value="3080"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="list_id" value="3081"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="list_id" value="3082"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="list_id" value="3083"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                       <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3776"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
+						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),episoden)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6071"/>
 						</include>
@@ -1582,8 +2312,51 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6073"/>
 						</include>
+                           <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout12),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath12)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader12)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="2401"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
+						</include>
                         <!-- WIDGET 3 -->
-                    
+                        
+                            <!-- PINBOARD Filme / Serien -->
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),pinboard_movies)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="list_id" value="3084"/>
+                            <param name="movie_content" value="true"/>
+                            <param name="list_type" value="movie"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_movies_tvshows" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),pinboard_tvshows)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="list_id" value="3085"/>
+                            <param name="tvshow_content" value="true"/>
+                        </include>
+                        <!-- PINBOARD  -->
+                        <!-- PINBOARD Musik / Addons  -->
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),pinboard_musik)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="list_id" value="3086"/>
+                            <param name="musik_content" value="true"/>
+                            <param name="list_type" value="musik"/>
+                        </include>
+                        <include content="WidgetListPoster_pinboard_music_addons" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),pinboard_addons)">
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="list_id" value="3087"/>
+                            <param name="addon_content" value="true"/>
+                        </include>
+                      <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),widget_gto)">
+                            <param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+                            <param name="widget_target" value="pvr"/>
+                            <param name="list_id" value="3777"/>
+                            <param name="label" value="$INFO[ListItem.label2]$INFO[ListItem.Property(StartTime), (,)]"/>
+                            <param name="label2" value="$INFO[ListItem.label]"/>
+                        </include>
                         <include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
@@ -1602,6 +2375,16 @@
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6076"/>
+						</include>
+                           <include content="WidgetListChannels" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout13),radio_tv)">
+							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath13)]"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader13)]"/>
+							<param name="widget_target" value="files"/>
+							<param name="list_id" value="2402"/>
+                            <param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>
                     </control>    
                     </control>    
@@ -1666,7 +2449,7 @@
 								<width>462</width>
 								<height>95</height>
 								<texture colordiffuse="button_focus">lists/focus.png</texture>
-								<animation effect="fade" start="100" end="20" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog">Conditional</animation>
+								<animation effect="fade" start="100" end="20" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog | Control.hasfocus(804) | Control.hasfocus(802) | Control.hasfocus(801)">Conditional</animation>
 							</control>
                         <control type="group">
 							<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
@@ -1698,13 +2481,14 @@
 						</control>
 						<control type="label">
 							<left>104</left>
-							<top>-15</top>
+							<top>0</top>
 							<height>95</height>
 							<width>560</width>
 							<aligny>center</aligny>
 							<font>font37</font>
 							<label>[B]$INFO[ListItem.Label][/B]</label>
 							<shadowcolor>text_shadow</shadowcolor>
+                            <animation effect="slide" start="0,0" end="0,-15" time="0" condition="!String.IsEmpty(ListItem.Label2)">Conditional</animation>
 						</control>
                         <control type="label">
 							<left>104</left>
@@ -1812,6 +2596,7 @@
 					<texture>icons/logo-text.png</texture>
 				</control>
 			</control>
+       
 			<control type="rss">
 				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>

@@ -593,7 +593,7 @@
 		<ondown>1000</ondown>
 		<include content="DefaultDialogButton">
 			<param name="id" value="9" />
-			<param name="label" value="$LOCALIZE[40014]" />
+			<param name="label" value="$LOCALIZE[24020]" />
             <param name="onclick" value="Dialog.Close(1890)" />
 			<param name="onclick_2" value="ActivateWindow(1891)" />
 		</include>

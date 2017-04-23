@@ -725,3 +725,115 @@ msgstr ""
 msgctxt "#31161"
 msgid "Numeric pad"
 msgstr ""
+
+msgctxt "#40000"
+msgid "customise"
+msgstr ""
+
+msgctxt "#40001"
+msgid "Customise homemenu"
+msgstr ""
+
+msgctxt "#40002"
+msgid "Edit home menu entry"
+msgstr ""
+
+msgctxt "#40003"
+msgid "Edit sublabel"
+msgstr ""
+
+msgctxt "#40004"
+msgid "Edit category widget"
+msgstr ""
+
+msgctxt "#40005"
+msgid "Enable this option to replace the menu item with custom widgets."
+msgstr ""
+
+msgctxt "#40006"
+msgid "Choose the [B]Onclick[/B], [B]Name[/B] and [B]Icon[/B] of your own home menu item.[CR]You can choose any available category independently from the later defined widgets."
+msgstr ""
+
+msgctxt "#40007"
+msgid "Here you can select name and reset your own widgets."
+msgstr ""
+
+msgctxt "#40008"
+msgid "Here you can set the category widget, that is the widget which is shown at first place at the top over the widgets. And defined which category the menu item belongs to."
+msgstr ""
+
+msgctxt "#40009"
+msgid "Here you can select the sublabels of your own home menu item."
+msgstr ""
+
+msgctxt "#40010"
+msgid "Show pinboard"
+msgstr ""
+
+msgctxt "#40011"
+msgid "Add to pinboard"
+msgstr ""
+
+msgctxt "#40012"
+msgid "All items full"
+msgstr ""
+
+msgctxt "#40013"
+msgid "Pinboard items"
+msgstr ""
+
+msgctxt "#40014"
+msgid "Random episodes"
+msgstr ""
+
+msgctxt "#40015"
+msgid "Close"
+msgstr ""
+
+msgctxt "#40016"
+msgid "Here you organise the pinboard items."
+msgstr ""
+
+msgctxt "#40017"
+msgid "Configure the pinboard items"
+msgstr ""
+
+msgctxt "#40018"
+msgid "Click on the name to delete the item."
+msgstr ""
+
+msgctxt "#40019"
+msgid "Add item"
+msgstr ""
+
+msgctxt "#40020"
+msgid "Pinboard"
+msgstr ""
+
+msgctxt "#40021"
+msgid "German Telecast Offers"
+msgstr ""
+
+msgctxt "#40022"
+msgid "PinBoard - Music"
+msgstr ""
+
+msgctxt "#40023"
+msgid "Use Add-on"
+msgstr ""
+
+msgctxt "#40024"
+msgid "Own"
+msgstr ""
+
+msgctxt "#40025"
+msgid "Number of"
+msgstr ""
+
+msgctxt "#40026"
+msgid "Number of watched"
+msgstr ""
+
+msgctxt "#40027"
+msgid "Number of unwatched"
+msgstr ""

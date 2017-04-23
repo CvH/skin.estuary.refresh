@@ -195,6 +195,7 @@
 						<textcolor>button_focus</textcolor>
 						<shadowcolor>black</shadowcolor>
 					</control>
+                   
 				</control>
 				<control type="grouplist">
 					<description>Build date</description>
@@ -217,6 +218,30 @@
 						<font>font12</font>
 						<textcolor>button_focus</textcolor>
 						<shadowcolor>black</shadowcolor>
+					</control>
+				</control>
+                <control type="grouplist">
+					<description>Skin Version</description>
+					<itemgap>10</itemgap>
+					<top>160</top>
+					<left>1210</left>
+					<width>800</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<description>kodi Compiled Text</description>
+						<width>auto</width>
+						<height>25</height>
+						<label>Skin Version:</label>
+						<font>font12</font>
+						<shadowcolor>black</shadowcolor>
+					</control>
+					<control type="label" id="53">
+						<description>Kodi Build Date</description>
+						<width>auto</width>
+						<font>font12</font>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>black</shadowcolor>
+                        <label>3.7.1</label>
 					</control>
 				</control>
 			</control>

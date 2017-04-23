@@ -47,6 +47,7 @@
                        
 						<item>
 							<label>$LOCALIZE[342]</label>
+                            <label2>[B]$INFO[Window.Property(Movies.Count),,[/B] (]$INFO[Window.Property(Movies.UnWatched,, ungesehen)]</label2>
 							<onclick condition="Library.HasContent(movies)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 							<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
@@ -56,6 +57,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[20343]</label>
+                            <label2>[B]$INFO[Window.Property(Tvshows.Count),,[/B] (]$INFO[Window.Property(Tvshows.UnWatched,, ungesehen)]</label2>
 							<onclick condition="Library.HasContent(tvshows)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 							<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
 							<property name="menu_id">$NUMBER[6000]</property>
@@ -65,6 +67,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[2]</label>
+                            <label2>$INFO[Window.Property(Music.AlbumsCount),Alben:, (]$INFO[Window.Property(Music.SongsCount),Lieder:,) ]</label2>
 							<onclick>ActivateWindow(Music,root,return)</onclick>
 							<property name="menu_id">$NUMBER[7000]</property>
 							<thumb>icons/sidemenu/music.png</thumb>
@@ -81,6 +84,7 @@
 						</item>
                        <item>
 							<label>$LOCALIZE[20389]</label>
+                            <label2>[B]$INFO[Window.Property(MusicVideos.Count),,[/B](]$INFO[Window.Property(MusicVideos.UnWatched),, ungesehen) ]</label2>
 							<property name="menu_id">$NUMBER[16000]</property>
 							<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
 							<thumb>icons/sidemenu/musicvideos.png</thumb>
@@ -89,8 +93,9 @@
 						</item>
                        <item>
 							<label>$LOCALIZE[19020]</label>
+                            <label2>[B]$INFO[Pvr.BackendChannels,,[/B] Kanäle]</label2>
 							<property name="menu_id">$NUMBER[12000]</property>
-							<onclick>ActivateWindow(TVChannels)</onclick>
+							<onclick>ActivateWindow(TVChannels)</onclick>  
 							<thumb>icons/sidemenu/livetv.png</thumb>
 							<property name="id">livetv</property>
 							<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
@@ -153,6 +158,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[8]</label>
+                            <label2>[B]$INFO[Weather.Location,,[/B]]</label2>
 							<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
 							<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
 							<property name="menu_id">$NUMBER[15000]</property>
@@ -980,25 +986,25 @@
 		<param name="animation">False</param>
 		<definition>
 			<control type="group">
-				<visible>!String.IsEmpty(ListItem.UserRating)</visible>
+				<visible>!String.IsEmpty(ListItem.Rating)</visible>
 				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
 				<control type="image">
 					<left>3</left>
 					<top>-3</top>
-					<width>44</width>
-					<height>44</height>
+					<width>55</width>
+					<height>55</height>
 					<aspectratio>keep</aspectratio>
-					<texture colordiffuse="button_focus">overlays/badge.png</texture>
+					<texture colordiffuse="button_focus">badge.png</texture>
 				</control>
 				<control type="label">
 					<left>3</left>
 					<top>-3</top>
 					<align>center</align>
 					<aligny>center</aligny>
-					<width>44</width>
-					<height>44</height>
+					<width>55</width>
+					<height>55</height>
 					<font>font20_title</font>
-					<label>$INFO[ListItem.UserRating]</label>
+					<label>$INFO[ListItem.Rating]</label>
 				</control>
 			</control>
 		</definition>

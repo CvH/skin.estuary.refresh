@@ -53,25 +53,25 @@
 					<control type="grouplist" id="9999">
 						<include>WidgetGroupListCommon</include>
 						<!-- Video LAYOUT WIDGET1 Categories AUDIO / FILME / MUSIC / TVSHOWS / EPISODES-->
-						<include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serienkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filmkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien)|String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audiokategorien))"><!-- HEADER -->
+						<include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serienkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filmkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),filme) |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),serien)|String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio |String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audiokategorien))"><!-- HEADER -->
 							<param name="content_path" value="$VAR[value_widget_header_kategorie]"/>
 							<param name="widget_header" value="Kategorien"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5900"/>
+							<param name="list_id" value="9900"/>
 						</include>
                         <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
+							<param name="list_id" value="9901"/>
 						</include>
 						<!-- Serien LAYOUT WIDGET1 ENDE--> 
 						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout1),audiokategorien)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader1)]"/>
 							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7100"/>
+							<param name="list_id" value="9902"/>
 							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
 						</include>
                             <!-- Filme/Serien LAYOUT WIDGET1 -->
@@ -79,7 +79,7 @@
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath1)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader1)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9100"/>
+							<param name="list_id" value="9903"/>
 						</include>
                         <!-- TEST widget 3 -->
                         <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
@@ -87,14 +87,14 @@
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
+							<param name="list_id" value="9904"/>
 						</include>
 						<!-- Serien LAYOUT WIDGET1 ENDE--> 
 						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout3),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout3),audiokategorien)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader3)]"/>
 							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7100"/>
+							<param name="list_id" value="9905"/>
 							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
 						</include>
                          <!-- Filme/Serien LAYOUT WIDGET1 -->
@@ -102,7 +102,7 @@
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath3)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader3)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9100"/>
+							<param name="list_id" value="9906"/>
 						</include>
 				</control>
 			</control>
@@ -114,25 +114,25 @@
                 <control type="grouplist" id="9998">
                     <include>WidgetGroupListCommon</include>
                     <!-- Video LAYOUT WIDGET1 Categories AUDIO / FILME / MUSIC / TVSHOWS / EPISODES-->
-						<include content="WidgetListCategories" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serienkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filmkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien)|String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audiokategorien))"><!-- HEADER -->
+						<include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serienkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filmkategorien) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),filme) |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),serien)|String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio |String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audiokategorien))"><!-- HEADER -->
 							<param name="content_path" value="$VAR[value_widget_header_kategorie_2]"/>
 							<param name="widget_header" value="Kategorien"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5900"/>
+							<param name="list_id" value="8900"/>
 						</include>
                         <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
 						<include content="WidgetListEpisodes" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),episoden)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
+							<param name="list_id" value="8901"/>
 						</include>
 						<!-- Serien LAYOUT WIDGET1 ENDE--> 
 						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout2),audiokategorien)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader2)]"/>
 							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7100"/>
+							<param name="list_id" value="8902"/>
 							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
 						</include>
                           <!-- Filme/Serien LAYOUT WIDGET1 -->
@@ -140,7 +140,7 @@
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath2)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader2)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9100"/>
+							<param name="list_id" value="8903"/>
 						</include>
                         <!-- TEST WIDGET 3 -->
                         <!-- Filme/Serien LAYOUT WIDGET1 ENDE--> 
@@ -148,21 +148,21 @@
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
+							<param name="list_id" value="8904"/>
 						</include>
 						<!-- Serien LAYOUT WIDGET1 ENDE--> 
 						<include content="WidgetListSquare" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),audio) | String.IsEqual(Skin.String(CustomHome1WidgetLayout4),audiokategorien)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome2WidgetHeader4)]"/>
 							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7100"/>
+							<param name="list_id" value="8905"/>
 							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
 						</include>
                         	<include content="WidgetListPoster" condition="String.IsEqual(Skin.String(CustomHome1WidgetLayout4),filme) | String.IsEqual(Skin.String(CustomHome1WidgetLayout4),serien)">
 							<param name="content_path" value="$INFO[Skin.String(CustomHome1WidgetPath4)]"/>
 							<param name="widget_header" value="$INFO[Skin.String(CustomHome1WidgetHeader4)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="9100"/>
+							<param name="list_id" value="8906"/>
 						</include>
                     </control>
 			</control>
@@ -174,7 +174,7 @@
                    </include>
                     <control type="grouplist" id="5001">
                         <include>WidgetGroupListCommon</include>
-                        <include content="WidgetListCategories" condition="Library.HasContent(movies)">
+                        <include content="WidgetListCategories_small" condition="Library.HasContent(movies)">
 							<param name="content_path" value="library://video/movies/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -235,7 +235,7 @@
                     </include>
                     <control type="grouplist" id="6001">
 						<include>WidgetGroupListCommon</include>
-						<include content="WidgetListCategories" condition="Library.HasContent(tvshows)">
+						<include content="WidgetListCategories_small" condition="Library.HasContent(tvshows)">
 							<param name="content_path" value="library://video/tvshows/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -293,7 +293,7 @@
 					</include>
 					<control type="grouplist" id="7001">
 						<include>WidgetGroupListCommon</include>
-						<include content="WidgetListCategories" condition="Library.HasContent(music)">
+						<include content="WidgetListCategories_small" condition="Library.HasContent(music)">
 							<param name="content_path" value="library://music/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="music"/>
@@ -359,7 +359,7 @@
 					</include>
 					<control type="grouplist" id="8001">
 						<include>WidgetGroupListCommon</include>
-						<include content="WidgetListCategories">
+						<include content="WidgetListCategories_small">
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="8900"/>
 							<param name="visible" value="Integer.IsGreater(Container(8100).NumItems,0) | Integer.IsGreater(Container(8200).NumItems,0) | Integer.IsGreater(Container(8300).NumItems,0) | Integer.IsGreater(Container(8400).NumItems,0) | Integer.IsGreater(Container(8500).NumItems,0)"/>
@@ -491,7 +491,7 @@
 								</include>
 							</control>
 						</control>
-						<include content="WidgetListCategories" condition="System.HasPVRAddon">
+						<include content="WidgetListCategories_small" condition="System.HasPVRAddon">
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="12900"/>
 							<param name="pvr_submenu" value="true"/>
@@ -560,7 +560,7 @@
 								</include>
 							</control>
 						</control>
-						<include content="WidgetListCategories" condition="System.HasPVRAddon">
+						<include content="WidgetListCategories_small" condition="System.HasPVRAddon">
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="13900"/>
 							<param name="pvr_submenu" value="true"/>
@@ -746,7 +746,7 @@
 					</include>
                     <control type="grouplist" id="16001">
 						<include>WidgetGroupListCommon</include>
-						<include content="WidgetListCategories" condition="Library.HasContent(musicvideos)">
+						<include content="WidgetListCategories_small" condition="Library.HasContent(musicvideos)">
 							<param name="content_path" value="library://music/musicvideos/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -813,7 +813,7 @@
 					</include>
                     <control type="grouplist" id="4001">
 						<include>WidgetGroupListCommon</include>
-						<include content="WidgetListCategories" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
+						<include content="WidgetListCategories_small" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
 							<param name="content_path" value="sources://pictures/"/>
 							<param name="widget_header" value="$LOCALIZE[20094]"/>
 							<param name="widget_target" value="pictures"/>
@@ -892,12 +892,22 @@
 						</control>
 						<control type="label">
 							<left>104</left>
-							<top>0</top>
+							<top>-15</top>
 							<height>95</height>
 							<width>560</width>
 							<aligny>center</aligny>
 							<font>font37</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+                        <control type="label">
+							<left>104</left>
+							<top>20</top>
+							<height>95</height>
+							<width>560</width>
+							<aligny>center</aligny>
+							<font>font12</font>
+							<label>$INFO[ListItem.Label2]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 					</focusedlayout>

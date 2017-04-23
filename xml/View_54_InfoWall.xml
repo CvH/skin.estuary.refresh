@@ -281,9 +281,11 @@
 					<width>270</width>
 					<height>270</height>
 					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio>scale</aspectratio>
+					<bordertexture border="20">globalsearch-shadow.png</bordertexture>
+                    <aspectratio>scale</aspectratio>
 					<bordersize>20</bordersize>
 				</control>
+                	
 			</control>
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
@@ -305,9 +307,10 @@
 					<height>400</height>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
 					<aspectratio>scale</aspectratio>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordertexture border="20">globalsearch-shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
+                
 				<control type="image">
 					<left>35</left>
 					<top>290</top>

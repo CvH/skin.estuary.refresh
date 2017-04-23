@@ -471,7 +471,7 @@
                     
                   <!-- WIDGET 1-->
                         <include content="WidgetListCategories_small" condition="String.IsEqual(Skin.String(CustomHomeWidgetCategoryLayout3),category_widget)">
-							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory4)]"/>
+							<param name="content_path" value="$INFO[Skin.string(CustomHomeWidgetCategory3)]"/>
 							<param name="widget_header" value="Kategorien"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6048"/>

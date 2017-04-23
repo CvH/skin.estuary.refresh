@@ -174,7 +174,7 @@
 						<param name="label" value="$VAR[info_videoinfosets4]" />
 					</include>
                </control>
-				
+			
 			
 				<control type="panel" id="50">
 					<top>158</top>
@@ -182,6 +182,8 @@
 					<height>370</height>
 					<onleft>50</onleft>
 					<onright>50</onright>
+                    <onclick>Dialog.Close(1064)</onclick>
+                    <onclick>PlayMedia($ESCINFO[Listitem.FilenameandPath])</onclick>
 					<visible>![Control.hasfocus(101) | Control.hasfocus(51)]</visible>
 					<animation effect="slide" time="400" start="0,0"  end="1500,0" easing="inout" tween="cubic">Hidden</animation>
                     <ondown>140</ondown>
@@ -311,7 +313,7 @@
 						<param name="id" value="105" />
 						<param name="icon" value="close.png" />
                         <param name="onclick_1" value="Dialog.Close(all)" />
-						<param name="label" value="Schliessen" />
+						<param name="label" value="$LOCALIZE[40015]" />
 					</include>
 				</control>
 				<include content="LeftRightArrows">

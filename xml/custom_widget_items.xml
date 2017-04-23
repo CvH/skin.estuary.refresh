@@ -136,31 +136,7 @@
 			</control>
 		</focusedlayout>
 		<content>
-			<!--item id="2">
-				<description>Filme Kategorien</description>
-				<label>Filme Kategorien</label>
-				<label2></label2>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$LOCALIZE[31148])</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],filmkategorien)</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],library://video/movies/)</onclick>
-			</item>
-			<item id="2">
-				<description>Serien Kategorien</description>
-				<label>Serien Kategorien</label>
-				<label2></label2>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$LOCALIZE[31148])</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],serienkategorien)</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],library://video/tvshows/)</onclick>
-			</item>
-			<item id="2">
-				<description>Musik Kategorien</description>
-				<label>Musik Kategorien</label>
-				<label2></label2>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$LOCALIZE[31148])</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audiokategorien)</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],library://music/)</onclick>
-			</item-->
-			<item id="1">
+            <item id="1">
 				<description>Film Playliste</description>
 				<label>Film Playliste</label>
 				<label2></label2>
@@ -220,13 +196,52 @@
 			</item>
             <item id="6">
 				<description>Favoriten</description>
-				<label>Favoriten</label>
-				<label2></label2>
+				<label>Favouriten </label>
+				<label2>(veraltet, stattdessen das neue PINBOARD benutzen)</label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],audio)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],favourites://)</onclick>
                 <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],Favouriten)</onclick>
                 <onclick>Dialog.Close(all)</onclick>
 			</item>
+            
+            
+             <item id="7">
+				<description>PinBoard Filme</description>
+				<label>$LOCALIZE[40020]</label>
+				<label2></label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],pinboard_movies)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$LOCALIZE[40020])</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+			</item>
+           <item id="8">
+				<description>PinBoard tvshows</description>
+				<label>$LOCALIZE[40021]</label>
+				<label2></label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],pinboard_tvshows)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$LOCALIZE[40021])</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+			</item>
+            
+             <item id="9">
+				<description>PinBoard Musik</description>
+				<label>$LOCALIZE[40022]</label>
+				<label2></label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],pinboard_musik)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$LOCALIZE[40022])</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+			</item>
+           <item id="20">
+				<description>PinBoard tvshows</description>
+				<label>PinBoard - Addons</label>
+				<label2></label2>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],pinboard_addons)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],PinBoard - Addons)</onclick>
+                <onclick>Dialog.Close(all)</onclick>
+			</item>
+            
+            
+            
+            
            	<item id="10">
 				<description>Aufnahmen</description>
 				<label>$LOCALIZE[31015] (TV)</label>
@@ -249,7 +264,7 @@
 			</item>
             <item id="12">
 				<description>Tv Kanäle</description>
-				<label>Alle Tv Kanäle</label>
+				<label>asasasadfsdAlle Tv Kanäle</label>
 				<label2></label2>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],radio_tv)</onclick>
 				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],pvr://channels/tv/*?view=flat)</onclick>
@@ -341,14 +356,15 @@
                 <onclick>Dialog.Close(all)</onclick>
                 <visible>System.Platform.Android</visible>
 			</item>
-              <item id="22">
+            <item id="22">
 				<description>Script German telecast offers</description>
 				<label>German Telecast Offers</label>
 				<label2></label2>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],radio_tv)</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://plugin.service.gto?action=getcontent&amp;ts=$INFO[Window(Home).Property(GTO.timestamp)])</onclick>
-                <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],German Telecast Offers)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetLayout)],widget_gto)</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetPath)],plugin://plugin.service.gto?action=getcontent&ts=$INFO[Window(Home).Property(GTO.timestamp)])</onclick>
+                <onclick>Skin.SetString($INFO[Window(home).Property(CustomHomeWidgetHeader)],$ADDON[plugin.service.gto 30104]: $INFO[Window(Home).Property(GTO.Provider)])</onclick>
                 <onclick>Dialog.Close(all)</onclick>
+                <visible>System.HasPVRAddon + System.HasAddon(plugin.service.gto)</visible>
             </item>
             <item id="23">
 				<description>Zufaellige Filme</description>

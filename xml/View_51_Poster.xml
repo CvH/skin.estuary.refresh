@@ -133,7 +133,7 @@
                    	<control type="label">
 					<left>695</left>
 					<top>455</top>
-					<label>$INFO[ListItem.Property(TotalEpisodes),Episoden ,] ([COLOR grey]$INFO[ListItem.Property(UnWatchedEpisodes),ungesehen ][/COLOR])</label>
+					<label>$INFO[ListItem.Property(TotalEpisodes),Episoden ,] [COLOR grey]$INFO[ListItem.Property(UnWatchedEpisodes),(ungesehen ,) ][/COLOR]</label>
 					<font>font25_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>left</align>

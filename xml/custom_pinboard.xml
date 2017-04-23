@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1890" type="Dialog">
+<defaultcontrol always="true">8625</defaultcontrol>
+<include>Animation_DialogPopupOpenClose</include>
+<depth>DepthOSD</depth>
+
+<controls>
+    <control type="group">
+        <top>180</top>
+        <left>350</left>
+        <include content="DialogBackgroundCommons">
+			<param name="width" value="1400" />
+			<param name="height" value="800" />
+			<param name="header_label" value="" />
+			<param name="header_id" value="1" />
+		</include>
+        <control type="image">
+			<left>40</left>
+			<top>80</top>
+			<width>1070</width>
+			<height>700</height>
+			<texture border="40">buttons/dialogbutton-nofo.png</texture>
+		</control>
+    </control>      
+<control type="group">
+        <top>-20</top>
+        <left>-150</left>
+    <control type="label">
+		<top>210</top>
+		<left>520</left>
+		<width>550</width>
+		<aligny>center</aligny>
+		<height>40</height>
+		<font>font14</font>
+		<label>[B]$LOCALIZE[40013][/B]</label>
+	</control>
+    <control type="image">
+				<left>515</left>
+				<top>590</top>
+				<width>30</width>
+				<height>30</height>
+				<bottom>0</bottom>
+              	<texture colordiffuse="button_focus">arrowup.png</texture>
+				<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+				<animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+                <visible>Container(8625).HasPrevious</visible>
+                </control>
+                <control type="image">
+				<left>515</left>
+				<top>650</top>
+				<width>30</width>
+				<height>30</height>
+				<bottom>0</bottom>
+              	<texture flipy="true" colordiffuse="button_focus">arrowup.png</texture>
+				<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+				<animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+                <visible>Container(8625).HasNext</visible>
+    </control>
+    
+    <control type="textbox">
+			<left>1630</left>
+			<bottom>250</bottom>
+			<width>250</width>
+			<height>150</height>
+			<font>font12</font>
+			<align>left</align>
+			<textcolor>button_focus</textcolor>
+			<label>$LOCALIZE[40016]</label>
+			<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+            <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+			<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+            <visible>Control.hasfocus(9)</visible>
+        </control>
+
+    <control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(tvshows)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>1030</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>1030</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>1030</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>1030</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+		<item id="30">
+			<label>$INFO[Skin.String(ShowList1TVShowTitle)]</label>
+            <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList1ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList1TVShowTitle))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(ShowList2TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList2ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList2TVShowTitle))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(ShowList3TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList3ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList3TVShowTitle))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(ShowList4TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList4ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList4TVShowTitle))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(ShowList5TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList5ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList5TVShowTitle))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(ShowList6TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList6ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList6TVShowTitle))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(ShowList7TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList7ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList7TVShowTitle))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(ShowList8TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList8ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList8TVShowTitle))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(ShowList9TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList9ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList9TVShowTitle))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(ShowList10TVShowTitle)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList10ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList10TVShowTitle))</visible>
+		</item>
+		<item id="40">
+			<label>Serien auswählen</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+           	<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+		</item>
+	</content>
+	</control>
+    
+ <control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(Movies)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>1030</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>1030</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>1030</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>1030</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+		<item id="30">
+			<label>$INFO[Skin.String(MovieList1Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList1Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList1Title))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(MovieList2Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList2Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList2Title))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(MovieList3Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList3Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList3Title))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(MovieList4Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList4Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList4Title))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(MovieList5Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList5Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList5Title))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(MovieList6Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList6Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList6Title))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(MovieList7Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList7Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList7Title))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(MovieList8Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList8Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList8Title))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(MovieList9Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList9Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList9Title))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(MovieList10Title)]</label>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList10Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList10Title))</visible>
+		</item>
+		<item id="40">
+			<label>Filme auswählen</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+		</item>
+	</content>
+	</control>    
+   
+
+<control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(Addons)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>550</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>550</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+		<item id="30">
+			<label>$INFO[Skin.String(AddonList1Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList1Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList1Title))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(AddonList2Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList2Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList2Title))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(AddonList3Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList3Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList3Title))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(AddonList4Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList4Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList4Title))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(AddonList5Title)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList5Title))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(AddonList6Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList6Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList6Title))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(AddonList7Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList7Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList7Title))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(AddonList8Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList8Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList8Title))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(AddonList9Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList9Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList9Title))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(AddonList10Title)]</label>
+			<onclick>RunAddon($INFO[Skin.String(AddonList10Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList10Title))</visible>
+		</item>
+		
+	</content>
+	</control>  
+
+<control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(albums)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>550</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>550</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+		<item id="30">
+			<label>$INFO[Skin.String(MusicList1Title)] $INFO[Skin.String(MusicList1Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList1ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList1Title))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(MusicList2Title)] $INFO[Skin.String(MusicList2Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList2ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList2Title))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(MusicList3Title)] $INFO[Skin.String(MusicList3Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList3ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList3Title))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(MusicList4Title)] $INFO[Skin.String(MusicList4Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList4ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList4Title))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(MusicList5Title)] $INFO[Skin.String(MusicList5Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList5ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList5Title))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(MusicList6Title)] $INFO[Skin.String(MusicList6Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList6ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(Music^List6Title))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(MusicList7Title)] $INFO[Skin.String(MusicList7Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList7ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList7Title))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(MusicList8Title)] $INFO[Skin.String(MusicList8Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList8ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList8Title))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(MusicList9Title)] $INFO[Skin.String(MusicList9Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList9ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList9Title))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(MusicList10Title)] $INFO[Skin.String(MusicList10Artist)]</label>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList10ID)]/)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList10Title))</visible>
+		</item>
+		<item id="40">
+			<label>Album auswählen</label>
+            <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+		</item>
+	</content>
+	</control>
+    
+	<control type="grouplist" id="1000">
+		<top>280</top>
+		<left>1600</left>
+		<right>0</right>
+		<bottom>140</bottom>
+		<onleft>8625</onleft>
+		<onright>8625</onright>
+		<onup>1000</onup>
+		<ondown>1000</ondown>
+		<include content="DefaultDialogButton">
+			<param name="id" value="9" />
+			<param name="label" value="$LOCALIZE[40014]" />
+            <param name="onclick" value="Dialog.Close(1890)" />
+			<param name="onclick_2" value="ActivateWindow(1891)" />
+		</include>
+		
+		<include content="DefaultDialogButton">
+			<param name="id" value="11" />
+			<param name="label" value="$LOCALIZE[40015]" />
+			<param name="onclick" value="Dialog.close(all)" />
+		</include>
+	</control>
+</control>
+<control type="label">
+				<left>1450</left>
+				<top>910</top>
+				<width>275</width>
+				<height>35</height>
+				<font>font12</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+				<label>[COLOR=button_focus]$INFO[Container(8625).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR=button_focus]$INFO[Container(8625).CurrentPage]/$INFO[Container(8625).NumPages][/COLOR]</label>
+			</control>
+</controls>
+</window>

@@ -329,6 +329,500 @@
 			</control>
 		</definition>
 	</include>
+    
+    
+    
+     <include name="WidgetListPoster_pinboard_music_addons">
+        <param name="musik_content">false</param>
+		<param name="addon_content">false</param>
+		<param name="list_type">musik</param>
+		<param name="visible">true</param>
+        <param name="icon">$INFO[ListItem.Icon]</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="250"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>115</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<right>0</right>
+				<height>500</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]"/>
+				</include>
+				<itemlayout width="310" height="486">
+					<control type="group">
+						<left>68</left>
+						<top>10</top>
+						<include content="InfoWallMusicLayout_pinboard">
+							<param name="focused" value="false" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="486">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>68</left>
+						<top>10</top>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<include content="InfoWallMusicLayout_pinboard">
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+  
+    <include condition="$PARAM[musik_content]" content="pinboard_content_musik">
+	<param name="list_type" value="$PARAM[list_type]"/>
+	</include>
+    <include  condition="$PARAM[addon_content]">pinboard_content_addon</include>
+   
+			</control>
+		</definition>
+	</include>
+    
+    <include name="pinboard_content_musik">
+    <content>
+   	<item id="30">
+			<label>$INFO[Skin.String(MusicList1Title)] $INFO[Skin.String(MusicList1Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList1fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList1rating)]</property>
+            <icon>$INFO[Skin.String(MusicList1Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList1ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList1Title))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(MusicList2Title)] $INFO[Skin.String(MusicList2Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList2fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList2rating)]</property>
+            <icon>$INFO[Skin.String(MusicList2Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList2ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList2Title))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(MusicList3Title)] $INFO[Skin.String(MusicList3Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList3fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList3rating)]</property>
+            <icon>$INFO[Skin.String(MusicList3Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList3ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList3Title))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(MusicList4Title)] $INFO[Skin.String(MusicList4Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList4fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList4rating)]</property>
+            <icon>$INFO[Skin.String(MusicList4Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList4ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList4Title))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(MusicList5Title)] $INFO[Skin.String(MusicList5Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList5fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList5rating)]</property>
+            <icon>$INFO[Skin.String(MusicList5Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList5ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList5Title))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(MusicList6Title)] $INFO[Skin.String(MusicList6Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList6fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList6rating)]</property>
+            <icon>$INFO[Skin.String(MusicList6Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList6ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(Music^List6Title))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(MusicList7Title)] $INFO[Skin.String(MusicList7Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList7fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList7rating)]</property>
+            <icon>$INFO[Skin.String(MusicList7Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList7ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList7Title))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(MusicList8Title)] $INFO[Skin.String(MusicList8Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList8fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList8rating)]</property>
+            <icon>$INFO[Skin.String(MusicList8Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList8ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList8Title))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(MusicList9Title)] $INFO[Skin.String(MusicList9Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList9fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList9rating)]</property>
+            <icon>$INFO[Skin.String(MusicList9Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList9ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList9Title))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(MusicList10Title)] $INFO[Skin.String(MusicList10Artist)]</label>
+            <property name="fanart">$INFO[Skin.String(MusicList10fanart)]</property>
+            <property name="rating">$INFO[Skin.String(MusicList10rating)]</property>
+            <icon>$INFO[Skin.String(MusicList10Poster)]</icon>
+			<onclick>ActivateWindow(music,musicdb://albums/$INFO[Skin.String(MusicList10ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList10Title))</visible>
+		</item>
+        </content>
+    </include> 
+    <include name="pinboard_content_addon">
+    <content>
+ <item id="30">
+			<label>$INFO[Skin.String(AddonList1Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList1fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList1Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList1Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList1Title))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(AddonList2Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList2fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList2Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList2Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList2Title))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(AddonList3Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList3fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList3Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList3Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList3Title))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(AddonList4Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList4fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList4Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList4Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList4Title))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(AddonList5Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList5fanart)]</property>
+             <icon>$INFO[Skin.String(AddonList5Icon)]</icon>
+			<onclick>Dialog.Close(all,true)</onclick>
+            <onclick>RunAddon($INFO[Skin.String(AddonList5Path)])</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList5Title))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(AddonList6Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList6fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList6Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList6Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList6Title))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(AddonList7Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList7fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList7Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList7Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList7Title))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(AddonList8Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList8fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList8Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList8Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList8Title))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(AddonList9Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList9fanart)]</property>
+             <icon>$INFO[Skin.String(AddonList9Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList9Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList9Title))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(AddonList10Title)]</label>
+            <property name="fanart">$INFO[Skin.String(AddonList10fanart)]</property>
+            <icon>$INFO[Skin.String(AddonList10Icon)]</icon>
+			<onclick>RunAddon($INFO[Skin.String(AddonList10Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList10Title))</visible>
+		</item>
+        </content>
+    </include> 
+    <include name="WidgetListPoster_pinboard_movies_tvshows">
+        <param name="movie_content">false</param>
+		<param name="tvshow_content">false</param>
+		<param name="list_type">movie</param>
+		<param name="visible">true</param>
+        <param name="icon">$INFO[ListItem.Icon]</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="250"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>115</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<right>0</right>
+				<height>500</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]"/>
+				</include>
+				<itemlayout width="310" height="486">
+					<control type="group">
+						<left>68</left>
+						<top>10</top>
+						<include content="InfoWallMovieLayout_pinboard">
+							<param name="focused" value="false" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="486">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>68</left>
+						<top>10</top>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<include content="InfoWallMovieLayout_pinboard">
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+  
+    <include condition="$PARAM[movie_content]" content="pinboard_content_movies">
+	<param name="list_type" value="$PARAM[list_type]"/>
+	</include>
+    <include  condition="$PARAM[tvshow_content]">pinboard_content_tvshows</include>
+   
+			</control>
+		</definition>
+	</include>
+     
+    <include name="pinboard_content_tvshows">
+    <content>
+   <item id="30">
+			<label>$INFO[Skin.String(ShowList1TVShowTitle)]</label>
+            <icon>$INFO[Skin.String(ShowList1Poster)]</icon>
+            <property name="fanart">$INFO[Skin.String(ShowList1Fanart)]</property>
+            <property name="rating">$INFO[Skin.String(ShowList1rating)]</property>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList1ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList1TVShowTitle))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(ShowList2TVShowTitle)]</label>
+            <property name="fanart">$INFO[Skin.String(ShowList2Fanart)]</property>
+            <property name="rating">$INFO[Skin.String(ShowList2rating)]</property>
+             <icon>$INFO[Skin.String(ShowList2Poster)]</icon>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList2ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList2TVShowTitle))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(ShowList3TVShowTitle)]</label>
+            <property name="fanart">$INFO[Skin.String(ShowList3Fanart)]</property>
+            <property name="rating">$INFO[Skin.String(ShowList3rating)]</property>
+            <icon>$INFO[Skin.String(ShowList3Poster)]</icon>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList3ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList3TVShowTitle))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(ShowList4TVShowTitle)]</label>
+            <property name="rating">$INFO[Skin.String(ShowList4rating)]</property>
+             <property name="fanart">$INFO[Skin.String(ShowList4Fanart)]</property>
+             <icon>$INFO[Skin.String(ShowList4Poster)]</icon>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList4ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList4TVShowTitle))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(ShowList5TVShowTitle)]</label>
+             <icon>$INFO[Skin.String(ShowList5Poster)]</icon>
+             <property name="rating">$INFO[Skin.String(ShowList5rating)]</property>
+              <property name="fanart">$INFO[Skin.String(ShowList5Fanart)]</property>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList5ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList5TVShowTitle))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(ShowList6TVShowTitle)]</label>
+             <icon>$INFO[Skin.String(ShowList6Poster)]</icon>
+             <property name="rating">$INFO[Skin.String(ShowList6rating)]</property>
+              <property name="fanart">$INFO[Skin.String(ShowList6Fanart)]</property>
+			<onclick>ActivateWindow(videos,"videodb://tvshows/titles/$INFO[Skin.String(ShowList6ID)]/")</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList6TVShowTitle))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(ShowList7TVShowTitle)]</label>
+             <icon>$INFO[Skin.String(ShowList7Poster)]</icon> 
+             <property name="rating">$INFO[Skin.String(ShowList7rating)]</property>
+             <property name="fanart">$INFO[Skin.String(ShowList7Fanart)]</property>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList7ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList7TVShowTitle))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(ShowList8TVShowTitle)]</label>
+             <icon>$INFO[Skin.String(ShowList8Poster)]</icon>
+             <property name="rating">$INFO[Skin.String(ShowList8rating)]</property>
+              <property name="fanart">$INFO[Skin.String(ShowList8Fanart)]</property>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList8ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList8TVShowTitle))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(ShowList9TVShowTitle)]</label>
+            <icon>$INFO[Skin.String(ShowList9Poster)]</icon>
+            <property name="rating">$INFO[Skin.String(ShowList9rating)]</property>
+            <property name="fanart">$INFO[Skin.String(ShowList9Fanart)]</property>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList9ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList9TVShowTitle))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(ShowList10TVShowTitle)]</label>
+             <icon>$INFO[Skin.String(ShowList10Poster)]</icon>
+             <property name="rating">$INFO[Skin.String(ShowList10rating)]</property>
+              <property name="fanart">$INFO[Skin.String(ShowList10Fanart)]</property>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[Skin.String(ShowList10ID)]/)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList10TVShowTitle))</visible>
+		</item>
+        </content>
+    </include>
+    
+   
+     <include name="pinboard_content_movies">
+    <content>
+    <item id="30">
+			<label>$INFO[Skin.String(MovieList1Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList1rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList1Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList1Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList1Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList1Title))</visible>
+		</item>
+		<item id="31">
+			<label>$INFO[Skin.String(MovieList2Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList2rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList2Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList2Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList2Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList2Title))</visible>
+		</item>
+		<item id="32">
+			<label>$INFO[Skin.String(MovieList3Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList3rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList3Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList3Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList3Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList3Title))</visible>
+		</item>
+		<item id="33">
+			<label>$INFO[Skin.String(MovieList4Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList4rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList4Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList4Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList4Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList4Title))</visible>
+		</item>
+		<item id="34">
+			<label>$INFO[Skin.String(MovieList5Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList5rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList5Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList5Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList5Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList5Title))</visible>
+		</item>
+		<item id="35">
+			<label>$INFO[Skin.String(MovieList6Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList6rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList6Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList6Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList6Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList6Title))</visible>
+		</item>
+		<item id="36">
+			<label>$INFO[Skin.String(MovieList7Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList7rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList7Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList7Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList7Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList7Title))</visible>
+		</item>
+		<item id="37">
+			<label>$INFO[Skin.String(MovieList8Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList8rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList8Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList8Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList8Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList8Title))</visible>
+		</item>
+		<item id="38">
+			<label>$INFO[Skin.String(MovieList9Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList9rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList9Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList9Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList9Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList9Title))</visible>
+		</item>
+		<item id="39">
+			<label>$INFO[Skin.String(MovieList10Title)]</label>
+            <property name="rating">$INFO[Skin.String(MovieList10rating)]</property>
+            <property name="fanart">$INFO[Skin.String(MovieList10Fanart)]</property>
+            <icon>$INFO[Skin.String(MovieList10Poster)]</icon>
+			<onclick>PlayMedia($ESCINFO[Skin.String(MovieList10Path)])</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList10Title))</visible>
+		</item>
+        </content>
+    </include>
+    
+    
+    
+    
+    
     <include name="WidgetListPoster_customwidgets">
 		<definition>
 			<include content="CategoryLabel">
@@ -986,6 +1480,126 @@
             
            
 		</content>
+	</include>
+    	<include name="WidgetListRecordings">
+		<param name="item_limit">15</param>
+		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="label">$INFO[ListItem.Label]</param>
+		<param name="label2">$INFO[ListItem.Title]</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="200"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>120</top>
+				<right>0</right>
+				<height>430</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]"/>
+				</include>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<itemlayout width="310" height="500">
+					<control type="group">
+						<left>70</left>
+						<control type="image">
+							<width>319</width>
+							<height>340</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<top>43</top>
+							<left>38</left>
+							<width>245</width>
+							<height>200</height>
+							<texture fallback="DefaultTVShows.png">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<left>42</left>
+							<top>247</top>
+							<width>245</width>
+							<height>70</height>
+							<label>$PARAM[label]</label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>top</aligny>
+						</control>
+						
+						<control type="image">
+							<left>260</left>
+							<top>30</top>
+							<width>32</width>
+							<height>32</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="500">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>70</left>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="240,100" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="240,100" />
+						</animation>
+						<control type="image">
+							<width>319</width>
+							<height>340</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<width>319</width>
+							<height>340</height>
+							<texture colordiffuse="button_focus">colors/grey.png</texture>
+							<bordersize>20</bordersize>
+							<include>Animation_FocusTextureFade</include>
+						</control>
+						<control type="image">
+							<top>43</top>
+							<left>38</left>
+							<width>245</width>
+							<height>200</height>
+							<texture fallback="DefaultTVShows.png">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<left>42</left>
+							<top>247</top>
+							<width>245</width>
+							<height>70</height>
+							<label>$PARAM[label]</label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<scroll>true</scroll>
+							<aligny>top</aligny>
+						</control>
+						
+						<control type="image">
+							<left>260</left>
+							<top>30</top>
+							<width>32</width>
+							<height>32</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[item_limit]">$PARAM[content_path]</content>
+			</control>
+		</definition>
 	</include>
 	<include name="WidgetListChannels">
 		<param name="item_limit">15</param>

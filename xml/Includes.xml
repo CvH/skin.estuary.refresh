@@ -21,6 +21,8 @@
     <include file="IncludesLyrics.xml"/>
     <include file="custom_Videoinfosets.xml"/>
     <include file="custom_home_items.xml"/>
+    <include file="custom_pinboard.xml"/><!-- neue Pinboard System -->
+    <include file="custom_pinboard_config.xml"/><!-- neue Pinboard System Config -->
     <include file="custom_home_categories.xml"/><!-- -->
 	<include file="Constants_1920.xml" condition="!String.IsEqual(Skin.AspectRatio,21:9)"/>
 	<include file="Constants_2560.xml" condition="String.IsEqual(Skin.AspectRatio,21:9)"/>
@@ -42,6 +44,171 @@
 	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)</expression>
 	<expression name="sidebar_focused">ControlGroup(9000).HasFocus | Control.HasFocus(6130)</expression>
 	
+    <include name="InfoWallMusicLayout_pinboard">
+		<param name="fallback_image">DefaultFolder.png</param>
+		<param name="main_label">$INFO[ListItem.Artist]</param>
+		<param name="sub_label">$INFO[ListItem.Title]</param>
+		<param name="single_label">$INFO[ListItem.Label]</param>
+		<param name="focused">false</param>
+		<definition>
+			<control type="image">
+				<top>0</top>
+				<width>316</width>
+				<height>386</height>
+				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<top>-4</top>
+				<left>-4</left>
+				<width>324</width>
+				<height>394</height>
+				<texture colordiffuse="button_focus">colors/grey.png</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<visible>$PARAM[focused]</visible>
+				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>316</width>
+				<height>316</height>
+				<texture fallback="$PARAM[fallback_image]" background="true">$INFO[Listitem.Icon]</texture>
+				<aspectratio>keep</aspectratio>
+				<bordersize>20</bordersize>
+			</control>
+            <control type="group">
+				<left>135</left>
+				<top>-8</top>
+                <visible>!String.Isempty(ListItem.Property(rating))</visible>
+				<control type="group">
+				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
+				<control type="image">
+					<left>3</left>
+					<top>-3</top>
+					<width>55</width>
+					<height>55</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="button_focus">badge.png</texture>
+				</control>
+				<control type="label">
+					<left>3</left>
+					<top>-3</top>
+					<align>center</align>
+					<aligny>center</aligny>
+					<width>55</width>
+					<height>55</height>
+					<font>font20_title</font>
+					<label>$INFO[ListItem.Property(rating)]</label>
+				</control>
+			</control>
+			</control>
+			<control type="textbox">
+				<left>28</left>
+				<top>289</top>
+				<width>262</width>
+				<height>80</height>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$PARAM[single_label]</label>
+				<visible>!String.IsEqual(ListItem.DBType,album)</visible>
+			</control>
+			<control type="group">
+				<visible>String.IsEqual(ListItem.DBType,album)</visible>
+				<control type="label">
+					<left>29</left>
+					<top>300</top>
+					<width>260</width>
+					<label>$PARAM[sub_label]</label>
+					<font>font10</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+				<control type="label">
+					<left>29</left>
+					<top>328</top>
+					<width>260</width>
+					<label>$PARAM[main_label]</label>
+					<font>font12</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+			</control>
+			<control type="group">
+				<left>133</left>
+				<top>2</top>
+				<include>UserRatingCircle</include>
+			</control>
+		</definition>
+	</include>
+    
+   <include name="InfoWallMovieLayout_pinboard">
+		<param name="focused">false</param>
+		<definition>
+            <control type="group">
+                <control type="image">
+					<left>11</left>
+					<top>-14</top>
+					<width>298</width>
+					<height>408</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>290</width>
+					<height>400</height>
+					<texture background="true">$INFO[ListItem.icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordertexture border="20">globalsearch-shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+                <control type="image">
+					<left>35</left>
+					<top>290</top>
+					<width>80</width>
+					<height>80</height>
+					<texture>overlays/overlay-bg.png</texture>
+					<visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<left>135</left>
+				<top>-8</top>
+				<control type="group">
+				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
+				<control type="image">
+					<left>3</left>
+					<top>-3</top>
+					<width>55</width>
+					<height>55</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="button_focus">badge.png</texture>
+				</control>
+				<control type="label">
+					<left>3</left>
+					<top>-3</top>
+					<align>center</align>
+					<aligny>center</aligny>
+					<width>55</width>
+					<height>55</height>
+					<font>font20_title</font>
+					<label>$INFO[ListItem.Property(rating)]</label>
+				</control>
+			</control>
+			</control>
+		</definition>
+	</include>
+   
     
                     <include name="default_home_content">
                        <item>
@@ -135,6 +302,7 @@
 						</item>
                        <item>
 							<label fallback="Eigener Eintrag7">$VAR[homemenu_label_custommenu7]</label>
+                             <label2>$VAR[homemenu_label2_custommenu7]</label2>
 							<property name="menu_id">$NUMBER[8000]</property>
 							<onclick>$VAR[homemenu_onclick_custommenu7]</onclick>
 							<thumb fallback="special://skin/extras/icons/playlist.png">$VAR[homemenu_icon_custommenu7]</thumb>
@@ -588,7 +756,7 @@
          <control type="panel" id="012">
 				<top>675</top>
                 <left>10</left>
-				<width>600</width>
+				<width>520</width>
 				<height>370</height>
 				<onleft>012</onleft>
 				<onright>012</onright>
@@ -658,107 +826,7 @@
 					</control>
 				</focusedlayout>
               <content sortby="year" order="ascending">videodb://movies/sets/$INFO[ListItem.DBID]/</content>   
-              <!--content>
-	<item>
-	<label>$INFO[Container(1001999).ListItemNowrap(0).Title]</label>
-	<icon>$INFO[Container(1001999).ListItemNowrap(0).Thumb]</icon>
-	<property name="Disc">$INFO[Container(1001999).ListItemNowrap(0).Art(discart)]</property>
-	<property name="Fanart">$INFO[ListItem.Art(fanart)]</property>
-    <property name="Genre">$INFO[Container(1001999).ListItemNowrap(0).Genre]</property>
-    <property name="Overlay">$INFO[Container(1001999).ListItemNowrap(0).Overlay]</property>
-	<property name="Plot">$INFO[Container(1001999).ListItemNowrap(0).Plot]</property>
-	<property name="Year">$INFO[Container(1001999).ListItemNowrap(0).Year]</property>
-	<property name="Country">$INFO[Container(1001999).ListItemNowrap(0).Country]</property>
-	<property name="Duration">$INFO[Container(1001999).ListItemNowrap(0).Duration]</property>
-    <property name="path">$INFO[Container(1001999).ListItemNowrap(0).filenameandpath]</property>
-    <property name="OriginalTitle">$INFO[Container(1001999).ListItemNowrap(0).OriginalTitle]</property>
-    <property name="Director">$INFO[Container(1001999).ListItemNowrap(0).Director]</property>
-    <property name="Studio">$INFO[Container(1001999).ListItemNowrap(0).Studio]</property>
-    <property name="lastplayed">$INFO[Container(1001999).ListItemNowrap(0).lastplayed]</property>
-    <property name="clearart">$INFO[Container(1001999).ListItemNowrap(0).Art(clearart)]</property>
-    <property name="clearlogo">$INFO[Container(1001999).ListItemNowrap(0).Art(clearlogo)]</property>
-    <property name="tagline">$INFO[Container(1001999).ListItemNowrap(0).tagline]</property>
-    <property name="mpaa">$INFO[Container(1001999).ListItemNowrap(0).mpaa]</property>
-    <property name="rating">$INFO[Container(1001999).ListItemNowrap(0).rating]</property>
-    <property name="rantingandvotes">$INFO[Container(1001999).ListItemNowrap(0).RatingAndVotes]</property>
-	<onclick>noop</onclick>
-	</item>
-    <item>
-	<label>$INFO[Container(1001999).ListItemNowrap(1).Title]</label>
-	<icon>$INFO[Container(1001999).ListItemNowrap(1).Thumb]</icon>
-	<property name="Disc">$INFO[Container(1001999).ListItemNowrap(1).Art(discart)]</property>
-    <property name="Overlay">$INFO[Container(1001999).ListItemNowrap(1).Overlay]</property>
-    <property name="Genre">$INFO[Container(1001999).ListItemNowrap(1).Genre]</property>
-	<property name="Fanart">$INFO[ListItem.Art(fanart)]</property>
-	<property name="Plot">$INFO[Container(1001999).ListItemNowrap(1).Plot]</property>
-	<property name="Year">$INFO[Container(1001999).ListItemNowrap(1).Year]</property>
-	<property name="Country">$INFO[Container(1001999).ListItemNowrap(1).Country]</property>
-	<property name="Duration">$INFO[Container(1001999).ListItemNowrap(1).Duration]</property>
-    <property name="OriginalTitle">$INFO[Container(1001999).ListItemNowrap(1).OriginalTitle]</property>
-    <property name="Director">$INFO[Container(1001999).ListItemNowrap(1).Director]</property>
-    <property name="Studio">$INFO[Container(1001999).ListItemNowrap(1).Studio]</property>
-    <property name="lastplayed">$INFO[Container(1001999).ListItemNowrap(1).lastplayed]</property>
-    <property name="path">$INFO[Container(1001999).ListItemNowrap(1).filenameandpath]</property>
-    <property name="clearart">$INFO[Container(1001999).ListItemNowrap(1).Art(clearart)]</property>
-    <property name="clearlogo">$INFO[Container(1001999).ListItemNowrap(1).Art(clearlogo)]</property>
-    <property name="tagline">$INFO[Container(1001999).ListItemNowrap(1).tagline]</property>
-    <property name="mpaa">$INFO[Container(1001999).ListItemNowrap(1).mpaa]</property>
-    <property name="rating">$INFO[Container(1001999).ListItemNowrap(1).rating]</property>
-    <property name="rantingandvotes">$INFO[Container(1001999).ListItemNowrap(1).RatingAndVotes]</property>
-	<onclick>noop</onclick>
-	<visible>!String.Isempty(Container(1001999).ListItemNowrap(1).Thumb)</visible>
-	</item>
-    <item>
-	<label>$INFO[Container(1001999).ListItemNowrap(2).Title]</label>
-	<icon>$INFO[Container(1001999).ListItemNowrap(2).Thumb]</icon>
-	<property name="Disc">$INFO[Container(1001999).ListItemNowrap(2).Art(discart)]</property>
-     <property name="Overlay">$INFO[Container(1001999).ListItemNowrap(2).Overlay]</property>
-    <property name="Genre">$INFO[Container(1001999).ListItemNowrap(2).Genre]</property>
-	<property name="Fanart">$INFO[ListItem.Art(fanart)]</property>
-	<property name="Plot">$INFO[Container(1001999).ListItemNowrap(2).Plot]</property>
-	<property name="Year">$INFO[Container(1001999).ListItemNowrap(2).Year]</property>
-	<property name="Country">$INFO[Container(1001999).ListItemNowrap(2).Country]</property>
-	<property name="Duration">$INFO[Container(1001999).ListItemNowrap(2).Duration]</property>
-    <property name="OriginalTitle">$INFO[Container(1001999).ListItemNowrap(2).OriginalTitle]</property>
-    <property name="Director">$INFO[Container(1001999).ListItemNowrap(2).Director]</property>
-    <property name="Studio">$INFO[Container(1001999).ListItemNowrap(2).Studio]</property>
-    <property name="lastplayed">$INFO[Container(1001999).ListItemNowrap(2).lastplayed]</property>
-    <property name="path">$INFO[Container(1001999).ListItemNowrap(2).filenameandpath]</property>
-    <property name="clearart">$INFO[Container(1001999).ListItemNowrap(2).Art(clearart)]</property>
-    <property name="clearlogo">$INFO[Container(1001999).ListItemNowrap(2).Art(clearlogo)]</property>
-    <property name="tagline">$INFO[Container(1001999).ListItemNowrap(2).tagline]</property>
-    <property name="mpaa">$INFO[Container(1001999).ListItemNowrap(2).mpaa]</property>
-    <property name="rating">$INFO[Container(1001999).ListItemNowrap(2).rating]</property>
-    <property name="rantingandvotes">$INFO[Container(1001999).ListItemNowrap(2).RatingAndVotes]</property>
-    <onclick>noop</onclick>
-	<visible>!String.Isempty(Container(1001999).ListItemNowrap(2).Thumb)</visible>
-	</item>
-    <item>
-	<label>$INFO[Container(1001999).ListItemNowrap(3).Title]</label>
-	<icon>$INFO[Container(1001999).ListItemNowrap(3).Thumb]</icon>
-	<property name="Disc">$INFO[Container(1001999).ListItemNowrap(3).Art(discart)]</property>
-    <property name="Overlay">$INFO[Container(1001999).ListItemNowrap(3).Overlay]</property>
-    <property name="Genre">$INFO[Container(1001999).ListItemNowrap(3).Genre]</property>
-	<property name="Fanart">$INFO[ListItem.Art(fanart)]</property>
-	<property name="Plot">$INFO[Container(1001999).ListItemNowrap(3).Plot]</property>
-	<property name="Year">$INFO[Container(1001999).ListItemNowrap(3).Year]</property>
-	<property name="Country">$INFO[Container(1001999).ListItemNowrap(3).Country]</property>
-	<property name="Duration">$INFO[Container(1001999).ListItemNowrap(3).Duration]</property>
-    <property name="OriginalTitle">$INFO[Container(1001999).ListItemNowrap(3).OriginalTitle]</property>
-    <property name="Director">$INFO[Container(1001999).ListItemNowrap(3).Director]</property>
-    <property name="Studio">$INFO[Container(1001999).ListItemNowrap(3).Studio]</property>
-    <property name="lastplayed">$INFO[Container(1001999).ListItemNowrap(3).lastplayed]</property>
-    <property name="path">$INFO[Container(1001999).ListItemNowrap(3).filenameandpath]</property>
-    <property name="clearart">$INFO[Container(1001999).ListItemNowrap(3).Art(clearart)]</property>
-    <property name="clearlogo">$INFO[Container(1001999).ListItemNowrap(3).Art(clearlogo)]</property>
-    <property name="tagline">$INFO[Container(1001999).ListItemNowrap(3).tagline]</property> 
-    <property name="mpaa">$INFO[Container(1001999).ListItemNowrap(3).mpaa]</property>
-    <property name="rating">$INFO[Container(1001999).ListItemNowrap(3).rating]</property>
-    <property name="rantingandvotes">$INFO[Container(1001999).ListItemNowrap(3).RatingAndVotes]</property>
-	<onclick>noop</onclick>
-	<visible>!String.Isempty(Container(1001999).ListItemNowrap(3).Thumb)</visible>
-	</item>
-    </content-->
+    
     </control>
     </include>
       <include name="filmeimset_all_sets_setview">
@@ -790,7 +858,6 @@
                         </animation>
                         <animation condition="[Container(80).OnNext | Container(80).OnPrevious]" type="Conditional">
                             <effect type="fade" start="100" end="0" time="500" delay="500" />
-                           
                         </animation>
                     </control>
                     <control type="image">
@@ -811,16 +878,16 @@
 					<width>80</width>
 					<height>80</height>
 					<texture>overlays/overlay-bg.png</texture>
-					<visible>String.IsEqual(ListItem.Property(Overlay),OverlayWatched.png)</visible>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 				</control>
                     <control type="image">
 						<left>8</left>
 						<top>245</top>
 						<width>30</width>
 						<height>30</height>
-						<texture>$VAR[ListWatchedIconVar_newlist]</texture>
+						<texture>OverlayWatched.png</texture>
 						<aspectratio align="center" aligny="top">keep</aspectratio>
-						<visible>String.IsEqual(ListItem.Property(Overlay),OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
                 </itemlayout>
 				<focusedlayout height="275" width="270">
@@ -869,16 +936,16 @@
 					<width>80</width>
 					<height>80</height>
 					<texture>overlays/overlay-bg.png</texture>
-					<visible>String.IsEqual(ListItem.Property(Overlay),OverlayWatched.png)</visible>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 				</control>
                      <control type="image">
 						<left>8</left>
 						<top>245</top>
 						<width>30</width>
 						<height>30</height>
-						<texture>$VAR[ListWatchedIconVar_newlist]</texture>
+						<texture>OverlayWatched.png</texture>
 						<aspectratio align="center" aligny="top">keep</aspectratio>
-						<visible>String.IsEqual(ListItem.Property(Overlay),OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
                        <control type="image">
 								<left>3</left>
@@ -890,7 +957,7 @@
                                 <fadetime>350</fadetime>
 							</control>
 				</focusedlayout>
-    <content target="video" sort="year">videodb://movies/sets/$INFO[Listitem.DBID]</content>
+    <content target="video" sortby="year" order="ascending" >videodb://movies/sets/$INFO[Listitem.DBID]</content>
     </control>
     </include>
     
@@ -1011,6 +1078,7 @@
 			</control>
 		</definition>
 	</include>
+  
 	<include name="InfoList">
 		<param name="item_label">$INFO[ListItem.Year,[COLOR button_focus],[/COLOR]  -  ]$INFO[ListItem.Label]</param>
        	<param name="path">$VAR[InfoListPathVar]</param>

@@ -18,10 +18,11 @@
 			<imagepath background="true" colordiffuse="bg_overlay">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</imagepath>
 			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
 		</control>
-        
+       
                         
                         
-           
+ 
+            
                         
 		<control type="group" id="10000">
 			<left>470</left>
@@ -49,23 +50,31 @@
                 <visible>Skin.HasSetting(custommenu_0)</visible>
                 </control>           
                <control type="radiobutton" id="894">
-					<label>Hauptmenüeintrag [B]Favouriten[/B] anpassen</label>
+					<label>[B]$LOCALIZE[1036][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_0)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_0)</onclick>
                 </control>
 				<control type="button" id="895">
-					<label>- Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]Favouriten[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath0,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel0,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb0,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_0)</visible>
 				</control>
+                <control type="button" id="8949">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel0)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel0,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_0)</visible>
+				</control>
                  <control type="button" id="8950">
-					<label>- Kategorie Widget setzen</label>
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory0)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory0,home)</onclick>
@@ -121,23 +130,31 @@
                 <visible>Skin.HasSetting(custommenu_1)</visible>
                 </control>
                 <control type="radiobutton" id="901">
-					<label>Hauptmenüeintrag [B]Filme[/B] anpassen</label>
+					<label>[B]$LOCALIZE[342][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_1)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_1)</onclick>
                 </control>
 				<control type="button" id="902">
-					<label>Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]Filme[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath1,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel1,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb1,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_1)</visible>
 				</control>
-                     <control type="button" id="8951">
-					<label>- Kategorie Widget setzen</label>
+                 <control type="button" id="8926">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel1)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel1,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_1)</visible>
+				</control>
+                     <control type="button" id="8957">
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory1)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory1,home)</onclick>
@@ -194,23 +211,31 @@
                 <visible>Skin.HasSetting(custommenu_2)</visible>
                 </control>             
                <control type="radiobutton" id="907">
-					<label>Hauptmenüeintrag [B]Serien[/B] anpassen</label>
+					<label>[B]$LOCALIZE[20343][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_2)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_2)</onclick>
                 </control>
 				<control type="button" id="908">
-					<label>Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]Serien[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath2,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel2,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb2,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_2)</visible>
 				</control>
-                 <control type="button" id="8952">
-					<label>- Kategorie Widget setzen</label>
+                 <control type="button" id="8960">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel2)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel2,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_2)</visible>
+				</control>
+                 <control type="button" id="8961">
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory2)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory2,home)</onclick>
@@ -266,23 +291,31 @@
                 <visible>Skin.HasSetting(custommenu_3)</visible>
                 </control>
                 <control type="radiobutton" id="913">
-					<label>Hauptmenüeintrag [B]Musik[/B] anpassen</label>
+					<label>[B]$LOCALIZE[2][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_3)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_3)</onclick>
                 </control>
 				<control type="button" id="914">
-					<label>Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]Musik[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath3,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel3,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb3,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_3)</visible>
 				</control>
-                 <control type="button" id="8953">
-					<label>- Kategorie Widget setzen</label>
+                 <control type="button" id="8970">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel3)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel3,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_3)</visible>
+				</control>
+                 <control type="button" id="8971">
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory3)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory3,home)</onclick>
@@ -338,23 +371,31 @@
                 <visible>Skin.HasSetting(custommenu_4)</visible>
                 </control>
                 <control type="radiobutton" id="921">
-					<label>Hauptmenüeintrag [B]Musikvideos[/B] anpassen</label>
+					<label>[B]$LOCALIZE[20389][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_4)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_4)</onclick>
                 </control>
 				<control type="button" id="922">
-					<label>Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]MusikVideos[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath4,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel4,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb4,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_4)</visible>
 				</control>
-                 <control type="button" id="8954">
-					<label>- Kategorie Widget setzen</label>
+                 <control type="button" id="8980">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel4)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel4,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_4)</visible>
+				</control>
+                 <control type="button" id="8981">
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory4)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory4,home)</onclick>
@@ -411,23 +452,32 @@
                 </control>
                
                 <control type="radiobutton" id="928">
-					<label>Hauptmenüeintrag [B]TV[/B] anpassen</label>
+					<label>[B]$LOCALIZE[19020][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_5)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_5)</onclick>
                 </control>
 				<control type="button" id="929">
-					<label>Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]TV[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath5,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel5,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb5,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_5)</visible>
 				</control>
-                 <control type="button" id="8955">
-					<label>- Kategorie Widget setzen</label>
+                
+                 <control type="button" id="8990">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel5)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel5,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_5)</visible>
+				</control>
+                 <control type="button" id="8991">
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory5)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory5,home)</onclick>
@@ -483,23 +533,31 @@
                 <visible>Skin.HasSetting(custommenu_6)</visible>
                 </control>
                 <control type="radiobutton" id="935">
-					<label>Hauptmenüeintrag [B]Radio[/B] anpassen</label>
+					<label>[B]$LOCALIZE[19021][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_6)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_6)</onclick>
                 </control>
 				<control type="button" id="936">
-					<label>Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]Radio[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath6,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel6,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb6,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_6)</visible>
 				</control>
-                 <control type="button" id="8956">
-					<label>- Kategorie Widget setzen</label>
+                 <control type="button" id="9001">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel6)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel6,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_6)</visible>
+				</control>
+                 <control type="button" id="9002">
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory6)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory6,home)</onclick>
@@ -548,23 +606,31 @@
                 <visible>Skin.HasSetting(custommenu_7)</visible>
                 </control>
                 <control type="radiobutton" id="941">
-					<label>Hauptmenüeintrag [B]Addons[/B] anpassen</label>
+					<label>[B]$LOCALIZE[24001][/B] $LOCALIZE[40000]</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(custommenu_7)</selected>
 					<onclick>Skin.ToggleSetting(custommenu_7)</onclick>
                 </control>
 				<control type="button" id="942">
-					<label>Hauptmenüeintrag konfigurieren</label>
+					<label>- $LOCALIZE[40002]</label>
                     <include>DefaultSettingButton</include>
-					<label2>(ersetzt Hauptmenü [B]Addons[/B])</label2>
+					<label2></label2>
 					<onclick>SetProperty(CustomHomePath,CustomHomePath7,home)</onclick>
 					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel7,home)</onclick>
 					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb7,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_7)</visible>
 				</control>
-                 <control type="button" id="8957">
-					<label>- Kategorie Widget setzen</label>
+                 <control type="button" id="9101">
+					<label>- $LOCALIZE[40003]</label>
+					<label2>$INFO[Skin.string(CustomHomesublabel7)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>SetProperty(CustomHomesublabel,CustomHomesublabel7,home)</onclick>
+                    <onclick>ActivateWindow(1876)</onclick>
+					<visible>Skin.HasSetting(custommenu_7)</visible>
+				</control>
+                 <control type="button" id="9102">
+					<label>- $LOCALIZE[40004]</label>
 					<label2>$INFO[Skin.string(CustomHomeWidgetCategory7)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>SetProperty(CustomHomeWidgetCategory,CustomHomeWidgetCategory7,home)</onclick>
@@ -873,7 +939,7 @@
 						<onclick>noop</onclick>
 					</item>
                     <item id="4">
-						<label>Hauptmenü Anpassen</label>
+						<label>$LOCALIZE[40001]</label>
 						<onclick>noop</onclick>
 					</item>
                  

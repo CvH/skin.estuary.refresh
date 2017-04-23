@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1891" type="Dialog">
+<defaultcontrol always="true">8625</defaultcontrol>
+<include>Animation_DialogPopupOpenClose</include>
+<depth>DepthOSD</depth>
+
+<controls>
+    <control type="group">
+        <top>180</top>
+        <left>350</left>
+        <include content="DialogBackgroundCommons">
+			<param name="width" value="1400" />
+			<param name="height" value="800" />
+			<param name="header_label" value="" />
+			<param name="header_id" value="1" />
+		</include>
+        <control type="image">
+			<left>40</left>
+			<top>80</top>
+			<width>1070</width>
+			<height>700</height>
+			<texture border="40">buttons/dialogbutton-nofo.png</texture>
+		</control>
+    </control>      
+<control type="group">
+        <top>-20</top>
+        <left>-150</left>
+    <control type="label">
+		<top>210</top>
+		<left>520</left>
+		<width>550</width>
+		<aligny>center</aligny>
+		<height>40</height>
+		<font>font14</font>
+		<label>[B]$LOCALIZE[40017][/B]</label>
+	</control>
+    <control type="image">
+				<left>515</left>
+				<top>590</top>
+				<width>30</width>
+				<height>30</height>
+				<bottom>0</bottom>
+              	<texture colordiffuse="button_focus">arrowup.png</texture>
+				<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+				<animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+                <visible>Container(8625).HasPrevious</visible>
+                </control>
+                <control type="image">
+				<left>515</left>
+				<top>650</top>
+				<width>30</width>
+				<height>30</height>
+				<bottom>0</bottom>
+              	<texture flipy="true" colordiffuse="button_focus">arrowup.png</texture>
+				<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+				<animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+                <visible>Container(8625).HasNext</visible>
+    </control>
+    
+    <control type="textbox">
+			<left>1630</left>
+			<bottom>250</bottom>
+			<width>250</width>
+			<height>150</height>
+			<font>font12</font>
+			<align>left</align>
+			<textcolor>button_focus</textcolor>
+			<label>$LOCALIZE[40018]</label>
+			<animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+            <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+			<animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+        </control>
+ 
+        
+    <control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(tvshows)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+			<item id="1">
+			<label>$INFO[Skin.String(ShowList1TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList1TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList1ID)</onclick>
+			<onclick>Skin.Reset(ShowList1Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList1TVShowTitle))</visible>
+		</item>
+		<item id="11">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+           	<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList1TVShowTitle))</visible>
+		</item>
+		<item id="2">
+			<label>$INFO[Skin.String(ShowList2TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList2TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList2ID)</onclick>
+			<onclick>Skin.Reset(ShowList2Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList2TVShowTitle))</visible>
+		</item>
+		<item id="12">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList2TVShowTitle))</visible>
+		</item>
+		<item id="3">
+			<label>$INFO[Skin.String(ShowList3TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList3TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList3ID)</onclick>
+			<onclick>Skin.Reset(ShowList3Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList3TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList3TVShowTitle))</visible>
+		</item>
+		<item id="4">
+			<label>$INFO[Skin.String(ShowList4TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList4TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList4ID)</onclick>
+			<onclick>Skin.Reset(ShowList4Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList4TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList4TVShowTitle))</visible>
+		</item>
+		<item id="5">
+			<label>$INFO[Skin.String(ShowList5TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList5TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList5ID)</onclick>
+			<onclick>Skin.Reset(ShowList5Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList5TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList5TVShowTitle))</visible>
+		</item>
+		<item id="6">
+			<label>$INFO[Skin.String(ShowList6TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList6TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList6ID)</onclick>
+			<onclick>Skin.Reset(ShowList6Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList6TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList6TVShowTitle))</visible>
+		</item>
+		<item id="7">
+			<label>$INFO[Skin.String(ShowList7TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList7TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList7ID)</onclick>
+			<onclick>Skin.Reset(ShowList7Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList7TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList7TVShowTitle))</visible>
+		</item>
+		<item id="8">
+			<label>$INFO[Skin.String(ShowList8TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList8TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList8ID)</onclick>
+			<onclick>Skin.Reset(ShowList8Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList8TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList8TVShowTitle))</visible>
+		</item>
+		<item id="9">
+			<label>$INFO[Skin.String(ShowList9TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList9TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList9ID)</onclick>
+			<onclick>Skin.Reset(ShowList9Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList9TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList9TVShowTitle))</visible>
+		</item>
+		<item id="10">
+			<label>$INFO[Skin.String(ShowList10TVShowTitle)]</label>
+            <label2></label2>
+			<onclick>Skin.Reset(ShowList10TVShowTitle)</onclick>
+			<onclick>Skin.Reset(ShowList10ID)</onclick>
+			<onclick>Skin.Reset(ShowList10Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(ShowList10TVShowTitle))</visible>
+		</item>
+		<item id="13">
+			<label>$LOCALIZE[40019]</label>
+            <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(ShowList10TVShowTitle))</visible>
+		</item>
+	</content>
+
+	</control>
+    
+ <control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(Movies)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+			<item ID="1">
+			<label>$INFO[Skin.String(MovieList1Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList1Title)</onclick>
+			<onclick>Skin.Reset(MovieList1Path)</onclick>
+			<onclick>Skin.Reset(MovieList1Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList1Title))</visible>
+		</item>
+		<item ID="11">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList1Title))</visible>
+		</item>
+		<item ID="2">
+			<label>$INFO[Skin.String(MovieList2Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList2Title)</onclick>
+			<onclick>Skin.Reset(MovieList2Path)</onclick>
+			<onclick>Skin.Reset(MovieList2Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList2Title))</visible>
+		</item>
+		<item ID="12">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList2Title))</visible>
+		</item>
+		<item ID="3">
+			<label>$INFO[Skin.String(MovieList3Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList3Title)</onclick>
+			<onclick>Skin.Reset(MovieList3Path)</onclick>
+			<onclick>Skin.Reset(MovieList3Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList3Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList3Title))</visible>
+		</item>
+		<item ID="4">
+			<label>$INFO[Skin.String(MovieList4Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList4Title)</onclick>
+			<onclick>Skin.Reset(MovieList4Path)</onclick>
+			<onclick>Skin.Reset(MovieList4Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList4Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList4Title))</visible>
+		</item>
+		<item ID="5">
+			<label>$INFO[Skin.String(MovieList5Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList5Title)</onclick>
+			<onclick>Skin.Reset(MovieList5Path)</onclick>
+			<onclick>Skin.Reset(MovieList5Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList5Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList5Title))</visible>
+		</item>
+		<item ID="6">
+			<label>$INFO[Skin.String(MovieList6Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList6Title)</onclick>
+			<onclick>Skin.Reset(MovieList6Path)</onclick>
+			<onclick>Skin.Reset(MovieList6Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList6Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList6Title))</visible>
+		</item>
+		<item ID="7">
+			<label>$INFO[Skin.String(MovieList7Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList7Title)</onclick>
+			<onclick>Skin.Reset(MovieList7Path)</onclick>
+			<onclick>Skin.Reset(MovieList7Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList7Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList7Title))</visible>
+		</item>
+		<item ID="8">
+			<label>$INFO[Skin.String(MovieList8Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList8Title)</onclick>
+			<onclick>Skin.Reset(MovieList8Path)</onclick>
+			<onclick>Skin.Reset(MovieList8Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList8Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList8Title))</visible>
+		</item>
+		<item ID="9">
+			<label>$INFO[Skin.String(MovieList9Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList9Title)</onclick>
+			<onclick>Skin.Reset(MovieList9Path)</onclick>
+			<onclick>Skin.Reset(MovieList9Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList9Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList9Title))</visible>
+		</item>
+		<item ID="10">
+			<label>$INFO[Skin.String(MovieList10Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MovieList10Title)</onclick>
+			<onclick>Skin.Reset(MovieList10Path)</onclick>
+			<onclick>Skin.Reset(MovieList10Poster)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MovieList10Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(videos,videodb://movies/titles/)</onclick>
+			<visible>String.IsEmpty(Skin.String(MovieList10Title))</visible>
+		</item>
+	</content>
+	</control>    
+   
+
+<control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(Addons)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+		<item ID="1">
+			<label>$INFO[Skin.String(AddonList1Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList1Title)</onclick>
+			<onclick>Skin.Reset(AddonList1Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList1Title))</visible>
+		</item>
+		<item ID="11">
+			<label>$LOCALIZE[40019]</label>
+           	<onclick>Skin.SetAddon(AddonList1Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList1Title,$INFO[system.addontitle(Skin.String(AddonList1Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList1Title))</visible>
+		</item>
+		<item ID="2">
+			<label>$INFO[Skin.String(AddonList2Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList2Title)</onclick>
+			<onclick>Skin.Reset(AddonList2Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList2Title))</visible>
+		</item>
+		<item ID="12">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList2Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList2Title,$INFO[system.addontitle(Skin.String(AddonList2Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList2Title))</visible>
+		</item>
+		<item ID="3">
+			<label>$INFO[Skin.String(AddonList3Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList3Title)</onclick>
+			<onclick>Skin.Reset(AddonList3Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList3Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList3Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList3Title,$INFO[system.addontitle(Skin.String(AddonList3Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList3Title))</visible>
+		</item>
+		<item ID="4">
+			<label>$INFO[Skin.String(AddonList4Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList4Title)</onclick>
+			<onclick>Skin.Reset(AddonList4Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList4Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList4Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList4Title,$INFO[system.addontitle(Skin.String(AddonList4Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList4Title))</visible>
+		</item>
+		<item ID="5">
+			<label>$INFO[Skin.String(AddonList5Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList5Title)</onclick>
+			<onclick>Skin.Reset(AddonList5Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList5Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList5Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList5Title,$INFO[system.addontitle(Skin.String(AddonList5Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList5Title))</visible>
+		</item>
+		<item ID="6">
+			<label>$INFO[Skin.String(AddonList6Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList6Title)</onclick>
+			<onclick>Skin.Reset(AddonList6Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList6Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList6Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList6Title,$INFO[system.addontitle(Skin.String(AddonList6Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList6Title))</visible>
+		</item>
+		<item ID="7">
+			<label>$INFO[Skin.String(AddonList7Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList7Title)</onclick>
+			<onclick>Skin.Reset(AddonList7Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList7Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList7Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList7Title,$INFO[system.addontitle(Skin.String(AddonList7Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList7Title))</visible>
+		</item>
+		<item ID="8">
+			<label>$INFO[Skin.String(AddonList8Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList8Title)</onclick>
+			<onclick>Skin.Reset(AddonList8Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList8Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList8Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList8Title,$INFO[system.addontitle(Skin.String(AddonList8Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList8Title))</visible>
+		</item>
+		<item ID="9">
+			<label>$INFO[Skin.String(AddonList9Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList9Title)</onclick>
+			<onclick>Skin.Reset(AddonList9Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList9Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList9Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList9Title,$INFO[system.addontitle(Skin.String(AddonList9Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList9Title))</visible>
+		</item>
+		<item ID="10">
+			<label>$INFO[Skin.String(AddonList10Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(AddonList10Title)</onclick>
+			<onclick>Skin.Reset(AddonList10Path)</onclick>
+			<visible>!String.IsEmpty(Skin.String(AddonList10Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+			<onclick>Skin.SetAddon(AddonList10Path,xbmc.addon.video,xbmc.addon.executable,xbmc.addon.audio,xbmc.addon.image)</onclick>
+			<onclick>Skin.SetString(AddonList10Title,$INFO[system.addontitle(Skin.String(AddonList10Path))])</onclick>
+			<visible>String.IsEmpty(Skin.String(AddonList10Title))</visible>
+		</item>
+		
+	</content>
+	</control>  
+
+<control type="list" id="8625">
+		<top>300</top>
+		<left>550</left>
+		<right>0</right>
+		<width>1060</width>
+		<height>640</height>
+		<onright>1000</onright>
+        <visible>Container.Content(albums)</visible>
+		<itemlayout height="75" width="1060">
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="75" width="1060">
+			<control type="image">
+				<left>10</left>
+				<top>0</top>
+				<width>1030</width>
+				<height>75</height>
+				<bottom>0</bottom>
+				<texture colordiffuse="button_focus">lists/focus.png</texture>
+				<visible>control.hasfocus(8625)</visible>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>30</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<height>40</height>
+				<font>font14</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>15</top>
+				<left>120</left>
+				<width>900</width>
+				<aligny>center</aligny>
+				<align>right</align>
+				<height>40</height>
+				<font>font10</font>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</focusedlayout>
+		<content>
+		<item ID="1">
+			<label>$INFO[Skin.String(MusicList1Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList1Title)</onclick>
+			<onclick>Skin.Reset(MusicList1Artist)</onclick>
+			<onclick>Skin.Reset(MusicList1Poster)</onclick>
+			<onclick>Skin.Reset(MusicList1ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList1Title))</visible>
+		</item>
+		<item ID="11">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList1Title))</visible>
+		</item>
+		<item ID="2">
+			<label>$INFO[Skin.String(MusicList2Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList2Title)</onclick>
+			<onclick>Skin.Reset(MusicList2Artist)</onclick>
+			<onclick>Skin.Reset(MusicList2Poster)</onclick>
+			<onclick>Skin.Reset(MusicList2ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList2Title))</visible>
+		</item>
+		<item ID="12">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList2Title))</visible>
+		</item>
+		<item ID="3">
+			<label>$INFO[Skin.String(MusicList3Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList3Title)</onclick>
+			<onclick>Skin.Reset(MusicList3Artist)</onclick>
+			<onclick>Skin.Reset(MusicList3Poster)</onclick>
+			<onclick>Skin.Reset(MusicList3ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList3Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList3Title))</visible>
+		</item>
+		<item ID="4">
+			<label>$INFO[Skin.String(MusicList4Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList4Title)</onclick>
+			<onclick>Skin.Reset(MusicList4Artist)</onclick>
+			<onclick>Skin.Reset(MusicList4Poster)</onclick>
+			<onclick>Skin.Reset(MusicList4ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList4Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList4Title))</visible>
+		</item>
+		<item ID="5">
+			<label>$INFO[Skin.String(MusicList5Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList5Title)</onclick>
+			<onclick>Skin.Reset(MusicList5Artist)</onclick>
+			<onclick>Skin.Reset(MusicList5Poster)</onclick>
+			<onclick>Skin.Reset(MusicList5ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList5Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList5Title))</visible>
+		</item>
+		<item ID="6">
+			<label>$INFO[Skin.String(MusicList6Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList6Title)</onclick>
+			<onclick>Skin.Reset(MusicList6Artist)</onclick>
+			<onclick>Skin.Reset(MusicList6Poster)</onclick>
+			<onclick>Skin.Reset(MusicList6ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList6Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList6Title))</visible>
+		</item>
+		<item ID="7">
+			<label>$INFO[Skin.String(MusicList7Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList7Title)</onclick>
+			<onclick>Skin.Reset(MusicList7Artist)</onclick>
+			<onclick>Skin.Reset(MusicList7Poster)</onclick>
+			<onclick>Skin.Reset(MusicList7ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList7Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList7Title))</visible>
+		</item>
+		<item ID="8">
+			<label>$INFO[Skin.String(MusicList8Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList8Title)</onclick>
+			<onclick>Skin.Reset(MusicList8Artist)</onclick>
+			<onclick>Skin.Reset(MusicList8Poster)</onclick>
+			<onclick>Skin.Reset(MusicList8ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList8Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList8Title))</visible>
+		</item>
+		<item ID="9">
+			<label>$INFO[Skin.String(MusicList9Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList9Title)</onclick>
+			<onclick>Skin.Reset(MusicList9Artist)</onclick>
+			<onclick>Skin.Reset(MusicList9Poster)</onclick>
+			<onclick>Skin.Reset(MusicList9ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList9Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList9Title))</visible>
+		</item>
+		<item ID="10">
+			<label>$INFO[Skin.String(MusicList10Title)]</label>
+             <label2></label2>
+			<onclick>Skin.Reset(MusicList10Title)</onclick>
+			<onclick>Skin.Reset(MusicList10Artist)</onclick>
+			<onclick>Skin.Reset(MusicList10Poster)</onclick>
+			<onclick>Skin.Reset(MusicList10ID)</onclick>
+			<visible>!String.IsEmpty(Skin.String(MusicList10Title))</visible>
+		</item>
+		<item ID="13">
+			<label>$LOCALIZE[40019]</label>
+             <onclick>Dialog.Close(all,true)</onclick>
+			<onclick>ActivateWindow(music,musicdb://albums/,return)</onclick>
+			<visible>String.IsEmpty(Skin.String(MusicList10Title))</visible>
+		</item>
+	</content>
+	</control>
+    
+	<control type="grouplist" id="1000">
+		<top>280</top>
+		<left>1600</left>
+		<right>0</right>
+		<bottom>140</bottom>
+		<onleft>8625</onleft>
+		<onright>8625</onright>
+		<onup>1000</onup>
+		<ondown>1000</ondown>
+	
+		
+		<include content="DefaultDialogButton">
+			<param name="id" value="11" />
+			<param name="label" value="$LOCALIZE[40015]" />
+			<param name="onclick" value="Dialog.close(all)" />
+		</include>
+	</control>
+</control>
+<control type="label">
+				<left>1450</left>
+				<top>910</top>
+				<width>275</width>
+				<height>35</height>
+				<font>font12</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+				<label>[COLOR=button_focus]$INFO[Container(8625).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR=button_focus]$INFO[Container(8625).CurrentPage]/$INFO[Container(8625).NumPages][/COLOR]</label>
+			</control>
+</controls>
+</window>

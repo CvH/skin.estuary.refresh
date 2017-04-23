@@ -1,4 +1,20 @@
-﻿[B]3.7.7[/B]
+﻿[B]3.8.0[/B]
+• SetView Sortierung der Filme geändert (Nach Jahr)
+• Diverse Fehler Homemenu Pvr Widgets behoben
+• GermanTelecast Offers Widgets hinzugefügt 
+• Aufnahme Widget TV korrigiert
+• Homemenu Focus bei den oberen Buttons korrigiert (fadet runter)
+• Problem mit den Kategorie Widgets behoben (wurden teilweise nicht geladen)
+• Sublabels im Homemenu können nun definiert werden
+• Fehler in der DialogVideoinfoSets behoben, beim abspielen von Filmen aus dem Set
+• Fehler in der PosterView behoben (klammern wurden angezeigt)
+• Fehler in der WallView behoben (liste mit Sets war zu lang)
+• Gesehen Makierung in der SetView hinzugefügt
+• Teilweise mit der Übersetzung ins Englische angefangen. (danke @'CVH')
+• PinBoard System eingebaut, ersetzt die Favoriten (vielen dank an @marc0810)
+
+
+[B]3.7.7[/B]
 • Widgets hinzugefügt (Library Data Provider) (Zufällige(Lieder) / Angefangene(Alben) / Zufällige(Alben) / Neue(Alben) / Angefangene (Episoden))
 
 
@@ -19,7 +35,7 @@
 
 
 [B]3.7.3[/B]
-• Fehler in der musicvisualisation korrigiert (playlist anzeige wägrend radio empfang)
+• Fehler in der musicvisualisation korrigiert (playlist anzeige während radio empfang)
 • Aufnahme / geplante aufnahme Icon Position korrigiert
 • Pvr Kanäle Ansicht, Pfeile angepasst an den Skin
 • Favoriten zu Widget auswahl hinzugefügt

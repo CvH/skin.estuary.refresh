@@ -15,6 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+ 
 
 msgctxt "#31000"
 msgid "Now playing"
@@ -539,3 +540,96 @@ msgstr "Medien-Flags anzeigen"
 msgctxt "#31161"
 msgid "Numeric pad"
 msgstr "Ziffern-Eingabe"
+
+msgctxt "#40000"
+msgid "customise"
+msgstr "anpassen"
+
+msgctxt "#40001"
+msgid "Customise Homemenu"
+msgstr "Hauptmenü anpassen"
+
+msgctxt "#40002"
+msgid "Edit Home menu entry"
+msgstr "Hauptmenüeintrag konfigurieren"
+
+msgctxt "#40003"
+msgid "Edit Sublabel"
+msgstr "Sublabel setzen"
+
+msgctxt "#40004"
+msgid "Edit Kategory Widget"
+msgstr "Kategorie Widget setzen"
+
+msgctxt "#40005"
+msgid "Enable this option to replace the menu item with custom widgets."
+msgstr "Aktivieren Sie diese Option, um die Menüpunkte durch konfigurierbare Widgets zu ersetzen."
+
+msgctxt "#40006"
+msgid "Choose the [B]Onclick[/B], [B]Name[/B] and [B]Icon[/B] of your own home menu item.[CR]You can choose any available category independently from the later defined widgets."
+msgstr "Hier wird der [B]Name[/B], [B]Onclick[/B] und [B]Icon[/B] des eigenen Hauptmenü Punktes definiert.[CR]Unabhängig von dem Widgets die ihr später definiert, könnt ihr hier jede verfügbare Kategorie auswählen."
+
+msgctxt "#40007"
+msgid "Here you can select, title and reset your own widgets."
+msgstr "Hier könnt ihr eure eigenen Widgets auswählen, benennen und zurücksetzen."
+
+msgctxt "#40008"
+msgid "Here you can set the category widget, that is the widget which is shown at first place at the top over the widgets. And defined which category the menu item belongs to."
+msgstr "Hier könnt ihr das Kategorien Widget festlegen, das ist das Widget was an erster stelle ganz oben über den Widgets angezeigt wird. Und definiert welcher Kategorie euer Menüpunkt angehört."
+
+msgctxt "#40009"
+msgid "Here you can select, the sublabels of your own home menu item."
+msgstr "Hier könnt ihr die Sublabels des Homemenüs auswählen."
+
+msgctxt "#40010"
+msgid "Show Pinboard"
+msgstr "PinBoard öffnen"
+
+msgctxt "#40011"
+msgid "Add to PinBoard"
+msgstr "In Pinboard aufnehmen"
+
+msgctxt "#40012"
+msgid "All Items full"
+msgstr "Alle Plätze belegt"
+
+msgctxt "#40013"
+msgid "Pinboard Items"
+msgstr "Pinboard Einträge"
+
+msgctxt "#40014"
+msgid "konfigure"
+msgstr "Organisieren"
+
+msgctxt "#40015"
+msgid "close"
+msgstr "schliessen"
+
+msgctxt "#40016"
+msgid "Here you organise the Pinboard Items."
+msgstr "Hier verwaltet ihr die Pinboard Einträge."
+
+msgctxt "#40017"
+msgid "Configure the Pinboard Items"
+msgstr "Pinboard Einträge konfigurieren"
+
+msgctxt "#40018"
+msgid "click on the name to delete the item."
+msgstr "Zum Enfernen des Pinboard Eintrags, auf den Namen klicken."
+
+msgctxt "#40019"
+msgid "add item"
+msgstr "Item hinzufügen"
+
+msgctxt "#40020"
+msgid "PinBoard - Movies"
+msgstr "PinBoard - Filme"
+
+msgctxt "#40021"
+msgid "PinBoard - Tvshows"
+msgstr "PinBoard - Serien"
+
+msgctxt "#40022"
+msgid "PinBoard - Music"
+msgstr "PinBoard - Musik"
+

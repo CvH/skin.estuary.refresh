@@ -420,9 +420,9 @@
 					<label>Hauptmenüeintrag konfigurieren</label>
                     <include>DefaultSettingButton</include>
 					<label2>(ersetzt Hauptmenü [B]TV[/B])</label2>
-					<onclick>SetProperty(CustomHomePath,CustomHomePath15,home)</onclick>
-					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel15,home)</onclick>
-					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb15,home)</onclick>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath5,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel5,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb5,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_5)</visible>
 				</control>
@@ -492,9 +492,9 @@
 					<label>Hauptmenüeintrag konfigurieren</label>
                     <include>DefaultSettingButton</include>
 					<label2>(ersetzt Hauptmenü [B]Radio[/B])</label2>
-					<onclick>SetProperty(CustomHomePath,CustomHomePath16,home)</onclick>
-					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel16,home)</onclick>
-					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb16,home)</onclick>
+					<onclick>SetProperty(CustomHomePath,CustomHomePath6,home)</onclick>
+					<onclick>SetProperty(CustomHomeLabel,CustomHomeLabel6,home)</onclick>
+					<onclick>SetProperty(CustomHomeThumb,CustomHomeThumb6,home)</onclick>
 					<onclick>ActivateWindow(1870)</onclick>
                     <visible>Skin.HasSetting(custommenu_6)</visible>
 				</control>
